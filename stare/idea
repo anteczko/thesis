@@ -1,0 +1,46 @@
+Prezentacja:
+ -10 slajdów
+ -ok 10 minut
+
+Konfigurator wnętrz z użyciem silnika Unity3D
+-przedstawić się
+-agenda
+-ogólne przedstawienie tematu
+  -czym jest konfigurator
+   @konifgurator pozwala potancjalnemu klientowi lepiej sprecyzować swoje wymagania. Udziela klientowi informacji, oraz zaznacza obszar możliwości produktu. Zamiast bombardować go listą wszystkich możliwości, pozwala na stopniowe kreślanie wymagań produktu.
+  -czym jest wizualizacja
+   @wizualizacja jest grafiką, która ma przedstawiać przewidywany wygląd produktu. Zazwyczaj zmiany dokonane w konifguratorze są w pewien sposób odzwierciedlane w wizualizacji. Przykładowo kolor lakieru samochodu, na obrazku, zmienia się po wybraniu innego z dostępnej listy.
+ -po co to robić
+  @CZasami klient do końca nie sprecyzował jeszcze jake ma wymagania, ani jak produk końcowy miałby wyglądać. Do niektórych ludzi może bardziej przemawiać graficzna reprezentacja niż suchy tekstowy opis. Statystycznie oraz reklamowo im więcej zangażujemy zmysłów potencjalnego klienta, tym bardziej zwrócimy jego uwagę na produkt.
+ -jak to może pomóc klientom i pracownikom
+  @część prac konsulatacyjnych, wykonywanych przez pracowników, będzie wykonana przez oprogramowanie, co odciąży pracowników
+  @klienci będą mieli więcej czasu na zadawanie bardziej sprecyzowanych pytań
+-istniejące rozwiązania
+ @Postanowiłem podzielić istniejące rozwiązania na parę kategori.
+ -pre renderowane obrazy
+  @zdjęcia oraz prerenderowane obrazy charakteryzują się najelpszą jakością grafiki, oraz są dosyć zasobo-oszczędne (z punktu widzenia użytkonika). Zdjęcia jednak nie mogą być mocno zmodyfikowane po ich zrobieniu, zazwyczaj zmieniane są kolory elementów, albo niektóre elementy są zmieniane na inne.
+   @każda zmiana oraz możliwość musi zostać określona z kolei oraz wzięta pod uwagę
+   @w przypadku prerenderowanej grafiki, proces renderowania musi zostać powtórzony dla różnych konfiguracji, co jest procesem czasochłonnym
+ -technologie interaktywne
+  @technologie cechującą się większą interaktywnością, pozwalające na obracanie obrazu lub przedmiotu, oraz większe edycje otoczenia. Są one niestaty najbardziej wymagająde pod względem zasobów.
+  -konfiguratory mebli
+   @przykładem mogą być konifguratory mebli, pozwalają one na dokładne precyzowanie wymiarów, ilośc półek, szufladek i innych cech mebla
+-istniejące technologie do wizualizacji 3d
+ -blender-najlepszy ale zbyt wolny i zasobożerny
+  @generuje wysokiej jakości grafikę komputerową, poprzez symulację geometrii, materiałów oraz załamania światła. JEdnak okupione jest to niesamowicie długimi czasami renderowania, czasami dochodzącymi od kilku do kilkunastu godzin
+ -unreal engine i inne, nie działają w przeglądarce
+  -silniki gier muszą generować obraz w czasie rzeczywistym, oraz pozwalać na interaktywną rozrywkę. Niestety pomimo dobrych osiągów, oraz generowania dobrze wyglądającej grafiki, nadal nie są odpoweidnie w pewnych zastosowaniach. Do uruchomienia ich porzeba dosyć mocnego sprzętu komputerowego.
+ -unity3d
+  @jest silnikiem do gier komputerowych.
+  -prosty w obsłudze
+  -dostępny na różnych platformach
+   @ważną jego cechą jest możliwość osadzenia go na stronie internetowej, dzięki czemu możliwe jest dotarcie do ogromnej rzeczy odbiorców
+ -3DeCon-konfiogurator mebli
+  @jest rozwiązaniem stworzonym w jednym celu, jego działanie jednak może pozostawać trochę do życzenia
+-użyte technologie (silniki renderujące)
+ -HDRP
+  @Hih definition rendering pipeline, jest to zawansowany silnik renderujący pozwalający na wiele efektów graficznych. Cechuje się dobrą grafiką porównywalną czasami z resztą silników gier
+ -URP
+  @Cechuje się gorszą grafiką, ale jedgo atutem jest kompatybilność z przeglądarkami internetowymi. W pewnym sensie jest zbiorem dodatków do podstawowego silnika graficznego 
+ -Standardowy
+-dziękuję za uwagę

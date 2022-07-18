@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+\usepackage{lingmacros}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \oldincludegraphics[#1,max width=\linewidth]{#2}}
+\input{utp-report.tex}
+\lstset{language=Java} 
+\graphicspath{ {./scrots/} }
+
+\renewcommand{\title}{01}
+\newcommand{\project}{Wstępny szkic tematu pracy dyplomowej}
+\renewcommand{\author}{Antoni Malak} 
+\renewcommand{\date}{03.09.2021}
+\newcommand{\dateEnd}{03.09.2021}
+\newcommand{\grupa}{1}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\setcounter{section}{1}
+\begin{document}
+\tabelka
+
+
+\section*{Demo technologiczne gry typu sandbox, ze zniszczalnym terenem, oraz maszynami fizycznymi, z użyciem silnika Unity3D}
+
+\subsubsection{Przegląd różnych stopni zniszczalności terenu w innych grach komputerowych}
+\subsubsection{Określenie stopnia zniszczalności terenu, oraz elementów gry}
+\subsubsection{Określenie użytych algorytmów, oraz ich przeznaczenia}
+\subsubsection{Projekt struktury danych, oraz diagramy klas}
+\subsubsection{Struktura projektu gry oraz określenie jego części}
+\subsubsection{Analiza wydajności rozwiązania z uwzględnieniem różnych algorytmów optymalizacyjnych}
+
+
+
+\end{document}

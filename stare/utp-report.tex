@@ -1,0 +1,56 @@
+%\ProvidesPackage{utp-report}[UTP Report]
+\RequirePackage{graphicx}
+\RequirePackage{array}
+\RequirePackage{sectsty}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
+
+\renewcommand\familydefault{\sfdefault}
+
+
+\lstdefinestyle{custom}{
+  belowcaptionskip=1\baselineskip,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color{green!40!black},
+  commentstyle=\itshape\color{purple!40!black},
+  identifierstyle=\color{blue},
+  stringstyle=\color{orange},
+}
+\lstset{escapechar=@,style=custom}
+
+\definecolor{darkgray}{rgb}{0.3,0.3,0.3}
+\subsubsectionfont{\color{darkgray}}
+
+\newcommand{\screen}[1]{{\centering\includegraphics[width=10cm]{#1}}}
+
+\newcommand\hr{\par\vspace{-.5\ht\strutbox}\noindent\hrulefill\par}
+\newcommand{\B}[1]{\textbf{#1}}
+
+
+
+\newcommand{\university}{\footnotesize Uniwersytet Technologiczno-Przyrodniczy}
+\newcommand{\universityFill}{\footnotesize im. J.J. Śniadeckich w Bydgoszczy}
+\newcommand{\department}{\footnotesize Wydział Telekomunikacji, Informatyki i Elektrotechniki}
+\newcommand{\departmentFill}{\footnotesize Zakład Techniki Cyfrowej}
+
+\newcommand{\universityFullName}{\def\arraystretch{1.4} \begin{tabular}{c} \university \\ \universityFill \\ \department \\ \departmentFill \end{tabular} \def\arraystretch{2}}
+
+\newcommand\cimage[2][]{\raisebox{-0.4\height}{\includegraphics[#1]{#2}}}
+
+\newcommand{\tabelka}{
+\begin{table}[]
+	\def\arraystretch{2}
+	\begin{center}
+		\begin{tabular}{|l|l|l|l|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{\cimage[height=.9in]{utp}}             & \multicolumn{4}{c|}{\universityFullName}                                                                              & \multicolumn{1}{c|}{\cimage[height=.7in]{wtie}} \\ \hline
+			\textbf{\footnotesize Przedmiot}                            & \multicolumn{3}{l|}{\footnotesize \project}                                    & \footnotesize \textbf{Kierunek/Tryb} & \footnotesize IS/NP                             \\ \hline
+			\textbf{\footnotesize Numer lab.}                           & \footnotesize \title & \B{\footnotesize Data wykonania} & \footnotesize \date & \B{\footnotesize Data oddania}       & \footnotesize \dateEnd                         \\ \hline
+			\textbf{\footnotesize Imię i nazwisko}                      & \multicolumn{3}{l|}{\footnotesize \author}                                     & \footnotesize \textbf{Grupa}         & \footnotesize \grupa                                 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+}
+%\endinput

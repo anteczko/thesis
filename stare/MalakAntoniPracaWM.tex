@@ -1,0 +1,55 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+\usepackage{lingmacros}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \oldincludegraphics[#1,max width=\linewidth]{#2}}
+\input{utp-report.tex}
+\lstset{language=Java} 
+\graphicspath{ {./scrots/} }
+
+\renewcommand{\title}{01}
+\newcommand{\project}{Wstępny szkic tematu pracy dyplomowej}
+\renewcommand{\author}{Antoni Malak} 
+\renewcommand{\date}{03.09.2021}
+\newcommand{\dateEnd}{03.09.2021}
+\newcommand{\grupa}{1}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\setcounter{section}{1}
+\begin{document}
+\tabelka
+
+
+\section*{Zaprojektowanie i zaprojektowanie kafelkowego menadżera okien dla systemu Linux}
+
+\subsubsection{Przegląd różnych typów menadżerów okien i ich funkcjonalności}
+Celem projektu jest stworzenie nowego kafelkowego menadżera okien, który były w jakiś sposób unikalny, oraz posiadał funkcje, których nie ma w już istniejących programach tego typu. Dlatego ważne jest rozeznanie się w zakresie funkcji, które te programy oferują.
+\\
+
+\subsubsection{Określenie ogólnych funkcjonalności menadżera okien, oraz unikalnych cech do implementacji}
+Menadżer okien określa zachowanie oraz pozycjonowanie okien programów. Może on również dodawać 'wirtualne pulpity/przestrzenie robocze' (eng. Workspaces), oraz definiować interakcję pomiędzy oknami programów.
+\\
+\subsubsection{Określenie użytych algorytmów, oraz ich przeznaczenia}
+Menadżery przechowują okna w strukturze danych na różne sposoby, zazwyczaj jest to struktura drzewa, albo lista.
+\\
+\subsubsection{Struktura projektu oraz określenie jego części}
+Wymagane w projekcie byłaby część, która zarządzałaby oknami programów, przechowywała o nich informacje, oraz część dzięki której użytkownik będzie mógł wchodzić w interakcję z programem/
+\\
+\subsubsection{Użyte biblioteki}
+Menadżer okien jedynie zarządza oknami programów, ich rysowanie odbywa się dzięki zaimportowanym bilbiotekom graficznym.
+\\
+\subsubsection{Działanie oraz porówanie programu, do już istniejących, tego samego typu}
+Końcowe porównanie progrmu wynikowego, do innych istniejących już rozwiązań, oraz pokazanie, że stworzenie jeszcze jednego nowego menadżera okien jednak miało sens.\
+\\
+
+
+\end{document}

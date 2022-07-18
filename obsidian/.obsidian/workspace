@@ -1,0 +1,93 @@
+{
+  "main": {
+    "id": "8310b1a6ac331a19",
+    "type": "split",
+    "children": [
+      {
+        "id": "385170d226f7c71d",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Wstęp teoretyczny.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ec8588a8ba88f189",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2d546a58d264069",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "056697b173d02258",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "934085c4e872b510",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "c4626e1c6c436444",
+    "type": "split",
+    "children": [
+      {
+        "id": "98bd8c33cdc97bbf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7c79a8fbf48620ef",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Wstęp teoretyczny.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "385170d226f7c71d",
+  "lastOpenFiles": [
+    "Wstęp teoretyczny.md"
+  ]
+}

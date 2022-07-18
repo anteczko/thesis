@@ -1,0 +1,267 @@
+% This is a simple sample document.  For more complicated documents take a look in the exercise tab. Note that everything that comes after a % symbol is treated as comment and ignored when the code is compiled.
+
+\documentclass{article} % \documentclass{} is the first command in any LaTeX code.  It is used to define what kind of document you are creating such as an article or a book, and begins the document preamble
+
+\usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tabularx}
+
+
+\title{Simple Sample} % Sets article title
+\author{My Name} % Sets authors name
+\date{\today} % Sets date for date compiled
+
+% The preamble ends with the command \begin{document}
+\begin{document} % All begin commands must be paired with an end command somewhere
+
+\begin{center}
+ \Large \textbf{POLITECHNIKA BYDGOSKA} \\
+  im. Jana i Jędrzeja Śniadeckich \\
+\end{center}
+
+\begin{center}
+\end{center}
+
+\begin{center}
+ \LARGE WYDZIAŁ TELEKOMUNIKACJI, INFORMATYKI I ELEKTROTECHNIKI \\
+\end{center}
+
+\begin{center}
+ \includegraphics[width=4cm,height=4cm]{logo.png}
+ % logo.png: 300x300 px, 72dpi, 10.58x10.58 cm, bb=0 0 300 300
+\end{center}
+
+\begin{center}
+ \Large \textbf{PRACA DYPLOMOWA INŻYNIERSKA}
+\end{center}
+
+\begin{center}
+ \large \textbf{na kierunku Informatyka Stosowana}
+\end{center}
+
+\vspace{3cm}
+
+\begin{center}
+ \LARGE \textbf{Interaktywny konfigurator wnętrz pomieszczeń z dekoracyjnymi panelami 3D}
+\end{center}
+
+\vspace{3cm}
+
+\begin{minipage}{2in}
+Pracę wykonał: \\
+Antoni Malak\\
+\end{minipage}
+\hfill
+\begin{minipage}{1.3in}
+Kierujący pracą: \\
+dr inż. Mariusz Sulima
+\end{minipage}
+
+
+\begin{minipage}{2in}
+Nr albumu: \\
+108650
+\end{minipage}
+
+\begin{center}
+ Bydgoszcz,
+\end{center}
+
+
+\newpage
+
+\hspace{0pt}
+\vfill
+
+\begin{center}
+\Huge Tutaj wstawić kartę pracy
+\end{center}
+
+\vfill
+\hspace{0pt}
+
+\newpage
+
+\section*{Streszczenie}
+Celem pracy jest zaprojektowanie oraz stworzenie interaktywnego konfiguratora elementów wnętrz, a dokładniej ściennych paneli dekoracyjnych. Najpierw opisane będą istniejące już rozwiązania w tym zakresie, a potem zostanie określony zbiór funcjonalności oraz zakres interaktywności. Wymagane będzie zdefiniowanie i wymodelowanie elementów wnętrza, a następnie zaprojektowanie logiki programu umożliwiającej edycję parametrów tychże elementów.
+\\
+
+\textbf{Słowa kluczowe:}
+
+\section*{Summary}
+
+\textbf{Keywords:}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Wstęp}
+
+% <okoliczności powstania pracy>
+% -dostępność reklamy
+% -funkcje wizualizacji
+
+Szybki rozwój oraz powszechnośc internetu pozwolił na łatwiejsze dotarcie do potencjalnego klienta. Podając jedynie adres strony internetowej, zaprosić można kogoś na stronę internetową, której budowa i funkcje mogą być najróżniejsze. Może to być prosta statyczna strona wizytówka, której celem jest reklamowanie kogoś lub czegoś, lub skomplikowany profesjonalny program, który jest dostepny dla każdego, albo coś pomiędzy...
+\\
+
+Dawniejszą formą reklamy były bannery reklamowe i ulotki. Bannery zwracały uwagę masy osób, a ulotki pełniły rolę informcyjną, podsuwając klientowi bardziej szczegółowe informacje, dotyczące produktu. Niestety pewne rzeczy lepiej ejst przedstawić w sposób graficzny, dalatego powstały katalogi, w których widać produkt w jego 'naturalnym środowisku'. Dzięki technologii możliwe jest dostarczenie podobnej reklamy poprzez internet, nie marnując przy tym papieru, oraz dając sobie jednocześnie więcej możliwości w postaci interaktywności.
+\\
+
+Dzięki zaimplementowaniu funkcji interaktywnych w konfiguratorze, możliwe będzie rozszerzenie zestawu funkcji ze statycznego obrazu do namiatki wizyty w salonie sprzedającym ten produkt. Ważne jest odpowiednie podejście do wizualizacji. Możliwe będzie obejrzenie pojedynczego panelu, ale bardziej pomocny dla klienta będzie widok przykładowego wnętrza, z ich użyciem. Możliwa będzie częściowa edycja panelu, oraz pomieszczenia w którym będzie on przedstawiany.
+\\
+
+
+    \subsection{Cel pracy}
+Celem tej pracy dyplomowej jest stworzenie interaktywnej wizualizacji wnętrz, przedstawiającej panele ścienne potencjalnemu klinetowi. Możliwy będzie wybór panelu z katalogu, zmiana jego koloru, oraz definiowanie sposobu ich ułożenia. Możliwa będzie również konfiguracja wnętrza, aby klient mógł obejrzeć produkt, przedstawiony we wnętrzu, które przypomina jego własny dom. Do wyboru będą z góry zdefiniowane pomieszczenia, pozwalające na częściowe dostosowywanie ich w kwestii kolorystyki wnętrza, ilości i rozmiaru okien oraz konfiguracji mebli. Ważnym aspektem będzie możliwość osadzenia programu na stronie internetowej, co zwiększy rzeszę potencjalnych klientów.
+\\
+
+Przed napisaniem programu, wymagana będzie analiza podstawowych pojęć związanych z tematem, w celu lepszgo zrozumienia tematu, oraz precyzyjniejszego nakreślenia zakresu funkcji, które powinien pełnić program. Trzeba będzie przeanalizować i porównać istniejące już rozwiązania, aby nowo powstały program nie powielał błędów swoich poprzedników i starał się inspirować ich mocnymi stronami. Warto byłoby rozłożyć ideę na czyniiki pierwsze i zastanowić się nad różnymi ich aspektami, dzieląc te już isteniejące na kategorie i porównując je ze sobą.
+\\
+
+Dopiero potem możliwe będzie poprawne zdefiniowanie założeń i zakresu funkcji programu. Wyciągając wnioski z podobnych rozwiązań, będzie można zaprojektować rozwiązanie idealnie pasujące do postawionego problemu. Zdefiniowany zostanie zakres funkcjonalności, które powinna pełnić taka aplikacja. Ważne również będzie uprzednie zdefiniowanie stopnia interaktywności, gdyż implementacja pewnych funkcji nie może być możliwa w późniejszym stadium programowania. Warto również zastanowić sie nad funkcjami jakie powinna pełnić internetowa aplikacja, która pełni również rolę reklamy.
+\\
+
+Po fazach analizy i projektowania, możliwe będzie przejście do właściwej implementacji projektu, zaczynając od zaprogramowania logiki programu, poprzez modelowanie obiektów trójwymiarowych, aż do stworzenia wizualizacji, którą będzie można osadzić na stronie internetowej.
+\\
+
+
+
+\section{Wstęp teoretyczny}
+   
+    \subsection{Wizualizacja}
+        Wizualizacja jest obrazową reprezentacją przedmiotu, procesu lub stanu. Dawniej odnosiło się to do obrazu, albo procesu jego tworzenia, w naszej ludzkiej wyobraźni. Obraz ten istniał jedynie w naszej głowie, by przedstawić go komuś innemu wymagane było nakreślenie jego na jakimś medium, co wymagało dużych umiejętności i środków. Cała gałąź sztuki polega własnie na doskonaleniu tego wymagającego procesu.
+        \\
+        
+        Wizualizacja komputerowa zajmuje się czymś podobnym. Stara się przedstawić coś nie fizycznego za pomocą ilustracji. Przedstawiany może być przedmiot, proces albo inny bardziej abstrakcyjny koncept. Dzięki oprogramownaiu graficznemu możliwe jest zautomatyzowanie tego procesu dla, z góry określonych, scenariuszy. Zadaniem wizualizacji komputerowej jest zebranie ogromu danych, odpowidnie ich przetworzenie, oraz przedstawienie ich w prosty i zrozumiały sposób użytkownikowi końcowemu.
+        \\
+        
+        Medium komputerowe pozwala na wiele możliwości w kwestii edycji prezentowanej grafiki. Parametry mogą zostać łatwo zmienione, a ich zmiana może zostać odzwierciedlona w warstwie graficznej. Mogą się one tyczyć działania całego programu i jego algorytmów, albo części renderującej grafikę. Peryferia komputerowe pozwalają na łatwe wprowadzanie i dostrajanie parametrów, a program bierze te zmienione wartości pod uwagę tworząc nowy, zmieniony obraz. Funkcja pozwalająca na wprowadzanie zmian w symulacji, oraz natychmiastowa jej reakcja jest podstawą interaktywności.
+        \\
+            
+    \subsection{Interaktywność}
+        Interakcja jest wzajemnym oddziaływaniem na siebie osób, przedmiotów lub zjawisk.\footnote[1]{Definicja z internetowego słownika PWN} Ważne żeby oddziaływanie te było dwu-kierunkowe, gdyż jednokierunkowym odpowiednikiem interakcji jest przyczynowość. Interaktywność jest miarą interakcji i jej jakości. 
+        \\
+    
+        Interaktywnośc jest sytuacją w której każda kolejna akcja bierze poprzednią, lub kilka porzednich, pod uwagę zmieniając jej kontekst. Wykonanie tej samej akcji w innym kontekście będzie skutkować wykonaniem innej czynności. Ważne jest aby różne konteksty były łatwo rozpoznawalne i znane użytkownikowi.
+        \\
+    
+        Interaktywność może zostać zdefiniowana jako ciągła wymiana informacji, pomiędzy minium dwoma uczestnikami.  W tym przypadku jednym uczestnikiem jest wizualizacja, a drugim użytkownik. Użytkownik podaje informacje w postaci parametrów wejściowych, a wizualizacja zwraca użytkownikowi jak wyglądać może scena spełniające podane wymagania i paramtery. Jest to proces który zachodzi cały czas w formie pętli, lecz nie każda akcja użytkownika musi równać się natychmiastowej reakcji systemu.
+        \\
+        
+        Ważne jest zachowanie przejrzystości po obu stronach. Należy dać użytkownikowi interfejs, który jest zrozmiały i łatwy w obsłudze. Dzięki zastosowaniu się do podstawowych zasad projektowania interfejsów powinien on być wizualnie przejrzysty i jednolity. Sensowne rozplanowanie różnych kontekstów, pozwoli na bardziej intuicyją nawigację po programie i jego funkcjach.
+        \\
+    
+        Interaktywnośc pozwala użytkownikowi na kontrolowanie parametrów wejściowych symualcji, oraz obserwowanie nowo powstałego obrazu. Ważne jest aby użytkownik czuł, że ma kontrolę nad przebiegiem symualcji, a każda wprowadzona zmiana jest wprowadzana i aktualizowana tak szybko jak szybko się da. Dlatego czas obliczenia kolejnego widoku powinien być odpowiednio krótki. Zawęża to częściowo jak wiele obliczeń możemy przeznaczyć na ten cel, oraz jak wymagająca i realistyczna może być wizualizacja i jej grafika. 
+        \\
+        
+    \subsection{Grafika komputerowa}
+        Grafika komputerowa jest dziedziną zajmującą się tworzeniem, przetwarzaniem oraz wyświetlaniem obrazów w medium komputerowym. Obraz może być wygenerowany przez komputer, tworząc obraz generowany komputerowo (tzw. CGI), albo może być odzwierciedleniem prawidziwego fizycznego obiektu. Do stworzenia zdjęcia obiektu używane są matryce światłoczułe, zmieniające docierające do niej fotony, na sygnał cyfrowy. Możliwe jest również stworzenie obrazu, będącego wizualizacją powstałą z pomiarów innych urządzeń i sensorów cyfrowych. Mogą to być zarówno wykresy przedstawiające zmianę wartości mierzonej przez sensor, albo coś bliższego obrazowi obiektu jak trójwymiarowy model powstały z zeskanownia bryły fizycznego obiektu.
+        \\
+        
+        Podstawowe biblioteki graficzne, takie jak SDL, OpenGL, pozwalają na rysowanie podstawowych kształtów, obrazów i stosowanie podstawowych przekształceń na tych obrazach. Może to być wystarczające do stworzenia prostych wizualizacji, ale aby osiągnąć oczekiwane wyniki wymagany byłby ogromny wkład pracy. Biblioteki te nie pozwalają na wyświetlanie skompikowaynch modeli trójwymiarowych, ani ich tekstur. Oświetlenie musiałoby być zaimplementowane od podstaw wymagając ogromnej wiedzy oraz dobrej optymalizacji. Na szczęście istnieje wiele istniejących już rozwiązań, które implementują wszystkie wymagane funkcje, są to silniki gier komputerowych.
+        \\
+
+        
+        \subsubsection{Silniki gier komputerowych}
+        Silnik gry komputerowej nie obejmuje jedynie warstwy wizualnej, jest to kompletny pakiet obejmujący każdy aspekt interaktywnego programu z naciskiem na generowanie grafiki w czasie rzeczywistym. Ważniejszymi częściami silnika, użytymi w projekcie będzie pobieranie inputu od użytkownika, modyfikacja modeli i sceny w czasie rzeczywistym, oraz wyświetlenie nowo wygenerowanego obrazu.
+        \\
+        
+        Sterowanie odbywa się poprzez urządzenia peryferyjne, takie jak klawiatura, myszka czasami ekran dotykowy, albo tablet graficzny. Możliwe jest również użycie niektórych wewnętrznych sensorów urządzenia takich jak żyroskop czy akcelerometr, które pozwalają na detekcję orientacji urządzenia mobilnego. Pozwalają one na dokładne i precyzyjne manipulowanie sceną. Jest to Kolejny mechanizm, który został już zaimplementowany jako część slinika, oraz nie wymaga on implementacji.
+        \\
+        
+        Jedną z funkcji silnika jest możliwość łatwego tworzenia interfejsu użytkownika, za pomoca którego użytkownik może sterować zachowaniem programu. Interfejsy mogą składać się z warstw, mogą pełnić rolę informacyjną (wskazywanie stanu zmiennych), albo interaktywną (wirtualne przyciski). Niektóre akcje programu mogą być wykonywane w sposób mniej jawny, ale bardziej intuicyjny (n.p. gesty dotykowe do obracania widoku). Inne natomiast będą wymagały kliknięcia na przycisk, albo inny element interfejsu.
+        \\
+        
+        Dzięki gotowemu silnikowi graficznemu, zamiast implementować silnik graficzny od zera, możliwe będzie zaimportowanie modeli wraz z teksturami. Modele mogą być oteksturowane, oraz mogą być zrobione z różnego rodzaju materiałów, które inaczej wyglądają i wchodzą w interkację z oświetleniem. Do sceny można dodawać różne rodzaje obiektów, mogą to być proste modele trójwymiarowe, ale również różne rodzaje żródeł światła, albo efekty cząsteczkowe. Wymagane będzie również ręczne ustawienie sceny, oraz wszystkich jej elementów. Sceny mogą posiadać elementy interaktywne, co musi być uwzględnione w kompozycji jak i implementacji.
+        \\
+                      
+        \subsubsection{Znane silniki gier komputerowych}
+        Rynek oferuje wiele gotowych rozwiązań, w kwestii siliników do gier komputerowych. Mimo że one wszystkie mają ten sam cel, skupiają się one na różnych aspektach oraz posiadają pewne unikalne cechy. Jedne skupiają się na realistycznej grafice oraz streamowaniu ogromynch ilości danych, a inne skupiają się na prostocie użycia oraz mulitplatformowości. Każdy z nich swoimi możliwościami określia pewien zakres, w którym gra będzie się zawierać. Pełna gra stworzona na danym silniku nie może wyglądać lepiej niż demo technologiczne czy benchmark tego samego silnika, gdyż poprostu zabraknie zasobów na resztę logiki gry.
+        \\
+        
+        \subsubsection*{Unreal engine}
+        Silnik graficzny stworzony dla gry Unreal przez studio Epic Games. Gra Unreal została wydana w 1998 roku i była jedną z pierwszych trójwymarowych gier FPS. Była to w pełni gra trójwymairowa, która nie używała dwuwymiarowych sprite-ów zamiast przeciwników, jak wcześniej, a modeli trójwymiarowych. Były to czasy początków akcelaratorów graficznych, dlatego niektóre obliczenia były wykonywane na procesorze, a inne za pomocą akceleratora graficznego.
+        \\
+        
+        Zestaw narzędzi był o wiele bardziej podstawowy niż te spotykane obecnie ze względu na ograniczenia graficzne oraz fakt, że gry komputerowe nadal były nowością, a technologia do tworzenia gier komputerowych była bardzo wczesna. Dlatego zostały w nim zaimplementowane funkcje, które można uznać za dosyć podstawowe, takie jak: detekcja kolizji, filtrowanie tekstur, wsparcie dla kolorwych źródeł światła, oraz edytor poziomów. Ciekawą nową funkcją było dodanie obiektów wchodzących w interakcję ze światłem, źródeł światła, przestrzennej mgły, czy implementacja sklepienia nieba.
+        \\
+        
+        Z czasem silnik się rozwijał, oddawane zostały kolejne narzędzia, a większa moc obliczeniowa komputerów pozwalała na stworzenie realistycznej grafiki. Czwarta wersja dodawała nowy sposób na generowanie oświetlenia, zamiast statycznego oświetlenia sceny użyte było dynamiczne generowanie oświetlenia, reagujące na poruszające się obiekty jak i samego bohatera. W tej samer wersji dodano również narzędzia so szybkiej implementacji logiki gry.
+        \\
+        
+        Najnowsza piąte wersja, dodała przełomową funkcję, silnik Nanite. Pozwala on na importowanie modeli w najlepszej możliwej jakości oraz zmniejszanie ich jakości w locie, wedle potrzeby. Jeśli obiekt zajmuje większą powierzchnię ekranu, model rysowany jest z większą ilością wielokątów, jeżeli jest mniej widoczny jest on używany z mocno ograniczoną ich liczbą. Z perspektywy programisty jest to wygodne i nie wymaga ręcznej implementacji LOD, oraz jednocześnie samo dba o optymalizację modeli w całej grze.
+        \\
+        
+        Wymagania sprzętowe silnika są wysokie, mogą one być zbyt wysokie dla niektórych komputerów. Celem jest stworzenie wizualizacji, którą można będzie uruchomić na większości urządzeń, ale nie można wymagać od użytkownika posiadania nawet dedykowanej karty graficznej. Silnik byłby idealny jeżeli głównym celem byłaby realistyczna grafika, ale niestety jest on narzędziem o zbyt wysokich wymaganiach sprzętowych, których niektóre urządzenia klientów nie mogłyby sprostać.
+        \\
+        
+        \subsubsection*{Unity3D}
+        2
+        \\
+        
+        \subsubsection*{Godot}
+        Godot jest silnikiem na licencji otwartego oprogramowania, co czyni go w pełni darmowym. Został stworzony przez argentyńskich programistów na potrzeby gier komputerowych w Ameryce Łacińskiej. Wspiera on większość znanych systemów operacyjnych: Windows, macOS, Linux oraz różne wersje BSD. Dodatkowo wspiera on platformy mobilne, oraz uruchamianie gier w przeglądarce. Jest przeznaczony do tworzenia małych i średnich gier, oraz grafika przez niego generowana nie jest w stanie dorównać tej, reprezentowanej przez obecne gry AAA.
+        \\
+        
+        \subsubsection*{CryEngine}
+        Jest silnikiem zaprojektowanym na potrzeby gry Far Cry, przez firmę Crytek. Jego kolejna iteracja została użyta to gry Crysis, która jest znana z bardzo realistycznej grafiki, oraz jest uznawana za jeden z największych przeskoków graficznych i technologicznych w historii gier trójwymiarowych. Silnik ten wyprzedzał swoje czasy oraz pozwalał na generowanie realistycznej grafiki i posiadał fizykę, która pozwalała na niespotykaną dotąd interakcję z otoczeniem.
+        \\
+        
+        Silnik pozwala na tworzenie gier AAA, z wymagającą i realistyczną grafiką. Był tworzony z nastawieniem na gry FPS, co odbija się w doborze narzędzi do niego dołączonych. Przez lata zostało stworzonych wiele narzędzi, które ułatwiają tworzenie gier w wielu aspektach. Pozwalają na monitorowanie wydajności i parametrów gry podczas pracy, tworzenie materiałów i tekstur, obszerna baza gotowych modeli trójwymiarowych. Istnieje osobna grupa narzędzi pozwalająca na tworzenie i animowanie postaci. Istnieją, też narzędzia przeznaczone do efektów dźwiękowych oraz ich odpowiedniego rozmieszczenia w przestrzeni gry.
+        \\
+        
+        
+        
+    \subsection{Konfigurator}
+        \subsubsection{Typy konfiguratorów}
+    
+    \subsection{Aranżacja wnętrz}
+        \subsubsection{Istniejące już rozwiązania}
+    \subsection{Panele ścienne}
+        \subsubsection{Dekoracyjne}
+        \subsubsection{Wygłuszające}
+\section{Analiza i założenia projektu}
+    \subsection{Wymagania sprzętowe}
+    \subsection{Zakres funkcjonalności}
+        \subsubsection{Katalog asortymentu}
+        \subsubsection{Widok produktu w scenie}
+        \subsubsection{Prezntacja oferty i możliwości konfiguracji}
+        \subsubsection{Edycja pomieszczenia}
+        \subsubsection{Poruszanie kamerą}
+        \subsubsection{Zmiana oświetlenia}
+    \subsection{Określenie stopnia interaktywności}
+        \subsubsection{Zbiór elementów interaktywnych i stopień ich interaktywności}
+    \subsection{Strona internetowa}
+        \subsubsection{Znaczenie osiągalności informacji o produkcie}
+        \subsubsection{Konfigurator jako kotalog produktów}
+\section{Realizacja projektu}
+    \subsection{Modelowanie elementów 3d}
+        \subsubsection{pomieszczenia}
+    \subsection{Części projektu}
+        \subsubsection{Logika i schemat działania}
+        \subsubsection{Interfejs użytkownika}
+        \subsubsection{Widok pomieszczenia}
+        \subsubsection{Hierarchia i diagramy klas}
+        \subsubsection{Osadzenie programu wynikowego na stronie internetowej}
+
+
+
+\section{Wnioski}
+
+
+\newpage
+\section{Literatura}
+
+\newpage
+\section{Załączniki}
+
+
+
+\end{document} % This is the end of the document
+

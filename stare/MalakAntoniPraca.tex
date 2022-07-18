@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+\usepackage{lingmacros}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \oldincludegraphics[#1,max width=\linewidth]{#2}}
+\input{utp-report.tex}
+\lstset{language=Java} 
+\graphicspath{ {./scrots/} }
+
+\renewcommand{\title}{01}
+\newcommand{\project}{Wstępny szkic tematu pracy dyplomowej}
+\renewcommand{\author}{Antoni Malak} 
+\renewcommand{\date}{03.09.2021}
+\newcommand{\dateEnd}{03.09.2021}
+\newcommand{\grupa}{1}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\setcounter{section}{1}
+\begin{document}
+\tabelka
+
+
+\section*{Demo technologiczne gry typu sandbox, ze zniszczalnym terenem, oraz maszynami fizycznymi, z użyciem silnika Unity3D}
+
+\subsubsection{Przegląd różnych stopni zniszczalności terenu w innych grach komputerowych}
+Przez stworzeniem własnego projektu, warto byłoby przeanalizować i porównać podobne istniejące już projekty, oraz zastosowane w nich rozwiązania.
+\\
+\subsubsection{Określenie stopnia zniszczalności terenu, oraz elementów gry}
+Po zapoznaniu się z zakresem funkcjonalności gier podobnego gatunku, można zdefiniować zakres funkcji gry. W jakim stopniu teren może zostać zniszczony, w jaki sposób będzie on wyglądał, oraz jakie inne cechy będzie projekt posiadał.
+\\
+\subsubsection{Określenie użytych algorytmów, oraz ich przeznaczenia}
+Warto zapoznać się z algorytmami, używanymi z tego typu projektach, oraz zadecydowanie, które z nich zaimplementować w projekcie. Może to być algorytm LoD, który zmniejsza szczegółowość modeli w zależności od odległości, czy algorytm Quadtree, który jest w stanie w optymalny sposób dzielić powierzchnie o nierównym rozkładzie szczegółów na mniejsze prostokąty.
+\\
+\subsubsection{Projekt struktury danych, oraz diagramy klas}
+Wymagane będzie podzielenie świata gry na jednolite częśći, które będą mogły być generowane, zapisywane, ładowane w locie. Wymagana będzie do tego odpowiednia struktura danych. Prawdopodobnie podobne decyzje będzie trzeba podjąć w innych częściach projektu, takich jak przechowywanie punktów składających się na powierzchnię lądu, czy przechowywanie elementów mieszczących się w obrębie 'segmentu' mapy.
+\\
+\subsubsection{Struktura projektu gry oraz określenie jego części}
+Każdy większy projekt składa się z mniejszych części, zwłaszcza gdby ktoś miałby dalej rozwijać ten projekt. Podzielenie go na mniejsze częśći pozwoli na lepsze zarządzanie całym projektem oraz pracą nad nim.
+\\
+\subsubsection{Analiza wydajności rozwiązania z uwzględnieniem różnych algorytmów optymalizacyjnych}
+Warto byłoby zaprezentować, że użyte algorytmy pozwalają na szybsze oraz bardziej wydajne działanie programu.
+\\
+
+\end{document}

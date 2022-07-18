@@ -1,0 +1,92 @@
+Spis treści
+-wstęp
+ -cel pracy
+-wstęp teoretyczny
+ -problem badawczy
+ -
+ -
+-prezxentacja i mówienie wyników pracy
+-wnioski
+
+literatura
+załączniki
+
+///////////////////////////////////////////////
+Części pracy
+
+1.Opis podstawowych pojęć i definicji
+2.Analiza tematu oraz jego elementów
+3.Zaprojektowanie i implementacja projektu
+5.Wnioski
+
+Spis treści
+-wstęp
+ <opisanie okoliczności powstania tej pracy dyplomowej>
+ <opisanie potencjalnego produktu>
+ -cel pracy
+  <co powstanie w wyniku stworzenia tej pracy dyplomowej>
+-wstęp teoretyczny
+ <definicje, opisy, role oraz wytłumaczenia podstawowych terminów, nazw i części projektu>
+ -wizualizacja
+  -technologie do generowania grafiki i wizualizacji
+ -konfigurator
+  -typy konfiguratorów
+ -interaktywność
+  -stopień interaktywności
+ -aranżacja wnętrz
+  -istniejące już rozwiązania
+ -panele ścienne
+  -dekoracyjne
+  -funkcyjne (wygłuszające dźwięk)
+-analiza i założenia projektu (programistycznie)
+ <specyfkacja wymagań>
+ -wymagania sprzętowe
+   <powinno działać na wszystkim co może uruchomić przeglądarkę internetową>
+   <wersje na różne urządznia>
+ -zakres funkcjonalności
+  <jakie funkcje program posiada>
+  -prezentacja wyboru asortymentu
+  -prezentacja graficzna produktu w otoczeniu
+  -prezentacja oferty i ich możliwości
+   <nakreślenie użytkownikowi (pot. klientowi) co jest dostępne w ofercie, a co nie>
+   <przekazanie użytkownikowi poprzez program jakie panele są oferowane, w jakich kolorach itd.>
+  -edycja pomieszczenia
+   <edycja otoczenia pozwala na lepszą immersję użytkownika oraz sprawdzenia produktu w różynch otoczeniach>
+   -oświetlenie pomieszcznia
+   -ilość mebli/zabudowy
+   -kolorystyka pomieszczenia i mebli
+  -poruszanie kamerą
+  -zmiana pory dnia i nocy
+   <zmiana pozycji słońca>
+   <włączenie wyłączenie światła>
+ -określenie stopnia interaktywności
+  <określenie zioru gotowych pomieszczeń do wyboru>
+  -określenie elementów interaktywnych i zakresu ich interaktywności
+   <jakie elementy wnętrza/pomieszczenia mogą być edytowana i w jakim stopniu>
+   -panele
+   -pomieszczenie
+   -oświetlenie
+ -strona internetowa
+  -znaczenie osiągalności produktu i informacji o nim
+  -konfigurator jako katalog produktów
+-realizacja projektu
+ -modelowanie elementów 3D
+  -pomieszczenia
+   -ściany
+    -okna
+    -parapety
+    -inne elementy
+     <żyrandole>
+  -meble
+  -panele ścienne
+ -podział elementów w projekcie
+  -logika i schemat działania
+  -interfejs użytkownika
+  -widok pomieszczenia
+   -scena
+    -pomieszczenie
+    -oświetlenie
+    -kamera
+ -hierarchia i diagramy klas
+ -osadzenie programu wynikowego na stronie
+-wnioski

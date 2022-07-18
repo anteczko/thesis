@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage{listings}
+\usepackage{lingmacros}
+\usepackage{graphicx}
+\usepackage{tree-dvips}
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[export]{adjustbox}% http://ctan.org/pkg/adjustbox
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{%
+  \oldincludegraphics[#1,max width=\linewidth]{#2}}
+\input{utp-report.tex}
+\lstset{language=Java} 
+\graphicspath{ {./scrots/} }
+
+\renewcommand{\title}{01}
+\newcommand{\project}{Wstępny szkic tematu pracy dyplomowej}
+\renewcommand{\author}{Antoni Malak} 
+\renewcommand{\date}{03.09.2021}
+\newcommand{\dateEnd}{03.09.2021}
+\newcommand{\grupa}{1}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{\arabic{subsubsection}}
+\setcounter{section}{1}
+\begin{document}
+\tabelka
+
+\section*{Interaktywny konfigurator elementów wnętrz z użyciem silnika Unity3D}
+
+\subsubsection{Przegląd różnych stopni interaktywności i jakościi grafiki w podobnych projektach}
+Przez stworzeniem własnego projektu, warto byłoby przeanalizować i porównać podobne istniejące już projekty, oraz zastosowane w nich rozwiązania.
+\\
+\subsubsection{Określenie stopnia interaktywności elementów wnętrza}
+Po zapoznaniu się z zakresem funkcjonalności podobnych konfiguratorów, można zdefiniować jego zakres interaktywności. W jakim stopniu otoczenie może zostać edytowane, oraz jakie inne interaktywne cechy będzie projekt posiadał.
+\\
+\subsubsection{Określenie użytych technologi, oraz technik w celu stworzenia realistycznej wizualizacji}
+Warto zapoznać się z technologiami, używanymi z tego typu projektach, oraz zadecydowanie, które z nich zaimplementować w projekcie. 
+\\
+\subsubsection{Struktura projektu, oraz diagramy klas}
+W celu zapewnienia łądu i porządku w projekcie warto byłoby rozrysować strukturę projektu, oraz klasy i zależności pomiędzy nimi.
+\\
+\subsubsection{Ocena grafiki i stopnia interaktywności, oraz analiza wydajności rozwiązania}
+Warto byłoby zaprezentować, że grafika w projekcie jest na porównywalnym poziomie co podobne rozwiązania, a wydajność pozwala na zaprezentowanie jej na stronie internetowej i dotarcie do szerszej grupy klientów.
+\\
+
+\end{document}
