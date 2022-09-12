@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{tabularx}
+\usepackage{hyperref}
 
 
 \title{Simple Sample} % Sets article title
@@ -159,7 +160,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
     
         Interaktywnośc pozwala użytkownikowi na kontrolowanie parametrów wejściowych symualcji, oraz obserwowanie nowo powstałego obrazu. Ważne jest aby użytkownik czuł, że ma kontrolę nad przebiegiem symualcji, a każda wprowadzona zmiana jest wprowadzana i aktualizowana tak szybko jak szybko się da. Dlatego czas obliczenia kolejnego widoku powinien być odpowiednio krótki. Zawęża to częściowo jak wiele obliczeń możemy przeznaczyć na ten cel, oraz jak wymagająca i realistyczna może być wizualizacja i jej grafika. 
         \\
-        
+                
     \subsection{Grafika komputerowa}
         Grafika komputerowa jest dziedziną zajmującą się tworzeniem, przetwarzaniem oraz wyświetlaniem obrazów w medium komputerowym. Obraz może być wygenerowany przez komputer, tworząc obraz generowany komputerowo (tzw. CGI), albo może być odzwierciedleniem prawidziwego fizycznego obiektu. Do stworzenia zdjęcia obiektu używane są matryce światłoczułe, zmieniające docierające do niej fotony, na sygnał cyfrowy. Możliwe jest również stworzenie obrazu, będącego wizualizacją powstałą z pomiarów innych urządzeń i sensorów cyfrowych. Mogą to być zarówno wykresy przedstawiające zmianę wartości mierzonej przez sensor, albo coś bliższego obrazowi obiektu jak trójwymiarowy model powstały z zeskanownia bryły fizycznego obiektu.
         \\
@@ -202,13 +203,30 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         \\
         
         \subsubsection*{Unity3D}
-        Unity jest silnikem gier stworzonym na potrzeby tworzenia gier dla systemu Mac OS. Potem został zmodyfikowany do wpierania innych platform takich jak: komputery stacjonarne, konsole oraz pltformy mobilne. Dodane zostało również wsparcie dla gier wirtualnej rzeczywistości. Z jego pomocą możliwe jest stworzenie gier zarówno dwuwymiarowch jak i trójwymiarowych. Znany jest ze swojej prostoty i łatwości obsługi.
+        Unity jest silnikem gier stworzonym na potrzeby tworzenia gier dla systemu Mac OS. Potem został zmodyfikowany do wpierania innych platform takich jak: komputery stacjonarne, konsole oraz platformy mobilne. Dodane zostało również wsparcie dla gier wirtualnej rzeczywistości. Z jego pomocą możliwe jest stworzenie gier zarówno dwuwymiarowch jak i trójwymiarowych. Znany jest ze swojej prostoty i łatwości obsługi.
         \\
         
-        Silnik nie jest przeznczony do tworzenia gier AAA, lecz jest nastawiony na szybkie i łątwe tworzenie prostrzych gier nastawionych na ciekawą rozgrywkę, albo jej mechanikę. W tego typu grach posta grafika nie jest problemem, dlatego często jest on używany do tworzenia niezależnych gier komputerowych. Często również jest on używany do tworzenia gier mobilnych, gdzie szybkość tworzenia gier jest dosyć ważna, by móc nadążać za nieustannie zmieniającymi się trendami.
+        Silnik nie jest przeznczony do tworzenia gier AAA, lecz jest nastawiony na szybkie i łatwe tworzenie prostrzych gier nastawionych na ciekawą rozgrywkę, albo jej mechanikę. W tego typu grach posta grafika nie jest problemem, dlatego często jest on używany do tworzenia niezależnych gier komputerowych. Często również jest on używany do tworzenia gier mobilnych, gdzie szybkość tworzenia gier jest dosyć ważna, by móc nadążać za nieustannie zmieniającymi się trendami.
         \\
         
+        W obecnej wersji slinika, gry programowane mogą być w języku C\#. Pozwala to na lepsze użycie obiektowości oraz unikalnych funkcji języka C\# nastawioych na programownie obiektowe. Środowisko programistyczne do tworzenia gier jest dostępne, dla systemów operacyjnych Windows, GNU/Linux oraz Mac OS, a tworzone projekty mogą być przeznaczone na każdą możliwą wspieraną platformę.
+        \\
         
+        Możliwe jest stworzenie gry wieloosobowej. Dzięki zastosowaniu wielu wirtualnych kamer możlie jest zaimplementowanie gry wielosobowej na podzielonym ekranie. Silnik posiada warstwę sieciową, dzięki której można tworzyć sieciowe gry wieloosobowe, pozwalające na grę dwóch lub więcej graczy przez internet. Pozwalają one również na tworzenie serwerów gry wieloosobowej.
+        \\
+        
+        Liczba edytorów i narzędzi jest mniejsza i mniej wyspecjalizowana dlatego ten sam zestaw narzędzi można wykorzystać w większości projektów, niezależnie od gatunku tworzonej gry. Można tworzyć animacje dwuwymiarowe oraz trójwymiarowe, a wbudowany edytor animacji, pozwala na płynne przełączanie się pomiędzy różnymi animacjami.
+        \\
+        
+        Wbudowany edytor interfejsu użytkownika pozwala na tworzenie interaktywnych ekranów, z różnego rodzaju przyciskami, suwakami oraz innynmi wirtualnymi metodami wprowadzania i wyświetlania danych. Pozwalają one na stworzenie zarówno interfejsu użytkownika widocznego podczas gry, jak i bardziej złożonych ekranów wyboru, czy ekranów sterowania ustawieniami gry.
+        \\
+        
+        Silnik fizyczny posiada podatawowe funkcjonalności, pozwalające na tworznie gier opartych o fizykę. Obiekty gry mogą posiadać wagę, wyporność, oraz implementować cechy fizycznych materiałów z których są zrobione. Fizyczne obiekty mogą być połączone ze sobą wiązaniami, imitującymi połączenia przedmiotów w prawidziwym świecie, albo te zupełnie wirtualne. Możliwe jest emulowanie działania zawiasu, lin, szyny czy sprężyn. Wszyskie z nich są sparametryzowane co pozwala na ich dostrojenie, a nawet tworzenie własnych połączeń fizycznych.
+        \\
+        
+        Zintegorwanym śrdowiskiem programistycznym na platformie Windows i Mac OS, jest Visual Studio, nie jest ono dostępne na systemy operacyjne GNU/Linux. Istnieje wsparcie w postaci dodatków i wtyczek dla Visual Studio Code, które pozwalają na wygodne pisanie kodu i skryptowania na wszystkich wymienionych platformach.
+        \\
+         
         
         \subsubsection*{Godot}
         Godot jest silnikiem na licencji otwartego oprogramowania, co czyni go w pełni darmowym. Został stworzony przez argentyńskich programistów na potrzeby gier komputerowych w Ameryce Łacińskiej. Wspiera on większość znanych systemów operacyjnych: Windows, macOS, Linux oraz różne wersje BSD. Dodatkowo wspiera on platformy mobilne, oraz uruchamianie gier w przeglądarce. Jest przeznaczony do tworzenia małych i średnich gier, oraz grafika przez niego generowana nie jest w stanie dorównać tej, reprezentowanej przez obecne gry AAA.
@@ -245,13 +263,80 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         
     \subsection{Konfigurator}
+        Konfigurator, dawniej nazywany konfiguratorem produktu, jest narzędziem do tworzenia unikalnej konfiguracji produktu posiadającego wiele opcji konifguracyjnych. Produkty te posiadają wiele opcji wyboru, niektóre opcjonalne, inne wymagane, a inne wykluczające się nawzajem. Pozwala on na dogłębne dobranie i skonfigurowanie produktu, odpowiadającego klientowi, gdzie efektem końcowym jest gotowa konfiguracja, kompatybilna z systemem. Może on być przeznaczony dla samego klienta, albo być narzędziem wprowadzania dla pracownika jego obsługującego. Ma on na celu oddelegowanie zadania tworzenia konfiguracji z pracownika, na program komputerowy i samego klienta.
+        \\
+        
+        Dla klienta może on być interaktywnym katalogiem pokazującym zbiór produktów, oraz wszelkich ich opcji konfiguracyjnych. Czasami klient do końca nie sprecyzował jeszcze swojej wizji i wymagań, ani jak produkt końcowy miałby wyglądać. Poprzez kolejne kroki tworzenia kompozycji, klient jest zapoznawany z zakresem możliwości edycji i opcji dostrojenia produktu końcowego. W ten, koherentny, sposób udziela klientowi informacji, niezbędnych do podjęcia najlepszego dla siebie wyboru. Na końcu informacja ta może być w zautomatyzowany sposób przekazana do realizacji.
+        \\
+        
+        Dla pracownika, może być narzędziem pomagającym w pracy i pozwalającym na wprowadzenie gotowej, zwalidowanej konfiguracji do systemu. Może przeprowadzić on pracownika przez kolejne etapy, oraz poinformować go o stanie magazynu, albo innych niedogodnościach, dotyczących łańcucha dostaw. Dzięki temu, pracownik jest odciążony, a swoją uwagę może skupić na zadawaniu bardziej szczegółowych pytań klientowi.
+        \\
+        \href{https://docs.oracle.com/cd/E16582_01/doc.91/e15086/und_configurator.htm#EOABC00002}{adres}
+        \\
+        
         \subsubsection{Typy konfiguratorów}
+        Ze względu na zastosowaną technologię i grafikę, wydzielić można typy konfiguratorów produktów. Nie jest to jedyny sposób w jaki można je podzielić.
+        \\
+        
+        \subsubsection*{Prerenderowane wizualizacje}
+        Są to wizualizacje złożone z wygenerowanych wcześniej obrazów. Zdjęcia oraz prerenderowane obrazy charakteryzują się najelpszą jakością grafiki, oraz są zasobo-oszczędne (z punktu widzenia użytkownika). Zdjęcia jednak nie mogą być mocno zmodyfikowane po ich zrobieniu, zazwyczaj zmieniane są kolory elementów, albo niektóre elementy są zmieniane na inne. Każda wizualna konifguracja oraz jej możliwości muszą zostać określone z góry, oraz wzięte pod uwagę. 
+        \\
+        
+        \subsubsection*{Technologie interaktywne}
+        Technologie cechującą się większą interaktywnością, pozwalające na obracanie obrazu lub przedmiotu, oraz większe edycje otoczenia. Są one niestety najbardziej wymagające pod względem zasobów, oraz nie zawsze urządzenie klienta może tym wymaganiom sprostać. Do ich stworzenia używane są czasami silniki do gier komputerowych.
+        \\
     
-    \subsection{Aranżacja wnętrz}
+    \subsection{Architektura wnętrz}
+        Architektura wnętrz jest dziedzną zajmującą się projektowaniem oraz wystrojem wnętrz budynków. Obejmuje to zdefiniwanie stylu, i ogólnej kolorystyki wnętrza jak i rozplanowanie rozmieszczenia mebli. Odpowiednie, do jego zastosowania, zagospodarowanie wnętrza sprawia, że wnętrze jest bardziej funkcjonalne, oraz prezentuje się lepiej. W kontekście tej pracy wymagane będzie stworzenie zestawu projektów pomieszczeń, w taki sposób, aby najlepiej oddawały najróżniejsze kompozycje i style pomieszczeń. Zbiór ten powinien oddawać jak najszerszą gamę stylów, aby klient mógł w nim znaleźć coś co mniej więcej oddaje jego własne wnętrze, aby lepiej do niego dopasować swój własny produkt.
+        \\
+        
         \subsubsection{Istniejące już rozwiązania}
+        Trudno znaleźć rozwiązanie, które byłoby używane przez więcej niż jedną firmę. Zazwyczaj każda firma z kolei tworzy własną implementację od podstaw. Przyczyną może być różnorodność produktów, oraz jego otoczenia. Każda osobna implementacja musiałaby posiadać swoje własne tekstury, pomieszczenia, modele. Czasami nawet zakres edycji i rozmieszczenia kamery byłyby zupełnie inne. Ilość włożonej pracy jest niewiele mniejszy niż zaprogramownaie własngo rozwiązania od podstaw. Właśnie dlatego każda branża z kolei decyduje się na tworzenie własnej, skrojonej na miarę, implementacji. Wydzielić można pewne części wspólne i funkcjonalności, które mają miektóre z nich. 
+        \\
+        
+        
+        \subsubsection{Interaktywny widok trójwymiarowy}
+        Widok trójwymiarowy pozwalający na ograniczone obracanie kamery, oraz oglądanie produktu w swoim naturalnym otoczeniu. Pozwala to klientowi na bardziej wizualne podejśćie do decyzji, oraz skupienie się na innych aspektach i wizualnych cechach produktu, takich jak kolor, rozmiar czy jego kształt. Pokazanie produktu blisko przedmiotów o wiadomych rozmiarach, pozwala na lepszą ocenę rozmiaru produktu, który jeszcze fizycznie nie istnieje.
+        \\
+        
+        \subsubsection{Widok projektowania}
+        Widok przedstawiający produkt w uproszczonej formie, przypominający rysunek techniczny. Pozwala na dostosowanie wymiarów produktu do wymiarów istniejącego już pokju lub zabudowy. Używany jest kiedy wymiary otoczenia są znane, albo wymiary produktu mogą się mocno różnić zaleznie od dobieranego typu lub modelu. Jego zaletą jest przejrzystość, oraz uproszczony, czysty wygląd pozwalający się skupić na jego wymiarach.
+        \\
+        
+        \subsubsection{Katalog produktów i jego opcji}
+        Częścią konfiguratora może być osobny widok, albo okno pokazujące użytkownikowi inne produkty, albo inne jego wersje. W ten sposób pokazujemy klientowi asortyment i jakie on ma inne możliwości do wyboru. Tego typu widok może pokazywać różne warianty rozmiarowe, stylistyczne czy kolorystyczne produktu. Kolejne wybory można reprezentować poprzez miniaturowy obraz, model trójwymiarowy, albo opis tekstowy, a nawet krótki tytuł. Ważne jest aby kolejne wybory były ustawione w odpowiedniej kolejności, od najogólniejszego do najbardziej szczegółowego.
+        \\
+        
+        \subsubsection{Ekran podsumowania}
+        Ekran wypisujący wszystkie dokonane zmiany, oraz opcje dodatkowe. Ma na celu pokazanie klientowi ceny produktu końcowego oraz przekazanie innych ważnych dla niego informacji, takich jak czas realizacji, dane kontaktowe oraz numer zamówienia. Po ostatnim kliknięciu, konifguracja produktu powinna zostać dodana do systemu oraz przetworzona.
+        \\
+        
+        
     \subsection{Panele ścienne}
-        \subsubsection{Dekoracyjne}
+        Panele są płaskimi fragmentami materiału, o jednkowych kształtach, którymi wykłada się podłogi, sufity oraz ściany budynków. Na początku robiło się to w celu odizolowania termicznego, kamiennych ścian i podłóg. Wraz z czasem, panele zaczęły pełnić rolę dekoracyjną. Wykonywane one były na początku z drewna, wraz z rozwojem technologii i wynalezieniem nowych materiałów zaczęto je tworzyć z tworzyw sztucznynch. Dodatkowo wyłożenie powierzchni miększym materiałem, zmniejsza echo w pomieszczeniu. Efekt ten jest użyty w celu całkowitego wytłumienia echa, za pomocą specjalnych paneli wygłuszających. Paneli można również używać izolacji termicznej budynku, tzw. ocieplania budynku. 
+        \\
+        
+        \subsubsection{Tapety}
+        Tapety są cienką okładziną naklejaną na wnętrza budynków w celach dekoracyjnych, wykonane głównie z papieru, ale również tkanin, skóry i tworzyw sztucznynch. Dzięki swojej elastyczności i cienkości mogą być zwijane w rolki na czas transportu, co znacznie ułatwia ich transport. Kolejnym czynnikiem jest ich bardzo mała waga w przeciwieństwie do płytek i paneli nie wymagają mocnego kleju do instalacji. Przykleja się je do ściany za pomocą specjalnego kleju do tapet. 
+        \\
+        
+        Tapety mogą mieć różne kolory i wzory, dzięki ich różnorodniści mogą w duży stopniu zmienić sposób w jaki postrzegane jest pomieszczenie. Jaśniejsze kolory wizualnie powiększają pomieszczenie, a ciemniejsze je zmniejszają. Pionowe wzory sprawiają, że pomieszczenie wydaje się być wyższe, a poziome poszerzają je. Dodatkowo mogą one posiadać wytłoczenia, oraz własną teksturę, w ten sposób podkreślając swój wzór, albo używając jednolitego koloru, oraz swojego własnego wytłoczenia jako subtelnego wzoru. 
+        \\
+        
         \subsubsection{Wygłuszające}
+        Wytłumianie pomieszczenia polega na zmniejszaniu echa w pomieszczeniu poprzez pokrywanie jego ścian izolatorami akustycznymi. Jest to materiał, który dzięki swoim właściwościom, zapobiega niepożadanemu przenikaniu dźwięków oraz odbijaniu ich tworząc echo. Zależnie od zastosowania materiały te mogą być umieszczone wewnątrz ścian budynku, albo na wewnętrznej stronie ścian pomieszczenia. Umieszczenie ich wewnątrz ograniczy przedostawanie się dźwięków z wnętrza pomieszczenia do zewnątrz i na odwrót, a umieszczenie ich na wewnętrznej stronie ścian, efektywniej zmniejszy echo wewnątrz pomieszczenia.
+        \\
+        
+        Izolatory akustyczne mogą występować w różnych formach. Jeżeli jego grubość na to pozwala, może to być giętki materiał sprzedawany w roklach, który można przyklejać do ścian jak tapetę. Wariant o większej grubości jest sprzedawany w formie jednakowych paneli na ścianę, które posiadają falowane wyżłobienia polepszające ich właściwości tłumiące. Są one czasami sprzedawane w różnych wariantach kolorystycnych oraz pozwalają na tworzenie kolorowych wzorów na ścianę. Ostatnim typem są struktury tłumiące takie jak pułapki dźwiękowe, są to zazwyczaj pudła o różnych wymiarach, zazwyczaj wykonane z drewna z odpoweidnio wywierconymi dziurami i szczelinami. Pełnią one rolę odwrotną do pudła rezonansowego, łapiąc i wytłumiając całkowicie dźwięki.
+        \\
+        
+        \subsubsection{Dekoracyjne}
+        Inną funkcją jaką mogą pełnić panele ścienne jest dekoracja wnętrza, ich zadaniem jest przełamanie monotonii dużych jednolitych ścian w pomieszczeniu. Dodatkowo, są one mniej inwazyjne dla ściany niż tapeta lub glazura, której tak łatwno nie można wymienić na nową. Rozwój technologii i materiałoznawstwa pozwala obecnie na tworzenie klejów i mocowań wytarczająco mocnych na przytwierdzanie paneli do ściany, bez wiercenia dziur w ścianie, ani zostawiania śladów kleju na niej.
+        \\
+        
+        Ważne aby panele miały specjalny kształt, pozwalający na szczelne pokrycie powierzchni nazwaną parkietażem. Parkietaż formeny składa się z identycznych wielokątów foremnych, w którym jednakowa liczba figur, schodzi się w wierzchołku. W praktyce oznacza to, że wyprodukować będzie jedynie panele o w kształcie jednej figury geometrycznej. Trzema znanymi figurami geometrycznymi tworzącymi parkietaż foremny są kwadrat, trójkąt równoboczny oraz sześciokąt foremny. Nie trzeba się ograniczać parkietażu foremnego, dlatego możliwe jest użycie innych kształtów, które nie są podstawowymi foremnymi wielokątami.
+        \\
+        
 \section{Analiza i założenia projektu}
     \subsection{Wymagania sprzętowe}
     \subsection{Zakres funkcjonalności}
