@@ -339,18 +339,110 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
 \section{Analiza i założenia projektu}
     \subsection{Wymagania sprzętowe}
+        Ważnym aspektem programu jest dotarcie do jak największej grupy odbiorców, dlatego program powinien być dostępny oraz osiągalny dla jak największej liczby potencjalnych klientów. Jest wiele czynników, które mogą ograniczać dostęp, a jednym z nich są wymagania sprzętowe urządzenia klienta. Zakres urządzeń których mógłby używać klient jest bardzo obszerny, ale można załóżyć że program powinien płynnie pracować na komputerach biurowych ze zintegrowaną kratą graficzną oraz smartfonami z niskiej półki cenowej.
+        \\
+        
+        Program będzie uruchamiany z przeglądarce internetowej, dlatego powinien on wspierać najbardziej popularne z nich, takie jak Google Chrome, Safari, Edge oraz Mozilla firefox. Warto nadmienić, że niektóre z tych przeglądarek internetowych, posiadają swoje odpowiedniki na platformy mobilne, dla których również powinna zostać przygotowana mniej wymagająca wersja programu. Wybrany do realizacji projektu silnik Unity 3D wspiera tworzenie osobnych zestawów ustawień, przeznaczonych na urządzenia o różnych osiągach i mocy obliczeniowej. Niezbędną funkcją każdej z tych przeglądarek jest wsparcie dla renderowania OpenGL, gdyż jest ono używane przez silnik używany przez Unity3D.
+        \\
+        
+        Program może wymagać dosyć skomplikowanego sterowania, wymagany będzie wybór opcji, które mogą być reprezentowane za pomocą ikon oraz tekstu, oraz dostrajanie wymiarów produktu. Sterowanie będzie odbywać się poprzez ekran dotykowy smartfona lub tabletu, albo poprzez klawiaturę i myszkę komputera stacjonarnego. Wymagane jest stworzenie schematu sterowania który może być wygodnie i intuicyjnie używany z użyciem obu metod wprowadzania.
+        \\
+        
+        Zazwyczaj programy tworzy się z myślą o konkretnych docelowych systemach operacyjnych. W sprzyjających warunkach, można dostosować program do pracy innym systemie operacyjny, ale zależy do od wielu czynników i nie zawsze może być możliwe. Silnik Unity3D jest wspierany na większości systemów operacyjnych, dlatego projekt stworzony z jego użyciem będzie również wspierany przez te systemy.
+        \\
+        
+        
     \subsection{Zakres funkcjonalności}
+        Użytkownik zostanie przeprowadzony przez kolejne etapy konfigurowania produktu. Kolejne wybory będą stopniowo zawężać oraz prowadzić go do podjęcia najlepszej decyzji. Ważna jest ich kolejność, pierwsze -wybory mają mieć większe znaczenie, a każdy kolejny w coraz mniejszym stopniu będzie w stanie zmieniać ogólny zarys produktu.
+        \\
+        
+        Najpierw użytkownik będzie wybierać pomieszczenie oraz rzut z którego będzie ono widoczne. Do wyboru będzie parę opcji, które reprezentowac będą różne potencjalne umiejscowienia produktu w wirtualnym pomieszczeniu. Ważne aby były to jak naróżniejsze zastosowania i umiejscowienia, aby ukazywały jak najszerszy zakres użycia produktu. 
+        \\
+        
+        Następnie wybrać będzie można kolorystkę wnętrza, do wyboru będzie paręnaście palet, które zmienią kolory ścian, mebli oraz niektóre tekstury pomieszczenia. Dzięki temu, użytkownik, będzie można w pewnym stopniu odwzorować kolorystykę swojego własnego wnętrza, do którego chce dobrać panele dekoracyjne.
+        \\
+        
+        Pierwszym wyborem dotyczącym paneli będzie wybór ich kształtu. W osobnym widoku będze można przeglądać gotowe kształty i style paneli dekoracyjnych. Dostępne będą trójkątne, kwadratowe, sześciokątne, oraz inne bardzej skomplikowane formy. Wszystkie panele będą miały ten sam kształt.
+        \\
+        
+        Domyślnie panele będą poustawiane jeden przy drugim, ale możliwe będzie ich jednolite rozstąpienie, tworząc jednolite marginesy pomiędzy nimi. Wprowadzić będzie można dokładną szerokość odstępów między nimi. Możliwym wyborem będzie również obrócenie wszystkich paneli o 30 albo 45 stopni aby zmienić ich ułożenie na alternatywne.
+        \\
+        
+        Wybrać również będzie można kolor paneli. Do wyboru będzie gotowy zbiór kolorów do wyboru. Panele będą miały jednolity kolor. Zależnie od ilości miejsca na danej powierzchni i jej wymiarów, wybrać będzie można ilość rzędów oraz kolumn. Pozwoli to pokryć powierzchni o różnych wymiarach, panelami tej samej wielkości.
+        \\
+        
+        Po przejściu przez wszystkie kroki użytkownik zobaczy wycenę, swojego zamówienia, oraz będzie mógł wypełnić formularz kontaktowy.
+        \\
+    
+        \subsubsection{Wybór i edycja pomieszczenia}
+        Poprzez wybór pomieszczenia użytkownik określi otoczenie w jakim przedstawiany będzie produkt. Docelowo otoczenie to powinno jak najbliżej imitować miejsce ich instalacji, pomieszczenia w domu klienta. Nigdy to nie będzie możliwe, ale możliwe będzie stworzenie czegoś co docelowe otoczenie w pewnym stopniu przpomina. Ułatwi to klientowi dobranie dopasowanego do siebie produktu.
+        \\
+        
+        Użytkownik będzie mógł wybrać jedno z paru pomieszczeń takich jak: kuchnia, salon, jadalnia, sypialnia. Będą to różne pomieszczenia o różnym układzie mebli, oraz innym zastosowaniu, aby pokazać różnorodne zastosowanie dekoracji. Każde z nich będzie posiadać interaktywne ściany, o różnych wymiarach, do których będzie można przymierzać panele ścienne.
+        \\
+        
+        Wybrać będzie można styl i kolorystkę pomieszczenia. Każde z nich będzie posiadać zdefiniowany zbiór palet kolorów, które będą zmieniać kolorystykę całego pomieszczenia. Ściany będą zmieniały kolor na inny, podłogi będą miały inną teksturę, a niektóre meble będą miały zmieniony model aby stylistycznie lepiej pasować do wnętrza.
+        \\
+        
         \subsubsection{Katalog asortymentu}
-        \subsubsection{Widok produktu w scenie}
-        \subsubsection{Prezntacja oferty i możliwości konfiguracji}
-        \subsubsection{Edycja pomieszczenia}
+        Widok programu zostanie podzielony horyzontalnie na dwie części. Gorna będzie przedstawiać wizualizację, a dolna będzie oknem wyboru opcji gdzie przeglądać i wybierać będzie można katalog asortymentu. Przeciągając w lewo i prawo wybrać będzie można kształt paneli. Do wyboru będą kwadratowe, prostokątne, trójkątne, sześciokątne, oraz inne kształty które nie są wielokątami foremnymi. Podczas przeglądania poszczególnych form, wizualizacja na ścianie będzie się zmieniać, aby lepiej oddać wygląd nowego panelu.
+        \\
+        
+        Następnie wybrać będzie można sposób rozmieszczenia paneli. Figury geometryczne można ustawiać na wiele sposobów oraz kombinacji, dlatego każdy kształt będzie posiadać alternatywne możliwości ustawienia. Kwadraty i prostokąty mogą być równo poustawiane w kratę, przesunięte o połowę swojej długości, jak cegły w murze. Prostokąty można ustawiać na więcej różnych sposobów, w przeciwieństwie do kwadratów. Niektóre figury będzie można obrócić, przykładowo kwadraty będzie można obrócić o 45 stopni, a trójkąty o 30, lub 45 stopni.
+        \\
+        
+        Domyślnie panele będą ustawione bez szczelin między segmentami. Użytkownik będzie mógł ustalić jakie jednakowe odstępy mają być pomiędzy panelami, tworząc estetyczne marginesy pomiędzy nimi. Wartość tych odstępów będzie dowolna i będzie mogą zostać dokładnie ustalona przez użytkownika, ale nie przekraczająca dwukrotności szerokości panelu.
+        \\
+        
+        \subsubsection{Widok i rozmieszczenie produktu w scenie}
+        Zależnie od wybranej ściany, dostępna powierzchnia będzie miała różne wymiary, przez co zmieścić będzie można różną liczbę paneli na niej. Określić będzie można różną ilość kolumn i rzędów paneli zależnie od ich kształtu, rozmiaru oraz wybranych wcześniej odstępów pomiędzy nimi. Użytkownik będzie mógł określić ilość wierszy, oraz kolumn tak długo jak panele będą mieścić się na zadanej powierzchni.
+        \\
+        
         \subsubsection{Poruszanie kamerą}
+        Przez cały proces konfiguracji produktu, będzie można w określonym stopniu obracać widokiem, aby spojrzeć na panele z różnych perspektyw. Możliwe będzie również przybliżenie widoku w określonym stopniu za pomocą gestów albo za pomocą przycisków. 
+        \\
+        
         \subsubsection{Zmiana oświetlenia}
-    \subsection{Określenie stopnia interaktywności}
-        \subsubsection{Zbiór elementów interaktywnych i stopień ich interaktywności}
+        Ostatnią opcją konifguracji będzie zmiana pory dnia. Za pomocą suwaka będzie można określić porę dnia, która będzie wpływać na oświetlenie pomieszczenia. Słońce oświetlające pomieszczenie będzie zmieniać swoje położenie, a nocą zapalć się będą światła wewnątrz pomieszczenia.
+        \\
+    \subsection{Określenie stopnia interaktywności i zmiennych elementów otoczenia}
+        Ważne jest określenie stopnia interaktywności wizualizacji. Określić trzeba elementy interaktywne i zakres ich interaktywności. Pozwoli to na określenie czasu potrzebnego na wykonanie projektu i lepsze zarządzanie projektem. 
+        \\
+        
+        \subsubsection{Zbiór zmiennych elementów otoczenia i stopień ich edycji}
+        Niektóre elementy otoczenia będą zmienne, co wymaga określenia zbioru tych elementów oraz sposobu w jaki będą się one zmieniać. Sposób ich edycji oraz zasoby wymagane do ich implementacji również. Niektóre zmienne parametry, takie jak kolor ścian, będą mogły zostać automatycznie zmienione na dowolny inny kolor za pomocą logiki programu, jednak edycja innych rzeczy, takich jak modele nie mogą być tak łatwo sparametryzowane, oraz wymagane będzie stworzenie osobnych modeli trójwymiarowych na tę okazję.
+        \\
+        
+        Dodanie możliwości edycji otoczenia będzie mogło być dodane na parę różnych sposobów zależnie od edytowanego elementu otoczenia. Wydzielić można trzy główne grupy: modele trójwymiarowe, dodatkowa logika programu i implementacje scen. Statyczne przedmioty będą potrzebowały modeli trójwymiarowych. Pomieszczenia, a dokładniej sceny je przedstawiające będą wymagały implementacji, w tym przypadku złożenia ich razem. Ostatnią rzeczą będą dodatkowe efekty, które wymagać będą dodatkowej logiki takie jak zmiana pory dnia, czy zmiana koloru ścian i pewnych elementów.
+        \\
+        
+        Modele obiektów będą statyczne oraz nie będzie możliwości edytowania ich modeli. Jedyne co będzie możliwe to podstawowe skalowanie ich oraz podmaina ich modeli trójwymiarowych w locie. Dlatego wymagane będzie stworzenie osobnych modeli trójwymiarowych. Edytując elementy wnętrza podmieniać będziemy całe modele, zmieniać tekstury oraz w pewnych przypadkach zmieniać materiał na taki który będzie bardziej oddawał wymagany fizyczny materiał. Zasoby te będą wymagane do stworzenia pokoju jego elemntów, oraz mebli się w nim znajdujących.
+        \\
+        
+        Wymagane będzie stworzenie modeli od podstaw, o odpowiednich proporcjach, wymiarach i kroju. Osobne elementy wnętrza będą posiadały zupełne odrębne modele, meble będą posiadały swoje osobne warianty modeli trójwymiarowych, które jedynie w pewnym stopniu różnić będą się od swojej bazowej wersji.
+        \\
+        
+        Dodatkowa logika będzie musiała zostać zaimplementowana do odtworzenia zmiany pory dnia. Słońce będzie zmieniać swoje położenie rzucając cień pod różnymi kątami, a nocą zapalać będą się światła wewnątrz pomieszczenia o innym zabarwieniu. Światło słoneczne będzie miało biały kolor, a noca żółto-pomarańczowy. Będzie musiało to być odpowiednio oprogramowane, oraz dostosowane do każdego pomieszczenia z osobna.
+        \\
+        
+        Kolejną rzeczą jest zmiana kolorów ścian i elementów na dowolny wybrany kolor. Dostępna będzie narzędzie do wybierania kolorów, dzięki któremu będzie można dobrać dowolny kolor ścian. Wpływać on będzie na wygląd oraz postrzeganą jasność w pomieszczeniu. Kolorować będzie można również podłogę w pomieszczeniu, będzie ona zachowywać swoją teksturę, ale będzie ona barwiona na podany kolor.
+        \\
+        
     \subsection{Strona internetowa}
+        Dzięki osadzeniu aplikacji na stronie internetowej, będzie ona dostępna dla ludzi z całego świata, co pozwoli na dojście do większej liczby klientów. Każdy kto zna adres domeny, będzie mógł ze swojego urządzenia, smartfona czy komputera, odwiedzić stronę i skorzystać z konfiguratora. Po przejściu przez wszystkie etapy, podsumuje ona zamówienie, oraz wyśle je na serwer wraz ze wszystkimi niezbędynmi informacjami. Automatyzuje to proces zapoznania klienta z ofertą, podjęcia decyzji, oraz złożenia zamówienia.
+        \\
+        
+        Konfigurator jest jedynie częścią strony internetowej, oraz pełni inny zakres funkcji niż ona sama. Reklamowa strona internetowa, zazwyczaj pełni rolę internetowej wizytówki, udzielając klientowi informacji na temat zakresu obowiązków firmy, katalogu produktów, oraz lokacji i innych informacji kontakowych. Z czasem zaczęto rozwijać ten pomysł pozwalając użytkownikowi na wchodzenie w interakcję z firmą, za jej pomocą. Może na przykład na wysłanie wiadomości do pracowników firmy, albo skorzystanie z czatu internetowego.
+        \\
+        
         \subsubsection{Znaczenie osiągalności informacji o produkcie}
-        \subsubsection{Konfigurator jako kotalog produktów}
+            <jakieś statystyki o wyświetleniach czy coś>
+        \\
+        
+        \subsubsection{Konfigurator jako katalog produktów}
+        Konfigurator może w inteligentny sposób przejąć niektóre funkcje informacyjne strony, albo przedstawić je w bardziej przystępny sposób. Dotychczas katalog produktów przedstawiany był w formie listy lub broszury ze zdjęciami produktu, jako coś statycznego. Dzięki interkatywnemu podejściu do problemu, można w bardziej przystępny sposób przedstawić zakres świadczonych usług, przedstawić poszczególne produkty, oraz pozwolić na dostosowanie go do własnych potrzeb.
+        \\
+        
 \section{Realizacja projektu}
     \subsection{Modelowanie elementów 3d}
         \subsubsection{pomieszczenia}

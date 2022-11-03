@@ -42,6 +42,7 @@ Spis treści
  <specyfkacja wymagań>
  -wymagania sprzętowe
    <powinno działać na wszystkim co może uruchomić przeglądarkę internetową>
+   <sterowanie dostosowane do urz. dotykowych i komputerów>
    <wersje na różne urządznia>
  -zakres funkcjonalności
   <jakie funkcje program posiada>
@@ -52,15 +53,18 @@ Spis treści
    <przekazanie użytkownikowi poprzez program jakie panele są oferowane, w jakich kolorach itd.>
   -edycja pomieszczenia
    <edycja otoczenia pozwala na lepszą immersję użytkownika oraz sprawdzenia produktu w różynch otoczeniach>
+   -wybór pomieszczenia
+   -wybór ściany w pomieszczeniu
+   -kolorystyka i styl pomieszczenia i mebli
    -oświetlenie pomieszcznia
    -ilość mebli/zabudowy
-   -kolorystyka pomieszczenia i mebli
   -poruszanie kamerą
   -zmiana pory dnia i nocy
    <zmiana pozycji słońca>
    <włączenie wyłączenie światła>
  -określenie stopnia interaktywności
-  <określenie zioru gotowych pomieszczeń do wyboru>
+  <określZbiórNie
+  <określenie zbioru gotowych pomieszczeń do wyboru>
   -określenie elementów interaktywnych i zakresu ich interaktywności
    <jakie elementy wnętrza/pomieszczenia mogą być edytowana i w jakim stopniu>
    -panele
