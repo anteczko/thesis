@@ -491,8 +491,105 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
     
         
 \section{Realizacja projektu}
+    \subsection{Rozplanowanie projektu}
+    
+    
+    \subsection{Rozplanowanie scen i pomieszczeń}
+        Jednym z główych zadań wizualizacji jest prezentacja produktu w naturalnym dla niego otoczeniu, dlatego ważne jest aby zaprojektować pomieszczenia, które będą wyglądać lepiej dzięki powieszeniu paneli na ścianach. Celem tych paneli jest ozdobienie i przełamanie monotonii dużych pustych ścian danego pomieszczenia, dlatego prezentowane pomieszczenie powinno posiadać dużą pustą ścianę. Ściana nie musi być całkowicie wyeksponowana, przy niej mogą stać meble, ale nie powinny one być zbyt wysokie, dlatego panele pasowałyby również nad łóżkiem w sypialni. Pomieszczenie musi posiadać dużą nieprzerwaną ścianę, zazwyczaj salon jest największym pokojem w mieszkaniu, ale korytarze też mogą posiadać długie i monotonne powierzchnie.
+        \\
+        
+        Zazwyczaj na zdjęciach wizualizacjach pokazany jest jeden wąski kadr przedstawiający produkt w swoim otoczeniu. Można by lepiej użyć medium interaktywne poprzez wyznaczenie paru interaktywych ścian w jednym pomieszczeniu lub mieszkaniu, pomiędzy którymi możnaby się przełączać. Każda z nich byłaby w trochę innym otoczeniu, symbolizujące inne pomieszczenie. Kamera zamiast przeskakiwać do osobnego pomieszczenia przesuwałaby się płynnie na kolejne miejsce i obracała kadr w kierunku nowej interaktywnej ściany. Wymaga to zaprojektowania mieszkania spcjalnie pod tym kątem.
+        \\
+        
+        Zaprojektowanie pomieszczeń pozwoli na określenie ilości i umiejscowienia interaktywnych ścian pomieszczenia, rozplanowanie rozmieszczeń kamery oraz jej kadrowanie. Ważnym aspektem jest też rozplanowanie naturalnego i sztucznego oświetlenia w pomieszczeniu co odbywa się poprzez rozmieszczenie okien, lamp i żyrandoli. Po wstępnym zaprojektowaniu pomieszczeń, wiadoma będzie liczba i rodzaj mebli, które będa potrzebne do jego odtworzenia i umeblowania pomieszczenia za pomocą modeli trójwymiarowych. Dopiero wtedy można przejść do kolejnego punktu, którym jest wykonanie listy wymaganych modeli, oraz wymodelowanie ich. Dodatkowo, gotowy plan pomieszczenia ułatwi odwzorowanie go w silniku Unity3D.
+        \\
+        
+        \subsubsection{Plany pomieszczeń}
+        Poniżej przedstawione są plany pomieszczeń, które mogą znaleść się w projekcie. Rozplanowanie pomieszczenia pozwoli na określenie miejsc w do których będzie przenosić się kamera, oraz jaki kadr będzie ona obejmować. Na rysunku punkty oznaczają miejsca ustawienia wirtualnej kamery, a kolorowy trójkąt oznacza pole widzenia kamery, które na rysunku wynosi 60 stopni, co jest domyślnym ustawieniem kamery w Unity3D
+        \\
+        
+        Pierwsze z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. 
+        \\
+        \begin{center}
+            \includegraphics[scale=0.5]{images/diagrams/big_salon.jpeg}
+            % big_salon.jpeg: 640x455 px, 72dpi, 22.58x16.05 cm, bb=0 0 640 455
+        \end{center}
+        
+        
+        Kolejny plan jest małą kawalerką. W tym przypadku modelowanie niewidocznych pomieszczeń i ich umeblowania nie jest wymagane, w tym przypadku łazienka nie będzie widoczna do wglądu, a jej drzwi będą zamknięte.
+        \\
+        \begin{center}
+            \includegraphics[scale=0.5]{images/diagrams/kawalerka.jpeg}
+            % kawalerka.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
+        \end{center}
+
+        Zależnie od ilości okien ilość światła naturalnego będzie większa lub mniejsza. W przypadku tego pokoju ilość światła słonecznego jest największa ze wszystkich przykładów.
+        \\
+        \begin{center}
+            \includegraphics[scale=0.5]{images/diagrams/kawalerka2.jpeg}
+            % kawalerka2.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
+        \end{center}
+        
+        \begin{center}
+            \includegraphics[scale=0.5]{images/diagrams/kawalerka3.jpeg}
+            % kawalerka3.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
+        \end{center}
+        
+        
     \subsection{Modelowanie elementów 3d}
-        \subsubsection{pomieszczenia}
+        Proste kształty i modele trójwymiarowe można modelować bez technicznych rysunków i planów, takimi modelami będą ściany, które będą prostymi powierzchniami, z opcjonalnymi wnękami i otworami na wstawienie okien lub drzwi. Jedyną rzeczą o której trzeba pamiętać jest zachowanie jednakowej skali oraz proporcji. Podłoga i sufit będzie jeszcze prostrza do wymodelowania, gdzyż będzie ona jedynie płaską powierzchnią. Posiadać ona będzie teksturę która urozmaici monotonną powierzchnię.    Bardziej wymagające do wymodelowania będą meble, które posiadają bardziej skomplikowane kształty, teksturę oraz materiały. 
+        \\
+
+        \subsubsection{Modelowanie ścian}
+            Pierwszymymi elementami do wymodelowania będą części składające się na pomieszczenie: ściany, podłogi i sufity. Należy je zaprojektować i wymodelować w taki sposób aby możliwe byłoby proste ich rozciąganie, aby zmniejszyć ilośc modeli użytych w projekcie. Dodatkowo wydzielić można parę gotowych segmentów, z których można będzie zbudować większość pomieszczeń, będą nimi: pusta ściana, ściana z otworem na drzwi, ścina z otworem na okno, oraz ściana z wnęką pod grzejnik i otworem na okno. Wbrew pozorom z tych gotowych części będzie można złożyć większość podstawowych pomieszczeń. Ważne aby wszystkie modele w projekcie były wymodelowane w tej samej skali, a wymodelowane segmenty ścian powinny przestrzegać podstawowych zasad i wymiarów, którymi kierują się architekci podczas projektowania budnyków. Stworzenie niewymiarowych ścian burzyło by immersję użytkownika.
+            \\
+            
+            <opisz proces modelowania ścian>
+            \\
+            
+            Moduły ścian będa najprostrzymi do wymodelowania częściami ze względu na swoją prostą budowę. Będą one miały jednakowe wymiary: szerokość 1-go metra i wysokość 2,5 metra. Pusta ściana będzie jednolitą pionową powierzchnią o określonych wymiarach. Wariant z otworem na drzwi, posiadać będzie fragment ściany nad drzwiami, oraz ściany w które wstawiać będzie się drzwi. Ściana z otworem na okna będzie posiadać wariant uproszcony jedynie z otworem na okno na odpowiedniej wysokości, albo posaidać będzie również wnękę na grzejnik, pod otworem na wstawienie okna.
+            \\
+            
+            Przed wyeksportowaniem modelu trzeba pamiętać o pewnych mniej oczywistych zawiłościach, jedną z nich jest sposób w jaki różne silniki graficzne interpretują modele. Domyślnie w programie blender każda ściana ma dwie strony, tą która jest widoczna, oraz druga która jest całkowicie nie widoczna, pozwala to na nie renderowanie niewidocznych ścian w projekcie. Program blender zawsze pokazuje każdą ścianę z obu stron, ale nie jest to prawdą dla silnika Unity3d, przez co niektóre ściany modelu mogą być nie widoczne z pewnych stron. Możliwe jest włączenie specjalnego trybu pokazującego które ściany będa widoczne oraz ustawienie ich w taki sposób, aby ściany były widoczne z odpowiedniej strony.
+            \\
+            
+            Wykonane segmenty ścian są bardzo proste w swojej budowie i przezentują się następująco.
+            \\
+            <wstaw zdjęcie zegmentóœ ścian>
+            \\
+            
+        \subsubsection{Modelowanie listw ściennych}
+            Ozdobnymi częściami ścian będą listwy przypodłogowe oraz listwy przysufitowe. Oba przykłady listw mają dosyć proste do wymodelowania kształty. Są one jedynie przekrojem rozciągniętym w swojej długośći. Dokładny kształt przekroju listwy jest często przedstawiany w katalogu produktów, z uwagi na prostotę modelu jest to wystarczająco dokładna referencja. Z katalogu więc można skopiować przekrój listwy oraz wkleić go bezpośrednio do programu do modelowania jako zdjęcie referencyjne.
+            \\
+            
+            Następnie trzeba zeskalować zdjęcie referencyjne do wymiarów zbliżonych do wynikowego modelu, w tej sytuacji bardzo pomaga prawidłowe ustawienie jednostek, oraz siatki w programie Blender. Dopomóc sobie można również ustawiając w pobliżu obiekt o ustalonych wymiarach, na przykład, sześcian o boku 10-ciu centymetrów. Skala i wymiary listwy i tak będą dostosowane podczas modelowania, aby wszystkie listwy miały podobne wymiary i tę samą skalę. 
+            \\
+            
+            Najpierw trzeba ustawić odpowiednio punkt przyłożenia modelu, aby jego ustawienie było jednakowe z ustawieniem go w modelach ścian. Następnie można wymodelować przekrój listwy, odysowywując kolejne punkty wedle rysunku poglądowego. Powstały zarys przekoroju należy potem rozciągnąć go do końcowej długości listwy. W tym przypadku będzie to standardowa długość dla modułów ścian czyli 1. metr szerokości. Każda listwa posiadać będzie dwa warianty modelu, listwy przycięte prostopadle, oraz pod kątem 45-ciu stopni. Pozwoli to na tworzenie kątów i krawędzi ścian z idalnie schodzącymi się listwami.
+            \\
+            
+            <wstaw rysunek>
+            \\
+            
+            W taki sam sposób modelowane są listwy podsufitowe czasami nazywane sztukateriami. Różnicami będzie przesunięty punkt centralny modelu gdyż siatka będzie miała 1 metr a sufit będzie ustawiony na wysokości 2,5 metra. Kolejną różnicą będą dostępne wersje kolorystyczne z uwagi na różnice w materiałach 
+            \\
+            
+            
+            
+        \subsubsection{Modelowanie mebli}
+            Modelowanie mebli jest o wiele bardziej skomplikowane ze względu na ich bardziej złożone kształty. Jest jednak pewna metoda, która pozwala na proste i szybkie modelowanie modeli, z użyciem rysunków technicznych modelowanego obiektu. Polega ona na ustawieniu rysunków w przestrzeni trójwymiarowej oraz modelowaniu kolejnych części patrząc jednocześnie na więcej niż jeden rzut. W ten sposób stawiając punkt można sprawdzać poprawność jego umiejscowienia wielu osiach jednocześnie.
+            \\
+            
+            Najpierw trzeba znaleźć rysunki techniczne, które przedstawiają modelowany obiekt z przodu, z boku oraz z góry. Czasami rysowane są dodatkowe rzuty, ale w większości przypadków nie są one niezbędne. Ważne jest, aby obiekt w każdym z narysowanych rzutów był narysowany w tej samej skali. By można było je ze sobą zestawić w przestrzeni trójwymiarowej.
+            \\
+            
+            Niektóre firmy meblowe, w ramach marketingu i promocji swoich mebli, udostępniają za darmo modele trójwymiarowe swoich mebli, zdjęcia oraz ich rysunki techniczne. Projekt tworzony na potrzeby tej pracy inżynierskiej nie będzie wykorzystywany komercyjnie, więc można użyć w nim własnoręcznie wykonanych modeli opierających się na rysunkach udostępnionych do publicznego użytku. Czasami nawet udostępniane są gotowe oteksturowane modele trójwymiarowe mebli z zastrzeżeniem nie używania  go w projektach komercyjnych. Jedyną różnicą będzie fakt wykonania tychże modeli od podstaw.
+            \\
+            
+            
+        
+    
+        
     \subsection{Części projektu}
         \subsubsection{Logika i schemat działania}
         \subsubsection{Interfejs użytkownika}
