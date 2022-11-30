@@ -508,7 +508,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Poniżej przedstawione są plany pomieszczeń, które mogą znaleść się w projekcie. Rozplanowanie pomieszczenia pozwoli na określenie miejsc w do których będzie przenosić się kamera, oraz jaki kadr będzie ona obejmować. Na rysunku punkty oznaczają miejsca ustawienia wirtualnej kamery, a kolorowy trójkąt oznacza pole widzenia kamery, które na rysunku wynosi 60 stopni, co jest domyślnym ustawieniem kamery w Unity3D
         \\
         
-        Pierwsze z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. 
+        Pierwsze z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. Dzięki jednej dużej przestrzeni w planie mieszkania, jedno pomieszczenie jest w stanie pokazać produkt w paru różniących się od siebie otoczeniach, w salonie, jadalni, kuchni i korytarzu. 
         \\
         \begin{center}
             \includegraphics[scale=0.5]{images/diagrams/big_salon.jpeg}
@@ -516,20 +516,23 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         \end{center}
         
         
-        Kolejny plan jest małą kawalerką. W tym przypadku modelowanie niewidocznych pomieszczeń i ich umeblowania nie jest wymagane, w tym przypadku łazienka nie będzie widoczna do wglądu, a jej drzwi będą zamknięte.
+        Kolejny plan jest małą kawalerką. Modelowanie niewidocznych pomieszczeń i ich umeblowania nie jest wymagane, w tym przypadku łazienka nie będzie widoczna do wglądu, a jej drzwi będą zamknięte. Salon jest oświetlony naturlanym światłem, ale kuchnia wymaga dodatkowego, sztucznego światła.
         \\
         \begin{center}
             \includegraphics[scale=0.5]{images/diagrams/kawalerka.jpeg}
             % kawalerka.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
         \end{center}
 
-        Zależnie od ilości okien ilość światła naturalnego będzie większa lub mniejsza. W przypadku tego pokoju ilość światła słonecznego jest największa ze wszystkich przykładów.
+        Zależnie od ilości okien ilość światła naturalnego będzie większa lub mniejsza. W przypadku tego pokoju ilość światła słonecznego jest największa ze wszystkich przykładów. Otwartość przestrzeni pozwala na użycie mniejszej ilości sztucznych żródeł światła.
         \\
         \begin{center}
             \includegraphics[scale=0.5]{images/diagrams/kawalerka2.jpeg}
             % kawalerka2.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
         \end{center}
         
+        
+        Jest to dosyć małe i ciasne mieszkanie, może być wymagane zmienienie ustawień wirtualnej kamery, poprzez zwiększenie kąta jej widzenia. Mała ilość naturlego światła musi zostać zrekompensowana poprzez większą ilość sztucznego światła.
+        \\
         \begin{center}
             \includegraphics[scale=0.5]{images/diagrams/kawalerka3.jpeg}
             % kawalerka3.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
@@ -571,9 +574,19 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             <wstaw rysunek>
             \\
             
-            W taki sam sposób modelowane są listwy podsufitowe czasami nazywane sztukateriami. Różnicami będzie przesunięty punkt centralny modelu gdyż siatka będzie miała 1 metr a sufit będzie ustawiony na wysokości 2,5 metra. Kolejną różnicą będą dostępne wersje kolorystyczne z uwagi na różnice w materiałach 
+            W taki sam sposób modelowane są listwy podsufitowe czasami nazywane sztukateriami. Różnicami będzie przesunięty punkt centralny modelu gdyż siatka będzie miała 1 metr a sufit będzie ustawiony na wysokości 2,5 metra. Kolejną różnicą będą dostępne wersje kolorystyczne z uwagi na różnice w materiałach zazwyczaj używanych do ich wykonania. Listwy przypodłogowe wykonywane są z drewna albo plastiku i mają albo teksturę drewna, albo jednolity kolor. Drewniane sztukaterie nie są już spotykane we współczesnych wnętrzach, ale były wykorzystywane w dawnych czasach kiedy ściany również zdobiono drewnianymi panelami. Dlatego sztukaterie nie będa posiadać tekstury, lecz jednolity zazwyczaj jasny kolor.
             \\
             
+            
+        \subsubsection{Modelowanie okien}
+            Okna nie będą tak łatwo skalowalne jak ściany, dlatego będą wykonane w standardowym wriancie posującym do tworów na nie. By nie używać wszędzie tego samego modelu, trzeba będzie wykonać ich parę wariantów. Dostępne będzie pojedyncze okno, podwójne okno, oraz wysokie okno, które rozmairami i zastosowaniem przypomina przeszklone drzwi. Rama okna jest dosyś prosta do wymdelowania i można ją wymodelować na podstawie ogólnych wymiarów i zdjęć referencyjnych. Do wymodelowania klamki można użyć rysunków technicznych dostępnych na stronie producenta klamek do okien.
+            \\
+            
+            Okno jest pierwszym modelem, który posiadać będzie więcej niż jeden materiał, lub teksturę. Podział jest dosyć prosty, gdzie osobne elementy okna wykonane są z innych materiałów. Rama okna jest wykonana z drewna, albo materiału o podobnym kolorze, szyba będzie przeźroczystą powierzchnią, a cała klamka wykonane będzie z metalicznego materiału o szorstkim wykończeniu. 
+            \\
+            
+            Niestety nie jest możliwe bezpośrednie wyeksportowanie zawansowanych materiałów z programu blender do silnika Unity3D. Wyeksportować można jedynie tekstury, albo tekstury powstałe z tychże materiałów. Mimo tego, przydatne będzie na tym etapie przypisanie różnych materiałów do różnych części tego samego modelu, materiały będzie można zastąpić tymi pochodzącymi z silnika Unity3D. Na potrzeby tego projektu materiały silnika Unity3D są wystarczające.
+            \\
             
             
         \subsubsection{Modelowanie mebli}
@@ -586,7 +599,20 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Niektóre firmy meblowe, w ramach marketingu i promocji swoich mebli, udostępniają za darmo modele trójwymiarowe swoich mebli, zdjęcia oraz ich rysunki techniczne. Projekt tworzony na potrzeby tej pracy inżynierskiej nie będzie wykorzystywany komercyjnie, więc można użyć w nim własnoręcznie wykonanych modeli opierających się na rysunkach udostępnionych do publicznego użytku. Czasami nawet udostępniane są gotowe oteksturowane modele trójwymiarowe mebli z zastrzeżeniem nie używania  go w projektach komercyjnych. Jedyną różnicą będzie fakt wykonania tychże modeli od podstaw.
             \\
             
+            Proces modelwoania skoplikowanych modeli, zaczynamy od zaimportowania jego rysunków technicznych do programu Blender. Kopiujemy go tylerazy, ile rzutów jest narysowanych na rysunku. Każdy z rysunków ustawiamy w taki sposób aby był widoczyny z innej strony: front, bok, góra. Potem tworzymy podstawowy obiekt, kostkę która pomoże zestawić je ze sobą w przestrzeni trójwymiarowej. Kostkę skalujemy do odpowiednich wymiarów, zazwyczaj są to wymiary zakreślające cały obrys przedmiotu, z każdej widocznej perspektywy. Przesuwamy pojedynczo rysunki w jednej płaszczyźnie jednocześnie, aż do czasu kiedy przedmiot w każdym rzucie, mieści się w obrębie kostki.
+            \\
             
+            Kolejnym ułatwieniem medium ctfrowego jest to, że nie jeżeli modelowany przedmiot jest symetryczny, to nie trzeba modelować go w całości. Im więcej osi symetrii ma model wym mniejszą część należy modelować. Krzesło mając jedną oś symetri można podzielić na dwie połowy, stół natomiast posiada dwie osie symetrii, więc wystarczy wymodelować jego ćwiartkę. W przypadku krzesła wystarczy wymodelować jego połowę, a potem użyć modyfikatora, który stworzy drugą połowę modelu w odbiciu lustrzanym, pamiętać należy, że odbicie to tworzone jest względem punktu centralnego modelu.
+            \\
+            
+            <wstaw zdjęcie>
+            \\
+            
+            Teraz można zacząć proces modelowania. Zacząć można od jednego z podstawowych kształtów i powoli dodawać kolejne punkty, linie i ściany. Wielkim ułatwieniem jest fakt, że stawiając nawet jeden kolejny punkt, można sprawdzić poprawność jego położenia w paru rzutach jednocześnie, zamiast przełączać się po kolei pomiędzy nimi. Rama krzesła modelowana jest najpierw jako dwuwymiarowy kształt. Najpierw tworzony jest przekrój nogi krzesła, potem odchodzace od niego poprzeczki, następnie można rozciągnąć dwuwymairowy obiekt do trójwymiarowego tworząc zalążek ramy siedziska.
+            \\
+            
+            Za wczasu w miejscach zamontowania nóg krzesła powstawiane zostały kwadraty, będące jednocześnie przekrojami każdej z nóg krzesła. Kwadraty będą podstawą do stworzenia kwadratowych nóg krzesła. Tworzenie długich kształtów jest dosyć proste, wystarczy zaznaczyć ścianę która jest spodem nogi, oraz rozciągnąć ją do wybranej długości. Nogę rozciągamy do momentu montowania poprzeczki pomiędzy tylną a przednią noga krzesła. Podczas dostawiania każdego kolejnego przedłużenia na osobnym widoku sprawdzamy jego długość, a na innym jego dokładne położenie w innych osiach.
+            \\
         
     
         
