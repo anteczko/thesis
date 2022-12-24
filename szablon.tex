@@ -481,11 +481,85 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
         \subsubsection{Grafiki i obrazy}
-            Grafiki wymagane na potrzeby projektu
+            Na grafiki wymagane na potrzeby projektu składają się tekstury, obrazy użyte w scenie, oraz obrazy i ikony stworzone na potrzeby interfejsu użytkownika. 
             \\
-                
+            
+            Tekstury będą obrazami nałożonymi na modele trójwymiarowe. W przypadku bardziej skomplikowanych modeli będą one nałożone na model podczas modelowania, wymagane również może być odpowiednie dopasowanie tekstury do modelu. W przypadku mniej skomplikowanych modeli, tekstura będzie one mogły zostać potrakowana jako jednolity, albo powtarzalny materiał, który zostanie stworzony i zaaplikowany do modelu, w silniku do gier komputerowych.
+            \\
+            
+            Kolejnym typem grafiki użytym w projeckie będą obrazy i zdjęcia umiejscowione w świecie gry. Będą one wspomagać iluzję prawidzwego, naturalnego otoczenia. Mogą to być tekstury chmur za oknem, albo panoramiczna tekstura, przedstawiająca niebo 360-ciu stopniach widoczna za oknami mieszkania.
+            \\
+            
+            Ostatnim typem będą grafiki i ikony użyte bezipośrednio w interfejsie użytkownika. Wcześniejsze sposoby tworzenia interfejsu użytkownika w Unity3D wymagały aby każdy wystylowany przycisk był osobnym obrazem, było to bardzo pracochłonne i wymagało stworzenia osobnego brazka dla guzików, które różniły się od siebie jedynie napisami. W projekcie użyty będzie nowszy sposób tworzenia interfejsu użytkownika, User Interface Toolkit, który ogranicza użycie obrazów do niezbędnego minumum. Pozwala on na bardziej programowe podejście do tworzenia interfejsu i jego stylowania.
+            \\
+            
+            Na potrzeby interfejsu będą potrzebne ikony i miniatury. Ikony użyte będą w niektórych elementach interfejsu jako urozmicenie, albo w miejscach gdzie słowny opis albo fraza nie zmieści się w elemencie interaktywnym. Takim przykładem będą ikony przedstawjące poszczególne stadia modyfikacji produktu, albo przyciski finalizujące kolejne kroki. W tym celu projekcie użyty zostanie pakiet ikon Font Awesome, który używany jest w wielu stronach internetowych.
+            \\
         
+            W niektórych przypadkach wymgany tekst się nie zmieści, a treść do przekazania będzie zbyt skomplikowana zby przekazać ją za pomocą prostej ikony. W takich przypadkach użyte zostaną miniatury. W przypadku graficznego interfejsu miniatury przedstawiać będą skomplikowane koncepty albo będą małymi obrazami przedstawiającymi paletę kolorów a nie szczegóły zdjęcia. Miniatury będą przedstawiać różne palety kolorów w pomieszczeniu, nie jest ważne czy nawet przedstawiają ten sam pokój a ich kolorystyka. Bardziej prostymi miniaturami będą te przedstawiające kształty paneli, oraz te przedstawiające różne wariacje ich ułożenia.
+            \\
+            
+            Wymagane będzie wygenerowanie minitaur przedstawiających palety, będą one zrzutami ekranu pomieszczenia gdzie jego elementy będą posiadały zmienione materiały. Minatury przedstawiające unikalne sposoby ułożenia paneli oraz ich kształty będą musiały zostać wykonane włąsnoręcznie.
+            \\
+            
+            
         \subsubsection{Logika programu}
+        Gdyby projekt był pisany od podstaw wymagane byłoby napisanie jakieś jego centralnej logiki, w tym przypadku użyty jest silnik do gier komputerowy Unity3D. Dzięki temu podejściu jedyne co trzeba będzie stworzyć to elementy świata gry, interfejs graficzny oraz fragmenty kodu, które będą tę logikę implementować.
+        \\
+        
+        Każdy element w grze tzw. 'GameObject' może posaidać różne komponenty, to właśnie one definują funkcje i rolę tego obiektu w grze. Dodanie komponenut z określonym skryptem dodawać będzie pewną funkcjonalność do danego obiektu w scenie. Obiekty których materiały będą się zmieniać, wedle palety, będą posiadać określony skrypt jako swój komponent. Kamera zmeioniająca swoje położenie i ustawienie, również będzie posiadać od tego osobny skrypt.
+        \\
+ 
+        Poprzez graficzny interfejs użytkownika klient będzie wprowadzał kolejne informacje, oraz wchodził w interakcję z programem. Dlatego część logiki będzie podpięta pod obiekty interfejsu użytkownika, odpowiedzialne one będą za aktualizowanie potencjalnego zamówienia, oraz uruchamianie akcji wyzwalanych po interkacji z elementami z interfejsem. Dzięki nim możlie będzie przechodzenie przez kolejne kroki konfigurowania produktu.
+        \\
+        
+        \subsubsection{Interfejs użytkownika}
+        Zadaniem interfejsu użytkownika będzie umożliwienie mu wejścia w interakcję z programem. Dzięki niemu możliwe będzie przeprowadzenie go przez kolejne kroki konfiguracji produktu, dostrajanie kolejnych jego parametrów, wyświetlenie ekranu podsumowania i wypełnienie fomularza kontaktowego.
+        \\
+        
+        
+        \subsubsection*{Dostosowanie produktu}
+        
+        \begin{center}
+        \includegraphics[scale=0.3,keepaspectratio=true]{images/diagrams/ui_mockup.png}
+        % ui_mockup.png: 1225x766 px, 72dpi, 43.22x27.02 cm, bb=0 0 1225 766
+        \end{center}
+        
+
+        Pierwszym układem będzie układ przedstawiający produkt w scenie, umożliwiający dostosowanie produktu. Dzielić się on będzie na dwie częśći. Po lewej widoczna będzie trójwymiarowa wizualizacja, w której widoczne będą panele dekoracyjne. Wszystkie zmiany wprowadzane przez użytkownika będą aktualizowały wizualizację. Ekran wizualizacji będzie pozwalał na ograniczone obracanie kamerą i przybliżanie i oddalanie jej. Możliwe też będzie przełączanie się pomiędzy różnymi ścianami w pomieszczeniu.
+        \\
+        
+        Na dole widoku wizualizacji widać oś przedstawiającą kolejne etapy konfiguracji produktu. Poszczególne ikony będą przedstawiać kolejne kroki jego konfiguracji. Oś ta będzie pełniła funkcję paska postępu, informując użytkownika ile jeszcze pracy musi on wykonać aby zobaczyć efekt końcowy. Dzięki niej będzie możliwe przechodzenie w przód i w tył pomiędzy etapami, poprzez kliknięcie ikony sybolizującej dany etap.
+        \\
+        
+        Częć ekranu po prawej będzie obszarem przeznaczonym na przyciski, przełączniki i inne elementy interaktywne. Cała jego zawartośc i układ będzie się zmieniać zależnie od aktualnego etapu konfiguracji i pozwalać będzie na dostrojenie jednego z aspektów produktu. Na górze każdego z nich będzie nazwa etapu, która jednoznacznie wytłumaczy co dokładnie zmieniać w produkcie będzie dany parametr. Wprowadzanie danych będzie odbywać się poprzez przyciski, suwaki i pola wyboru do zaznaczenia.
+        \\
+        
+        Etap wyboru palety kolorów będzie posiadał przyciski z miniaturami pomieszczeń, każdy z nich będzie posiadał swoją własną nazwę widzoczną pod obrazkiem. Kliknięcie w miniaturkę zmieni kolorystkę wnętrza. 
+        \\
+        
+        Kolejny etap, wyboru kształtu paneli posiadać będzie zbiór możliwych do wybrania kształtów paneli dekoracyjnych. Wszystkie panele będą jednakowe, dlatego wybór ich kształtów będzie dosyć ograniczony. Po kliknięciu, modele paneli będa zmienione na te o innym, wybranym kształcie.
+        \\
+        
+        Potem możliwe będzie obrócenie paneli z puli zdefiniowanych wartości obrotu, dla każdego kształtu wariany obrotu będą inne gdyż różne kształty posiadają różną ilość osi symetri. Wybranie opcji sprawi, że wszyskie panele zmienią swoje ułożenie oraz obrócą się.
+        \\
+        
+        Kolejne będzie ustawienie szczelin pomiędzy panelami, osobno będzie można ustawić wartość horyzontalnych jak i wertykalnych szczelin pomiędzy panelami. Odbywać się to będzie z użyciem suwaków. Będą one miały z góry określone granice. Każda edycja suwaka zaktualizuje szerokość szczelin pomiędzy panelami.
+        \\
+        
+        Zależnie od wielkości pustej ściany możliwe będzie zmieszczenie różnej liczby rzędów i kolumn paneli. Możliwe będzie zwiększenie albo zmniejszejnie liczby kolumn i rzędów paneli, które składać będą się w jedną całość. Maksymalna ich liczba będzie zależna od wielkości ściany, kształtu, obrócenia i sposobu ułożenia paneli. Po aktualizacji liczby paneli, będą one ustawiały się w centrum wybranej ściany.
+        \\
+        
+        \subsubsection*{Widok podsumowania}
+        Kolejnym osobnym widokiem następującym po zakończeniu procesu konfiguracji jest widok podsumowania. Będzie w nim widoczna lista paneli, które będą wymagane do zrealizowania zamówienia. Wypisana będzie ich liczba, nazwa, dokładny kolor, oraz cena za sztukę. Pod linią symoblizującą podsumowanie widoczna będzie łączny koszt wszystkich paneli. Po kliknięciu przycisku Będzie można przejść do widoku formularza kontaktowego.
+        \\
+        
+        \subsubsection*{Formularz kontaktowy}
+        Ostatnim widokiem będzie formularz kontaktowy. Użytkownik  wprowadzi w nim swoje dane kontaktowe, aby firma mogła się z nim skontaktować w celu potwierdzenia realizacji zamówienia. Po kliknięciu na przycisk 'Wyślij' zamówienie powinno być dodane do systemu a dane klienta wysłane na serwery firmy.
+        \\
+        
+        
+        \subsubsection{Skrypty}
         
         \subsubsection{Wykonanie projektu}
     
@@ -537,7 +611,6 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \includegraphics[scale=0.5]{images/diagrams/kawalerka3.jpeg}
             % kawalerka3.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
         \end{center}
-        
         
     \subsection{Modelowanie elementów 3d}
         Proste kształty i modele trójwymiarowe można modelować bez technicznych rysunków i planów, takimi modelami będą ściany, które będą prostymi powierzchniami, z opcjonalnymi wnękami i otworami na wstawienie okien lub drzwi. Jedyną rzeczą o której trzeba pamiętać jest zachowanie jednakowej skali oraz proporcji. Podłoga i sufit będzie jeszcze prostrza do wymodelowania, gdzyż będzie ona jedynie płaską powierzchnią. Posiadać ona będzie teksturę która urozmaici monotonną powierzchnię.    Bardziej wymagające do wymodelowania będą meble, które posiadają bardziej skomplikowane kształty, teksturę oraz materiały. 
@@ -617,8 +690,34 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Rama krzesła modelowana jest najpierw jako dwuwymiarowy kształt. Najpierw tworzony jest przekrój nogi krzesła, potem odchodzace od niego poprzeczki, następnie można rozciągnąć dwuwymairowy obiekt do trójwymiarowego tworząc zalążek ramy siedziska.
             \\
             
-            Za wczasu w miejscach zamontowania nóg krzesła powstawiane zostały kwadraty, będące jednocześnie przekrojami każdej z nóg krzesła. Kwadraty będą podstawą do stworzenia kwadratowych nóg krzesła. Tworzenie długich kształtów jest dosyć proste, wystarczy zaznaczyć ścianę która jest spodem nogi, oraz rozciągnąć ją do wybranej długości. Nogę rozciągamy do momentu montowania poprzeczki pomiędzy tylną a przednią noga krzesła. Podczas dostawiania każdego kolejnego przedłużenia na osobnym widoku sprawdzamy jego długość, a na innym jego dokładne położenie w innych osiach. W podobny sposób modelujemy oparcie krzesła, będące przedłużeniem tylnych nóg. WYstarczy powstawiać proste okrągłe szczebelki kończąc krzesło.
+            Za wczasu w miejscach zamontowania nóg krzesła powstawiane zostały kwadraty, będące jednocześnie przekrojami każdej z nóg krzesła. Kwadraty będą podstawą do stworzenia kwadratowych nóg krzesła. Tworzenie długich kształtów jest dosyć proste, wystarczy zaznaczyć ścianę która jest spodem nogi, oraz rozciągnąć ją do wybranej długości. Nogę rozciągamy do momentu montowania poprzeczki pomiędzy tylną a przednią noga krzesła. Podczas dostawiania każdego kolejnego przedłużenia na osobnym widoku sprawdzamy jego długość, a na innym jego dokładne położenie w innych osiach. W podobny sposób modelujemy oparcie krzesła, będące przedłużeniem tylnych nóg. Wystarczy powstawiać proste okrągłe szczebelki kończąc krzesło.
             \\
+            
+        \subsubsection{Tekstury i materiały dla modeli}
+            Na każdy obiekt w scenie składa się z trójwymiarowego modelu oraz graficznej warstwa w którą jest on pokryty. Obrazy, które nakładane są na te modele nazywane są teksturami. Jeżeli materiał z którego jest dany przedmiot jest jednolity, można zamiast tekstury użyć materiału, w innych przypadkach wymagane jest odpowiednie rozwinięcie modelu oraz dokładne nałożenie tekstury z uwzględnieniem umiejscowienia jej w modelu.
+            \\
+        
+            Zadaniem tekstur jest sprawienie aby modele wyglądały bardziej podobnie do swojego orginału ze świata rzeczywistego. Niektóre obiekty posiadają jednolity kolor, ale niektóre posiadają charakterystyczną, nie powtarzającą się kolorystykę, w takich przypadkach wymagane jest użycie tekstur. Przykładem mogą być meble wykonane z drewna, gdzie widać słoje drewna, albo elementy wnętrza wykonane z kamienia takiego jak marmur.
+            \\
+            
+            Tekstury można stworzyć w różny sposób, można stworzyć ją od podstaw za pomocą programów graficznych, albo za pomocą specjalnych programów do tworzenia i generowania wirtualnych materiałów, na przykład Material Maker. Innym podejściem jest użycie zdjęć do ich stworzenia. Na potrzeby projektu, nie będziemy tworzyć tekstur od podstaw, lecz użyjemy już tych istniejących oraz dostępnych w internecie. Ważne jest aby ich licencja pozwalała na nieodpłatne używanie ich w naszym projekcie.
+            \\
+            
+            W internecie można znaleźć parę stron internetowych z teksturami i materiałami, ważna jest licecja pod którą podlegają. My będziemy używać materiałów objętych licencją Creative Commons CC0 License, która określa materiał jako podany do domeny publicznej, która pozwala na kopiowanie, modyfikowanie, dystybucję a nawet na używanie ich w produktach komercyjnych bez pytania o zgodę ich autora. Wedle oficjalne strony Creative Commons, twory opatrzone licencją CC0 przekazane są do domeny publicznej, a ich autor całkowicie zrzeka się praw autorskich do tego tworu.
+            \\
+            
+            <wstaw listę stron ambientcg.com, polyhaven.com> \\
+            <https://creativecommons.org/publicdomain/zero/1.0/deed.pl>
+            \\
+            
+    \subsection{Projektowanie i programowanie logiki programu}
+    
+        \subsubsection{Interfejs użytkownika}
+            Do stworzenia graficznego interfejsu użytkownika użyty zostanie zestaw narzędzi UI Toolkit, pozwala on na łatwe i szybkie tworzenie tego elementu projektu. Jednym z narzędzi jest edytor
+        \\
+        
+        \subsubsection{Skrypty}        
+            
             
     \subsection{Części projektu}
         \subsubsection{Logika i schemat działania}
