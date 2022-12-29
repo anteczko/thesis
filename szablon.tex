@@ -503,6 +503,17 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         \subsubsection{Logika programu}
         Gdyby projekt był pisany od podstaw wymagane byłoby napisanie jakieś jego centralnej logiki, w tym przypadku użyty jest silnik do gier komputerowy Unity3D. Dzięki temu podejściu jedyne co trzeba będzie stworzyć to elementy świata gry, interfejs graficzny oraz fragmenty kodu, które będą tę logikę implementować.
         \\
@@ -713,8 +724,47 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
     \subsection{Projektowanie i programowanie logiki programu}
     
         \subsubsection{Interfejs użytkownika}
-            Do stworzenia graficznego interfejsu użytkownika użyty zostanie zestaw narzędzi UI Toolkit, pozwala on na łatwe i szybkie tworzenie tego elementu projektu. Jednym z narzędzi jest edytor
+            Po wypisaniu wszystkich planownych funkcjonalności i określeniu listy kolejnych kroków, przez które przechodzić będzie użytkownik, można zacząć projektować graficzny interfejs użytkownika. Układ i jego plan można rozrysować za pomocą różnych narzędzi. Można rozrysować jego plany na kartce papieru, za pomocą tekstu czy rysunku, ale można też użyć bardziej nowoczesnych narzędzi.
+            \\
+            
+            Do wstępnego rozrysowania kolejnych widoków w projekcie użyte zostanie internetowe narzędzie do tworzenia mock-upów, czyli uproszczonej graficznej wizji produktu końcowego. Będzie to jedynie atrapa, która nie będzie działać a ma pomóc zaprojektować kolejne elementy. Podczas jego tworzenia jego styl jest uproszczony, a liczą się główny podział na kolejne, osobne widoki oraz elementy i ich planowane funkcjonalności.
+            \\
+            
+            Widok został podzielony na dwie części, wizualzacja z linią progresu, oraz widok z przyciskami i elementami interaktywnymi. Podczas procesu konfiguracji, kolejne widoki z przyciskami będa się zmieniać zależnie do obecnego stanu w procesie konfiguracji. 
+            \\
+            
+            <wstaw kolejne widoki z guzikami>
+            \\
+            
+            Gdy zaprojektujemy już wstępnie kolejne widoki, można zacząć wydzielać z nich części wspólne, oraz elementy powtarzające się. Dzięki temu tworząc ten widok oszczędzić będzie można sobie niepotrzebnej pracy. Na przykład lewa część ekranu nie będzę się prawie w ogóle zmieniać, gdzie prawa będzie całkowicie zmieniana na inną podczas przejścia na inny etap konfiguracji. Każdy z widoków będzie zaprojektowany osobno i posiadać będzie inne funkcjonalności, każdy z nich będzie wyświetlany tym samym miejscu. 
+            \\
+            
+            
+            
+        robienie mock-upa
         \\
+        
+        tworzenie w edytorze
+        \\
+        tworzenie układu, flexboxy itd
+        \\
+        stylowanie edytorze
+        \\
+        
+            Do stworzenia graficznego interfejsu użytkownika użyty zostanie zestaw narzędzi UI Toolkit, pozwala on na łatwe i szybkie tworzenie tego elementu projektu. Jednym z narzędzi jest graficzny edytor za pomocą którego można składać interfejs z gotowych elementów. Każdy element następnie trzeba wyedytować, oraz dostroić za pomocą zbioru dostępnych do edycji właściwości.
+            \\
+            
+            Napierw podzielić można cały ekran na dwie części, zrobić to można poprzez ustawienie dwóch elementów obok siebie oraz odpowiednie ustawienie ich maksymalnych rozmiarów i proporcji wobec siebie nawzajem. Lewy z nich będzie miejscem na widok wizualizacji i pasek postępu, a prawy będzie posiadał jasne tło a jego zawartość będzie zmieniać się zależnie od etapu. 
+            \\
+            
+            Wszystkie elementy są flexboxami, co oznacza że będą dynamicznie zmieniać swoje wymiary i ustawienie zależnie od rozmiaru ekranu. Zdefiniować należy maksymalne i minimalne rozmiary elementów w pikselach albo procentach, a elementy samoczynnie zmieniać będa swoje rozmiary, z uwzględnieniem tych zasad. Dzięki temu aplikacja będzie mogą dostosowywać się do różnych rozmiarów i proporcji ekranów.
+            \\
+            
+            Na dole części z widokiem wizualizacji dodajemy osobny element w którym będzie pasek postępu konfiguracji. Będzie to prosty pasek na którego długości będą rozstawione kolejne etapy wraz z ikonami objaśniającymi ich funkcję. Po ukończeniu kolejnych etapów pasek będzie się stopniowo napełniał, a kliknięcie na przycisk przeniesie użytkownika do danego etapu konfiguracji. Pasek postępu jest stworzony z dwóch różnokolorowych prostokątów, które będą zmieniać swoje rozmiary, oraz kół z ikonami, które symbolizują poszczególne etapy.
+            \\
+            
+            Zawartośc menu po prawej będzie się zmieniać zależnie od aktywnego etapu, przyciski przenaczone dla każdego z nich będą przechowywane w osobnych kontenerach. Zależnie od sytaucji będzie pokazywany, lub chowany. Każdy z nich posiada nagłówek wyjaśniający jaki aspekt produktu zmieniać będziemy. Pod spodem będzie miejsce na przyciski, suwaki oraz inne wymagane elementy interfejsu.
+            \\
         
         \subsubsection{Skrypty}        
             
