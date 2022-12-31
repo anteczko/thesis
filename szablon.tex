@@ -763,7 +763,32 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Na dole części z widokiem wizualizacji dodajemy osobny element w którym będzie pasek postępu konfiguracji. Będzie to prosty pasek na którego długości będą rozstawione kolejne etapy wraz z ikonami objaśniającymi ich funkcję. Po ukończeniu kolejnych etapów pasek będzie się stopniowo napełniał, a kliknięcie na przycisk przeniesie użytkownika do danego etapu konfiguracji. Pasek postępu jest stworzony z dwóch różnokolorowych prostokątów, które będą zmieniać swoje rozmiary, oraz kół z ikonami, które symbolizują poszczególne etapy.
             \\
             
-            Zawartośc menu po prawej będzie się zmieniać zależnie od aktywnego etapu, przyciski przenaczone dla każdego z nich będą przechowywane w osobnych kontenerach. Zależnie od sytaucji będzie pokazywany, lub chowany. Każdy z nich posiada nagłówek wyjaśniający jaki aspekt produktu zmieniać będziemy. Pod spodem będzie miejsce na przyciski, suwaki oraz inne wymagane elementy interfejsu.
+            Zawartośc menu po prawej będzie się zmieniać zależnie od aktywnego etapu, przyciski przenaczone dla każdego z nich będą przechowywane w osobnych kontenerach. Zależnie od sytaucji będzie stawał się widoczny lub niewidoczny. Każdy z nich posiada nagłówek wyjaśniający jaki aspekt produktu będzie aktualnie zmieniany. Pod spodem będzie miejsce na przyciski, suwaki oraz inne wymagane elementy interfejsu, potrzebne do dostrojenia tego jednego aspektu produktu.
+            \\
+            
+            Wybór palety barw będzie odbywać się poprzez naciśnięcie przycisku z odpowiadającą mu miniaturą i nazwą palety. Podobnie będzie z wyborem kształtu paneli, każdy przycisk posiadać będzie miniaturę z konturem danego kształtu. Zależnie od wybranego kształtu panelu, można będzie określić jak mają być obrócone panele. Nie wszystkie panele będą posiadały nawet taką opcję. W podobny sposób wybrać będzie można sposób ułożenia paneli, zależnie do wybranego kształtu dostępne będą sposby ich ułożenia.
+            \\
+            
+            Za pomoca suwaków będzie można zdefiniować odstępy pomiędzy panelami, oraz liczbę rzędów oraz kolumn paneli. Odstępy będą mogły być dowolną liczbą z podanego zakresu, a liczba paneli będzie liczbą całkowitą.
+            \\
+            
+            Przedostatnim widokiem będzie ekran podsumowania, który wylistuje nam dokładną nazwę wybranego panelu, ilość, kolor, jego cenę za sztukę oraz podliczoną cenę za wszystkie panele na danej ścianie.
+            \\
+            
+            Ostatnim widokiem będzie widok formularza kontaktowego, w którym wprowadzić będzie można swoje dane kontaktowe, dzięki którym będzie można się skontaktować z klientem. Polami tekstowymi do wypełnienia będą imię, nazwisko, adres email, oraz numer telefonu do klienta. Po wypełnieniu formularza, wysłać go będzie można klikając przycisk 'Wyślij'.
+            \\
+            
+        \subsubsection*{Tworzenie ikon i miniatur}
+            Na potrzeby intergefsu użytkownika wymagane jest stworzenie miniatur przedstawiających geometryczne kształty paneli, obrócone ich wariacje oraz alternatywne sposoby ich ułożenia. Miniatury te będą grafiką wektorową wykonaną w programie Inkscape. Stworzenie ich jednocześnie jest wymagane, aby obrazy te posiadały te same rozmiary, grubość lini, oraz styl graficzny.
+            \\
+            
+            \begin{center}
+            \includegraphics[scale=0.3,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_002.png}
+            % 6-tworzenie-ui_002.png: 916x544 px, 72dpi, 32.31x19.19 cm, bb=0 0 916 544
+            \end{center}
+
+            
+            Narysowanie podstawowych figur geometrycznych w programie do grafiki wektorowej, Inkscape jest trywialne proste, ze względu na wbudowane narzędzie do tworzenia figur równobocznych o zadanej ilości boków. Po narysowaniu kształtu możliwe jest ustawienie koloru i grubości lini, która go tworzy. Na końcu eksportujemy wszystkie figury jako osobne pliki graficzne.
             \\
         
         \subsubsection{Skrypty}        
