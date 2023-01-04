@@ -721,7 +721,32 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             <https://creativecommons.org/publicdomain/zero/1.0/deed.pl>
             \\
             
+            Do wyboru jest wiele najróżniejszych materiałów, ale trzeba pamiętać aby ograniczyć ich liczbę do minimum z uwagi na ich rozmiar. Jeżeli oddamy wbyt wiele tekstur i plików, problemem może się stać ograniczone miejsce pamięci RAM na urządzeniu odtwarzającym projekt. Dlatego należy wybrać jak najmniej, najbardziej różniących się od siebie materiałów. Kolejnym sposobem na oszczędzenie pamięci jest użycie białych wariantów tekstur, które można na poczekaniu pokolorować aby uzyskać iluzję zupełnie innego, nowego materiału, zamiast przechowywać parę różnych wariantów różniących się jedynie kolorami. 
+            \\
             
+            Ogrom materiałów do wyboru może przestraszyć ale można szybko zawęzić zakres poszukiwań wypisując nazwy materiałów, z których zrobione są meble oraz wnętrze. Na większość mebli składa się głównie metal, drewno oraz obicia z tkaniny. Są również inne materiały, takie jak papier, plastik i różne rodzaje kammiennych powierzchni.
+            \\
+            
+        \subsubsection{Tworzenie materiałów dla mebli}
+            Na potrzeby projektu wymagane będzie stworzenie materiałów przypisywanych modelom, będą to materiały stworzone w silniku Unity3D. Jeżeli mamy już potrzebne materiały, jest to prosty proces. W archiwum z teksturami znajdują się nie tylko tekstura, ale również inne obrazy reprezentujące warstwy materiału.         Tekstura jest zdjęciem lub obrazem imitujące kolor i przerbarwienia materiału. Czasami jest podstawowa część materiału.
+            \\
+            
+            Kolejną częścią są mapy wypukłości, są one specjalnym obrazem, przedstawiającym ostre krawędzie i nierówności w teksturze. Interpretowana jest ona w specjalny sposób przez silnik graficzny, zmienia się ona pod różnymi kątami padania światła. Nawet jeżeli nałożymy mapę wysokości na całkowicie płaską powierzchnię, mapa wypukłości będzie zmieniać się wraz z kierunkiem oświetlenia dając iluzję wypukłości materiału.
+            \\
+            
+            Mapa wysokości jest czarno-białym obrazem, w którym jasność piksela odpowiada jego wysokości. Dzięki temu materiał może posiadać iluzję różnych stopnii głębokości, nawet jeżeli obiekt jest całkowicie płaski. W projekcie niektóre materiały posiadają osobny obraz odpowiadający okluzji otoczenia (ambient coclusion). Jest to sposób na imitowanie uproszczonego cieniowania obiektów w scenie.
+            \\
+            
+            
+            \begin{center}
+            \includegraphics[scale=0.4,keepaspectratio=true]{images/screenshots/work/8-tworzenie-materialow_000.png}
+            % 8-tworzenie-materialow_000.png: 1164x524 px, 72dpi, 41.06x18.49 cm, bb=0 0 1164 524
+            \end{center}
+
+            
+            Dzięki złożeniu tych wszystkich obrazów, możliwe jest odtworzenie wielu materiałów. Wystarczy stworzyć nowy materiał oraz przeciągnąć odpowiednią teksturę do odpowiadających im pól. 
+            \\
+
             
     \subsection{Projektowanie i programowanie logiki programu}
     
@@ -766,6 +791,19 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
             Ostatnim widokiem będzie widok formularza kontaktowego, w którym wprowadzić będzie można swoje dane kontaktowe, dzięki którym będzie można się skontaktować z klientem. Polami tekstowymi do wypełnienia będą imię, nazwisko, adres email, oraz numer telefonu do klienta. Po wypełnieniu formularza, wysłać go będzie można klikając przycisk 'Wyślij'.
+            \\
+            
+            Ważnym elementem ułatwiającym stylowanie elementów interfejsu są arkusze stylów oraz klasy które one definiują. Pliki Unity 
+            Style Sheet (USS), które pełnią podobną rolę co pliki CSS w stronach internetowych, mogą zostać użyte do wypisania zasad, które definiować będą wygląd elementów. Raz zdefiniowana klasa, może zostać przypisana dowolnemu elementowi, dzięki czemu zyskuje on cechy wyglądu przypisane danej klasie. Jest to ogromne ułatwienie, jednak pliki USS nie są pozbawione wad. Pamiętać należy, że mechanizm ten nie jest tak samo dogłębnie rozbudowany co wersja dla stron internetowych i pewne parametry elementów znane z CSSa nie są zaimplementowane w USS. Przykładem są cienie pod elementami, które można zdefiniować w plikach CSS, ale Unity już tekiej opcji nie wspiera.
+            \\
+            
+            \begin{center}
+            \includegraphics[scale=0.35,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_003.png}
+            % 6-tworzenie-ui_003.png: 866x713 px, 72dpi, 30.55x25.15 cm, bb=0 0 866 713
+            \end{center}
+
+            
+            Przykładem w projekcie jest stylowanie przycisku, poprzez zdefiniowanie klasy .button-border, która tworzy różnokolorowe obramowanie wokół przycisku. Klasa ta jest dodawana do każdego elementu, który działa jako przycisk dzięki czemu jego wygląd kojarzy się użytkownikowi z określoną akcją naciśnięcia na niego. Po prawej stronie ekranu widoczna jest lista właściwości które są zmieniane w danej klasie.
             \\
             
         \subsubsection*{Tworzenie ikon i miniatur}
