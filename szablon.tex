@@ -572,7 +572,14 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         \subsubsection{Skrypty}
         
+        
         \subsubsection{Wykonanie projektu}
+        Na wykonanie projektu składać będą się akcje wykonane głównie w edytorze Unity3D, polegać one będą głównie na składaniu stworzonych zasobów ze sobą w jeden działający projekt. Jedną z pierwszych rzeczy, które trzeba będzie zrobić to stworzenie wirtualnego pomieszczenia, które będzie częścią sceny gry.
+        \\
+        
+        Pomieszcenie ma za zadanie stworzyć środowisko, w którym można będzie pokazać panele dekoracyjne z zachowaniem ich skali, oraz zastosowania. Nie musi ono być superrealistyczne, ale być na tyle wiarygodne żeby stanowić dobrą refernecję dla przedstawianego produktu.
+        \\
+        
     
         
 \section{Realizacja projektu}
@@ -821,6 +828,19 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         \subsubsection{Skrypty}       
 
+        \subsubsection{Wykonanie projektu}
+            Pierwszą większą rzeczą wykonaną w edytorze Unity3D będzie stworzenie sceny. Podzielona ona zostanie na grupy obiektów dla zachowania porządku struktury projektu. Wszystkie elementy składające się na pomieszczenie będą przypisane do jednego obiektu, dzięki temu wykonując na nim akcje przemieszczania, obracania i skalowania będą one różnież zmieniały wszystkie obiekty jemu podległe, czyli wszystkie elementy pomieszczenia. Coś podobnego zastosowane będzie do zgrupowania ze sobą obiektów o podobnym przeznaczeniu, przykładem mogą być ściany, albo meble.
+            \\
+            
+            Najpierw tworzymy nową płaską powierzchnię na którą nakładamy teksturę z diagramem przedstawiającym układ wnętrza pokoju oraz rozmieszczenie mebli. Potem skalujemy powierzchnię, aby miała te same proporcje co zdjęcie z teksturą, dzięki temu tekstura zachowa swoje pierwotne proporcje. Powierzchnię z planem używać będziemy jako zdjęcia referencyjnego, na podstawie którego ustwawimy ściany pomieszczenia, meble oraz kolejne punkty dla kamer.
+            \\
+            
+            Następnie importujemy modele do projektu oraz rozpakowywujemy je, następnie z każdego mebla tworzymy prefabrykat, z których będziemy tworzyć pomieszczenie. Zaczynamy od tworzenia ścian pomieszczenia, puste ściany możemy skalować do dowolnej wymaganej szerokości, dzięki temu nie tworzymy niepotrzebnych dodatkowych elementów. Elementy ścian posiadające otwory na okna, nie mogą być skalowane tak łatwo, ale pomieszczenie używa okien o standardowych rozmiarach, więc i one takie pozostaną.
+            \\
+            
+            Gdy ściany pomieszcenia są już na swoim miejscu można rozstawić meble na swoje miejsca. Bardzo pomocny staje się plan pomieszczenie, na którym meble również zostały narysowane, dzięki czemu można rozstawić meble na swoje miejsca, oraz w razie potrzeby nawet w pewnym stopniu przeskalować meble aby bardziej pokrywały się z planem.
+            \\
+        
 
 \section{Wnioski}
 
