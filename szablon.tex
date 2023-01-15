@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{indentfirst}
 
 
 \title{Simple Sample} % Sets article title
@@ -502,18 +503,6 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Wymagane będzie wygenerowanie miniatur przedstawiających palety, będą one zrzutami ekranu pomieszczenia gdzie jego elementy będą posiadały zmienione materiały. Miniatury przedstawiające unikalne sposoby ułożenia paneli oraz ich kształty będą musiały zostać wykonane własnoręcznie.
             \\
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         \subsubsection{Logika programu}
         Gdyby projekt był pisany od podstaw wymagane byłoby napisanie jakieś jego centralnej logiki, w tym przypadku użyty jest silnik do gier komputerowy Unity3D. Dzięki temu podejściu jedyne co trzeba będzie stworzyć to elementy świata gry, interfejs graficzny oraz fragmenty kodu, które będą tę logikę implementować.
         \\
@@ -571,6 +560,46 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         
         \subsubsection{Skrypty}
+        Zadaniem skryptów będzie urozmaicenie martwej i nieruchomej sceny wirtualnego pomieszczenia, dzięki nim będzie można zmieniać wygląd pomieszczenia i paneli, oglądać panele z różnych stron i zmieniać oświetlenie w pomieszczeniu.
+        \\
+        
+        Cała logika programu będzie zaimplementowana za pomocą luźno połączonych ze sobą fragmentów kodu, napisanego w języku C\#. Każdy z nich będzie miał inne zadanie, oraz zostanie przyłączony do odpowiadającego jemu elememtowi wirtualnej sceny, pozwoli to na zachowanie porządku i spójności w projekcie. Każdy z nich będzie realizował jedną z wielu interaktywnych funkcji programu.
+        \\
+        
+        Najważniejszym skryptem będzie skrypt układający panele na ścianie. Ściana interaktywna będzie płaską powierzchnią, do której dodany zostanie skrypt ją implementujący. Na płaską powierzchnię o danych wymiarach nakładane będą w różnych konfiguracjach, panele w trzech podstawowych kształtach: trójkątnym, kwadratowym i sześciokątnym. Maksymalna liczka rzędów i kolumn będzie obliczana na podstawie wymiarów indywidualnej ściany, dzięki czemu różne interaktywne ściany będą mogły mieć różne wymiary. Podczas jej obliczania będą brane pod uwagę rzeczywiste wymiary ściany interaktywnej, wymiary poszeczególnych paneli, oraz marginesy pomiędzy nimi.
+        \\
+        
+        Kolejnym skryptem będzie skrypt odpowiedzialny za poruszanie kamerą, będzie on dołaczony bezpośrednio do obiektu kamery. Będzie on definiował sposób obracania się kamery, oraz jej zachowanie.Kamera będzie zawsze zwrócona w kierunku ściany oraz poruszać się będzie względem ściany, gdzie punktem przyłożenia będzie ściana. Maksymalne kąty wychylenia w każdą ze stron będa ręcznie zdefiniowane dla każdej ze ścian osobno.
+        \\
+        
+        Osobny skrypt będzie on definiował położenie początkowe kamery, oraz możliwe wychylenia kamery. Skrypt ten będzie dołączany do każdej interaktywnej ściany z kolei. Posiadać on będzie informacje na temat możliwego wychylenia kamery, w każdym kierunku osobno, oraz jaka będzie jej minimalna i maksymalna odległość kamery od interaktywnej ściany. 
+        \\
+
+        Zmiana palety pomieszczenie będzie realizowana poprzez dwa różne rodzaje skryptów. Pierwszy będzie służył do zarządzania globalną paletą kolorów, a drugi typ skryptu dołączany do każdego elementu, którego materiały będą się zmieniać zależnie od palety kolorów pomieszczenia. 
+        \\
+
+        Kontroler palety kolorów dołączony będzie do któregoś z głównych obiektów sceny. Będzie on wyszukiwał wszystkie instancje skryptu trzymającego paletę kolorów oraz będzie inicjować funkcję zmiany materiałów.
+        \\
+        
+        Będzie on reprezentował listę materiałów z których wykonany może zostać obiekt, oraz posiadać będzie publiczną funkcję pozwalającą na ustawienie materiału o danym indeksie. Dodatkowo możliwe będzie pokolorowanie danego materiału, co będzie bardzo pomocne w zmianie koloru paneli dekoracyjnych. Paleta kolorów każdego z elementów otoczenie będzie inna, oraz będzie ręcznie stworzona ze stworzonych już materiałów.
+        \\
+        
+        W podobny sposób będzie zrealizowane oświetlenie wirtualnej sceny. Główny kontroler odpowiadający za oświetlenie będzie zarządzał trzema różnymi rodzajami oświetlenia. Pierwsze będzie oświetlenie ogólne, które świeci w jednym kierunku, oraz nie tworzy cieni i stanowić będzie większość oświetlenia sceny. Możliwa będzie zmiana barwy światła na chłodniejszy, lub cieplejszy aby lepiej oddać porę dnia. 
+        \\
+        
+        Drugim rodzajem światła, będzie światło słoneczne. Stworzony będzie obiekt imitujący słońce, świecący chłodnym w swojej barwie światłem, ten typ światła będzie rzucał realistyczne cienie w pomieszczeniu. 
+        \\
+        
+        Ostatnim typem światła będa obiekty, które będa lampami w pomieszczeniu. W każdej lampie będzie umieszczone osobne źródło światła, oraz skrypt pozwalający na kontrolowanie go. Kontroler oświetlenia będzie wyszukiwał wszystkie skrypty lamp oraz zmieniał ich ustawienie wedle potrzeb, traktując wszystkie lampy jako jedno grupowe oświetlenie.
+        \\
+        
+        
+        
+        oraz skrypty które opisywać będą kolejne pozycje do których przenosić się będzie kamera.
+        \\
+        
+        Przewidywane są trzy kształty paneli, trójkąt równoboczny, kwadrat i sześciokąt. Ułożenie każdego z nich odbywać się będzie w podobnej kolejności, ale odkległości oraz algroytm ich ułożenia będzie różnił się zależnie od kształtu, obrotu panela, oraz sposobu ułożenia.
+        \\
         
         
         \subsubsection{Wykonanie projektu}
@@ -579,6 +608,8 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         Pomieszcenie ma za zadanie stworzyć środowisko, w którym można będzie pokazać panele dekoracyjne z zachowaniem ich skali, oraz zastosowania. Nie musi ono być superrealistyczne, ale być na tyle wiarygodne żeby stanowić dobrą refernecję dla przedstawianego produktu.
         \\
+        
+        
         
     
         
@@ -826,7 +857,30 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Narysowanie podstawowych figur geometrycznych w programie do grafiki wektorowej, Inkscape jest trywialne proste, ze względu na wbudowane narzędzie do tworzenia figur równobocznych o zadanej ilości boków. Po narysowaniu kształtu możliwe jest ustawienie koloru i grubości linii, która go tworzy. Na końcu eksportujemy wszystkie figury jako osobne pliki graficzne.
             \\
         
-        \subsubsection{Skrypty}       
+        \subsubsection{Skrypty}    
+            Najważniejszym skryptem w projekcie jest skrypt ustawiający panele na ścianie interaktywnej. Ustawione będa mogły być panele o trzech kształtach: trójkątnym, kwadratowym i sześciokątnym, każdy z nich będzie ustawiany w troche inny sposób, który wymaga trochę innego podejścia. Panele będa mogły być obrócone, a niektóre z nich będa mogły zostać ustawione w siatce, albo w wiąz. 
+            \\
+            
+            Na początku wymagane będzie określenie obliczenie maksymalnej liczby kolumn i rzędów, które zmieszczą się na danej ścianie. Wystarczy podzielić wymiary ściany przez wymiary panelu dodając do niego opcjonalne odstępy pomiędzy nimi. Za pomocą wbudowanych funkcji silnika Unity3d można odczytać rzeczywiste wymiary ściany interaktywnej, oraz panelu który będzie ją pokrywał. Ważne jest wtedy branie pod uwagę sposobu w jaki obrócony ma być panel, bo jego obrót nie jest brany pod uwage podczas liczenia wymiarów modelu trójwymiarowego. Zależnie od wybranego kształtu panelu jego wymiary po obróceniu będą inne, dlatego już na tym etapie trzeba zrobić osobne przypadki dla różnych kształtów oraz różnych ich wariantów obrotu.
+            \\
+            
+            \begin{center}
+                \includegraphics[scale=0.2,keepaspectratio=true]{images/diagrams/panel_tiling_square.png}
+                % panel_tiling_square.png: 1008x183 px, 43dpi, 59.54x10.81 cm, bb=0 0 1688 306
+            \end{center}
+
+            
+            Po obliczeniu wymiarów, można określić wymiary siatki wedle której ustawiane będą panele, bo nie zawsze siatka jest tych samych wymiarów co wymiary panelu. Kwadraty są prostym przykładem, który sie komplikuje kiedy obróci się je o 45 stopni, wtedy muszą one zostać przesunięte w lewo lub prawo o połowę szerokości panelu, a wysokość rzędu wynosi połowę wysokości panelu zamiast jego wysokość.
+            \\
+            
+            
+            \begin{center}
+                \includegraphics[scale=0.3]{images/diagrams/panel_tiling_hexagon.png}
+                % panel_tiling_hexagon.png: 803x214 px, 43dpi, 47.43x12.64 cm, bb=0 0 1344 358
+            \end{center}
+
+            Podobnym przypadkiem są sześciokąty, które zawsze muszą być ustawione naprzemiennie.
+            \\
 
         \subsubsection{Wykonanie projektu}
             Pierwszą większą rzeczą wykonaną w edytorze Unity3D będzie stworzenie sceny. Podzielona ona zostanie na grupy obiektów dla zachowania porządku struktury projektu. Wszystkie elementy składające się na pomieszczenie będą przypisane do jednego obiektu, dzięki temu wykonując na nim akcje przemieszczania, obracania i skalowania będą one różnież zmieniały wszystkie obiekty jemu podległe, czyli wszystkie elementy pomieszczenia. Coś podobnego zastosowane będzie do zgrupowania ze sobą obiektów o podobnym przeznaczeniu, przykładem mogą być ściany, albo meble.
