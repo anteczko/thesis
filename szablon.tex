@@ -4,20 +4,40 @@
 
 \usepackage{amsmath} % \usepackage is a command that allows you to add functionality to your LaTeX code
 \usepackage[a4paper, margin=1in]{geometry}
+\linespread{1.25}
+ \geometry{
+ left=25mm,
+ right=15mm,
+ top=25mm,
+ bottom=25mm,
+ %showframe
+}
 \usepackage{mathptmx}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{indentfirst}
+\usepackage{chngpage}
+\usepackage{calc}
+\usepackage{fancyhdr}
+\renewcommand{\figurename}{Rys.}
+\renewcommand{\contentsname}{Spis treści}
 
+\pagestyle{fancy}% Set default page style to fancy
+\renewcommand{\headrulewidth}{0pt}% Remove header rule
+\fancyhead{}% Remove all header contents
+\fancyhf{}
+\rfoot{\thepage}
 
-\title{Simple Sample} % Sets article title
-\author{My Name} % Sets authors name
+\title{Interaktywny konfigurator wnętrz pomieszczeń z dekoracyjnymi panelami 3D} % Sets article title
+\author{Antoni Malak} % Sets authors name
 \date{\today} % Sets date for date compiled
 
 % The preamble ends with the command \begin{document}
 \begin{document} % All begin commands must be paired with an end command somewhere
+
+\thispagestyle{empty}
 
 \begin{center}
  \Large \textbf{POLITECHNIKA BYDGOSKA} \\
@@ -44,13 +64,13 @@
  \large \textbf{na kierunku Informatyka Stosowana}
 \end{center}
 
-\vspace{3cm}
+\vspace{2cm}
 
 \begin{center}
  \LARGE \textbf{Interaktywny konfigurator wnętrz pomieszczeń z dekoracyjnymi panelami 3D}
 \end{center}
 
-\vspace{3cm}
+\vspace{2cm}
 
 \begin{minipage}{2in}
 Pracę wykonał: \\
@@ -72,20 +92,14 @@ Nr albumu: \\
  Bydgoszcz,
 \end{center}
 
+\pagestyle{fancy}
 
+\begin{adjustwidth}{-\oddsidemargin-1in}{-\rightmargin}
+\centering
+\includegraphics[width=\paperwidth,angle=0.3]{Załączniki/karta_pracy_skan.png}
+\end{adjustwidth}
 \newpage
 
-\hspace{0pt}
-\vfill
-
-\begin{center}
-\Huge Tutaj wstawić kartę pracy
-\end{center}
-
-\vfill
-\hspace{0pt}
-
-\newpage
 
 \section*{Streszczenie}
 Celem pracy jest zaprojektowanie oraz stworzenie interaktywnego konfiguratora elementów wnętrz, a dokładniej ściennych paneli dekoracyjnych. Najpierw opisane będą istniejące już rozwiązania w tym zakresie, a potem zostanie określony zbiór funkcjonalności oraz zakres interaktywności. Wymagane będzie zdefiniowanie i wymodelowanie elementów wnętrza, a następnie zaprojektowanie logiki programu umożliwiającej edycję parametrów tychże elementów.
@@ -119,8 +133,12 @@ Dzięki zaimplementowaniu funkcji interaktywnych w konfiguratorze, możliwe będ
 \\
 
 
-    \subsection{Cel pracy}
-Celem tej pracy dyplomowej jest stworzenie interaktywnej wizualizacji wnętrz, przedstawiającej panele ścienne potencjalnemu klientowi. Możliwy będzie wybór panelu z katalogu, zmiana jego koloru, oraz zdefiniowanie sposobu ich ułożenia. Możliwa będzie również konfiguracja wnętrza, aby klient mógł obejrzeć produkt, przedstawiony we wnętrzu, które przypomina jego własny dom. Do wyboru będą z góry zdefiniowane pomieszczenia, pozwalające na częściowe dostosowywanie ich w kwestii kolorystyki wnętrza, ilości i rozmiaru okien oraz konfiguracji mebli. Ważnym aspektem będzie możliwość osadzenia programu na stronie internetowej, co zwiększy rzeszę potencjalnych klientów.
+\subsection{Cel pracy}
+Celem tej pracy dyplomowej jest stworzenie interaktywnej wizualizacji wnętrz, przedstawiającej panele ścienne potencjalnemu klientowi. 
+\\
+
+\subsection{Wstępne założenia pracy}
+Możliwy będzie wybór panelu z katalogu, zmiana jego koloru, oraz zdefiniowanie sposobu ich ułożenia. Możliwa będzie również konfiguracja wnętrza, aby klient mógł obejrzeć produkt, przedstawiony we wnętrzu, które przypomina jego własny dom. Do wyboru będą z góry zdefiniowane pomieszczenia, pozwalające na częściowe dostosowywanie ich w kwestii kolorystyki wnętrza, ilości i rozmiaru okien oraz konfiguracji mebli. Ważnym aspektem będzie możliwość osadzenia programu na stronie internetowej, co zwiększy rzeszę potencjalnych klientów.
 \\
 
 Przed napisaniem programu, wymagana będzie analiza podstawowych pojęć związanych z tematem, w celu lepszego zrozumienia tematu, oraz precyzyjniejszego nakreślenia zakresu funkcji, które powinien pełnić program. Trzeba będzie przeanalizować i porównać istniejące już rozwiązania, aby nowo powstały program nie powielał błędów swoich poprzedników i starał się inspirować ich mocnymi stronami. Warto byłoby rozłożyć ideę na czynniki pierwsze i zastanowić się nad różnymi ich aspektami, dzieląc te już istniejące na kategorie i porównując je ze sobą.
@@ -132,9 +150,11 @@ Dopiero potem możliwe będzie poprawne zdefiniowanie założeń i zakresu funkc
 Po fazach analizy i projektowania, możliwe będzie przejście do właściwej implementacji projektu, zaczynając od modelowania obiektów trójwymiarowych i wymaganych grafik, poprzez stworzenie interfejsu użytkownika, aż do  zaprogramowania logiki programu, który będzie można osadzić na stronie internetowej.
 \\
 
-
+\newpage
 
 \section{Wstęp teoretyczny}
+    Celem tego rozdziału jest wylistowanie i objaśnienie zagadnień których tyczyć będzie się ta praca inżynierska, ważne jest uprzednie zdefiniowanie pojęć za pomocą, których opisywać będziemy tworzony projekt.
+    \\
    
     \subsection{Wizualizacja}
         Wizualizacja jest obrazową reprezentacją przedmiotu, procesu lub stanu. Dawniej odnosiło się to do obrazu, albo procesu jego tworzenia, w ludzkiej wyobraźni. Obraz ten istniał jedynie w naszej głowie, by przedstawić go komuś innemu wymagane było nakreślenie jego na jakimś medium, co wymagało dużych umiejętności i środków. Cała gałąź sztuki polega właśnie na doskonaleniu tego wymagającego procesu.
@@ -263,7 +283,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         
         
-    \subsection{Konfigurator}
+    \subsection{Interaktywny konfigurator produktu}
         Konfigurator, dawniej nazywany konfiguratorem produktu, jest narzędziem do tworzenia unikalnej konfiguracji produktu posiadającego wiele opcji konifguracyjnych. Produkty te posiadają wiele opcji wyboru, niektóre opcjonalne, inne wymagane, a inne wykluczające się nawzajem. Pozwala on na dogłębne dobranie i skonfigurowanie produktu, odpowiadającego klientowi, gdzie efektem końcowym jest gotowa konfiguracja, kompatybilna z systemem. Może on być przeznaczony dla samego klienta, albo być narzędziem wprowadzania dla pracownika jego obsługującego. Ma on na celu oddelegowanie zadania tworzenia konfiguracji z pracownika, na program komputerowy i samego klienta.
         \\
         
@@ -324,14 +344,14 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Tapety mogą mieć różne kolory i wzory, dzięki ich różnorodności mogą w duży stopniu zmienić sposób w jaki postrzegane jest pomieszczenie. Jaśniejsze kolory wizualnie powiększają pomieszczenie, a ciemniejsze je zmniejszają. Pionowe wzory sprawiają, że pomieszczenie wydaje się być wyższe, a poziome poszerzają je. Dodatkowo mogą one posiadać wytłoczenia, oraz własną teksturę, w ten sposób podkreślając swój wzór, albo używając jednolitego koloru, oraz swojego własnego wytłoczenia jako subtelnego wzoru. 
         \\
         
-        \subsubsection{Wygłuszające}
+        \subsubsection{Panele wygłuszające}
         Wytłumianie pomieszczenia polega na zmniejszaniu echa w pomieszczeniu poprzez pokrywanie jego ścian izolatorami akustycznymi. Jest to materiał, który dzięki swoim właściwościom, zapobiega niepożądanemu przenikaniu dźwięków oraz odbijaniu ich tworząc echo. Zależnie od zastosowania materiały te mogą być umieszczone wewnątrz ścian budynku, albo na wewnętrznej stronie ścian pomieszczenia. Umieszczenie ich wewnątrz ograniczy przedostawanie się dźwięków z wnętrza pomieszczenia do zewnątrz i na odwrót, a umieszczenie ich na wewnętrznej stronie ścian, efektywniej zmniejszy echo wewnątrz pomieszczenia.
         \\
         
         Izolatory akustyczne mogą występować w różnych formach. Jeżeli jego grubość na to pozwala, może to być giętki materiał sprzedawany w rolkach, który można przyklejać do ścian jak tapetę. Wariant o większej grubości jest sprzedawany w formie jednakowych paneli na ścianę, które posiadają falowane wyżłobienia polepszające ich właściwości tłumiące. Są one czasami sprzedawane w różnych wariantach kolorystycznych oraz pozwalają na tworzenie kolorowych wzorów na ścianę. Ostatnim typem są struktury tłumiące takie jak pułapki dźwiękowe, są to zazwyczaj pudła o różnych wymiarach, zazwyczaj wykonane z drewna z odpowiednio wywierconymi dziurami i szczelinami. Pełnią one rolę odwrotną do pudła rezonansowego, łapiąc i wytłumiając całkowicie dźwięki.
         \\
         
-        \subsubsection{Dekoracyjne}
+        \subsubsection{Panele dekoracyjne}
         Inną funkcją jaką mogą pełnić panele ścienne jest dekoracja wnętrza, ich zadaniem jest przełamanie monotonii dużych jednolitych ścian w pomieszczeniu. Dodatkowo, są one mniej inwazyjne dla ściany niż tapeta lub glazura, której tak łatwo nie można wymienić na nową. Rozwój technologii i materiałoznawstwa pozwala obecnie na tworzenie klejów i mocowań wystarczająco mocnych na przytwierdzanie paneli do ściany, bez wiercenia dziur w ścianie, ani zostawiania śladów kleju na niej.
         \\
         
@@ -349,7 +369,12 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Konfigurator może w inteligentny sposób przejąć niektóre funkcje informacyjne strony, albo przedstawić je w bardziej przystępny sposób. Dotychczas katalog produktów przedstawiany był w formie listy lub broszury ze zdjęciami produktu, jako coś statycznego. Dzięki interaktywnemu podejściu do problemu, można w bardziej przystępny sposób przedstawić zakres świadczonych usług, przedstawić poszczególne produkty, oraz pozwolić na dostosowanie go do własnych potrzeb.
         \\
         
+    \newpage
+        
 \section{Analiza i założenia projektu}
+    Przez implementacją programu należy rozplanować jego wszystkie aspekty, zaczynając od spraw najbardziej ogólnych do rzeczy bardziej szczegółowych. Należy zdefiniować wymagania, które ma on spełniać, oraz zakres funkcji które będzie on implementował. Im bardziej szczegółowo zostanie to rozpisane, tym mniej zostawione zostanie miejsca na niedopowiedzenia i potencjalne błędy logiczne.
+    \\
+    
     \subsection{Wymagania sprzętowe}
         Ważnym aspektem programu jest dotarcie do jak największej grupy odbiorców, dlatego program powinien być dostępny oraz osiągalny dla jak największej liczby potencjalnych klientów. Jest wiele czynników, które mogą ograniczać dostęp, a jednym z nich są wymagania sprzętowe urządzenia klienta. Zakres urządzeń których mógłby używać klient jest bardzo obszerny, ale można założyć że program powinien płynnie pracować na komputerach biurowych ze zintegrowaną kratą graficzną oraz smartfonami z niskiej półki cenowej.
         \\
@@ -563,13 +588,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Zadaniem skryptów będzie urozmaicenie martwej i nieruchomej sceny wirtualnego pomieszczenia, dzięki nim będzie można zmieniać wygląd pomieszczenia i paneli, oglądać panele z różnych stron i zmieniać oświetlenie w pomieszczeniu.
         \\
         
-        Cała logika programu będzie zaimplementowana za pomocą luźno połączonych ze sobą fragmentów kodu, napisanego w języku C\#. Każdy z nich będzie miał inne zadanie, oraz zostanie przyłączony do odpowiadającego jemu elememtowi wirtualnej sceny, pozwoli to na zachowanie porządku i spójności w projekcie. Każdy z nich będzie realizował jedną z wielu interaktywnych funkcji programu.
+        Cała logika programu będzie zaimplementowana za pomocą luźno połączonych ze sobą fragmentów kodu, napisanego w języku C\#. Każdy z nich będzie miał inne zadanie, oraz zostanie przyłączony do odpowiadającego jemu elementowi wirtualnej sceny, pozwoli to na zachowanie porządku i spójności w projekcie. Każdy z nich będzie realizował jedną z wielu interaktywnych funkcji programu.
         \\
         
-        Najważniejszym skryptem będzie skrypt układający panele na ścianie. Ściana interaktywna będzie płaską powierzchnią, do której dodany zostanie skrypt ją implementujący. Na płaską powierzchnię o danych wymiarach nakładane będą w różnych konfiguracjach, panele w trzech podstawowych kształtach: trójkątnym, kwadratowym i sześciokątnym. Maksymalna liczka rzędów i kolumn będzie obliczana na podstawie wymiarów indywidualnej ściany, dzięki czemu różne interaktywne ściany będą mogły mieć różne wymiary. Podczas jej obliczania będą brane pod uwagę rzeczywiste wymiary ściany interaktywnej, wymiary poszeczególnych paneli, oraz marginesy pomiędzy nimi.
+        Najważniejszym skryptem będzie skrypt układający panele na ścianie. Ściana interaktywna będzie płaską powierzchnią, do której dodany zostanie skrypt ją implementujący. Na płaską powierzchnię o danych wymiarach nakładane będą w różnych konfiguracjach, panele w trzech podstawowych kształtach: trójkątnym, kwadratowym i sześciokątnym. Maksymalna liczka rzędów i kolumn będzie obliczana na podstawie wymiarów indywidualnej ściany, dzięki czemu różne interaktywne ściany będą mogły mieć różne wymiary. Podczas jej obliczania będą brane pod uwagę rzeczywiste wymiary ściany interaktywnej, wymiary poszczególnych paneli, oraz marginesy pomiędzy nimi.
         \\
         
-        Kolejnym skryptem będzie skrypt odpowiedzialny za poruszanie kamerą, będzie on dołaczony bezpośrednio do obiektu kamery. Będzie on definiował sposób obracania się kamery, oraz jej zachowanie.Kamera będzie zawsze zwrócona w kierunku ściany oraz poruszać się będzie względem ściany, gdzie punktem przyłożenia będzie ściana. Maksymalne kąty wychylenia w każdą ze stron będa ręcznie zdefiniowane dla każdej ze ścian osobno.
+        Kolejnym skryptem będzie skrypt odpowiedzialny za poruszanie kamerą, będzie on dołączony bezpośrednio do obiektu kamery. Będzie on definiował sposób obracania się kamery, oraz jej zachowanie.Kamera będzie zawsze zwrócona w kierunku ściany oraz poruszać się będzie względem ściany, gdzie punktem przyłożenia będzie ściana. Maksymalne kąty wychylenia w każdą ze stron będą ręcznie zdefiniowane dla każdej ze ścian osobno.
         \\
         
         Osobny skrypt będzie on definiował położenie początkowe kamery, oraz możliwe wychylenia kamery. Skrypt ten będzie dołączany do każdej interaktywnej ściany z kolei. Posiadać on będzie informacje na temat możliwego wychylenia kamery, w każdym kierunku osobno, oraz jaka będzie jej minimalna i maksymalna odległość kamery od interaktywnej ściany. 
@@ -587,18 +612,10 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         W podobny sposób będzie zrealizowane oświetlenie wirtualnej sceny. Główny kontroler odpowiadający za oświetlenie będzie zarządzał trzema różnymi rodzajami oświetlenia. Pierwsze będzie oświetlenie ogólne, które świeci w jednym kierunku, oraz nie tworzy cieni i stanowić będzie większość oświetlenia sceny. Możliwa będzie zmiana barwy światła na chłodniejszy, lub cieplejszy aby lepiej oddać porę dnia. 
         \\
         
-        Drugim rodzajem światła, będzie światło słoneczne. Stworzony będzie obiekt imitujący słońce, świecący chłodnym w swojej barwie światłem, ten typ światła będzie rzucał realistyczne cienie w pomieszczeniu. 
+        Drugim rodzajem światła, będzie światło słoneczne. Stworzony będzie obiekt imitujący słońce, świecący chłodnym w swojej barwie światłem, ten typ światła będzie rzucał realistyczne cienie w pomieszczeniu wpadające przez okna. 
         \\
         
-        Ostatnim typem światła będa obiekty, które będa lampami w pomieszczeniu. W każdej lampie będzie umieszczone osobne źródło światła, oraz skrypt pozwalający na kontrolowanie go. Kontroler oświetlenia będzie wyszukiwał wszystkie skrypty lamp oraz zmieniał ich ustawienie wedle potrzeb, traktując wszystkie lampy jako jedno grupowe oświetlenie.
-        \\
-        
-        
-        
-        oraz skrypty które opisywać będą kolejne pozycje do których przenosić się będzie kamera.
-        \\
-        
-        Przewidywane są trzy kształty paneli, trójkąt równoboczny, kwadrat i sześciokąt. Ułożenie każdego z nich odbywać się będzie w podobnej kolejności, ale odkległości oraz algroytm ich ułożenia będzie różnił się zależnie od kształtu, obrotu panela, oraz sposobu ułożenia.
+        Ostatnim typem światła będą obiekty, które będą lampami w pomieszczeniu. W każdej lampie będzie umieszczone osobne źródło światła, oraz skrypt pozwalający na kontrolowanie go. Kontroler oświetlenia będzie wyszukiwał wszystkie skrypty lamp oraz zmieniał ich ustawienie wedle potrzeb, traktując wszystkie lampy jako jedno grupowe oświetlenie.
         \\
         
         
@@ -606,16 +623,16 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Na wykonanie projektu składać będą się akcje wykonane głównie w edytorze Unity3D, polegać one będą głównie na składaniu stworzonych zasobów ze sobą w jeden działający projekt. Jedną z pierwszych rzeczy, które trzeba będzie zrobić to stworzenie wirtualnego pomieszczenia, które będzie częścią sceny gry.
         \\
         
-        Pomieszcenie ma za zadanie stworzyć środowisko, w którym można będzie pokazać panele dekoracyjne z zachowaniem ich skali, oraz zastosowania. Nie musi ono być superrealistyczne, ale być na tyle wiarygodne żeby stanowić dobrą refernecję dla przedstawianego produktu.
+        Pomieszczenie ma za zadanie stworzyć środowisko, w którym można będzie pokazać panele dekoracyjne z zachowaniem ich skali, oraz zastosowania. Nie musi ono być superrealistyczne, ale być na tyle wiarygodne żeby stanowić dobrą refernecję dla przedstawianego produktu.
         \\
         
         
         
-    
+\newpage
         
 \section{Realizacja projektu}
-    \subsection{Rozplanowanie projektu}
-    
+    Po rozplanowaniu projektu można przejść do jego realizacji. Przed przystąpieniem do zaprogramowania logiki, wymagane będzie stworzenie grafki i modeli, które tworzyć będą wirtualną scenę. Żeby wirtualne pomieszczenie było wiarygodne, musi ono być dokładnym odwzorowaniem istniejącego pomieszczenia.
+    \\
     
     \subsection{Rozplanowanie scen i pomieszczeń}
         Jednym z głównych zadań wizualizacji jest prezentacja produktu w naturalnym dla niego otoczeniu, dlatego ważne jest aby zaprojektować pomieszczenia, które będą wyglądać lepiej dzięki powieszeniu paneli na ścianach. Celem tych paneli jest ozdobienie i przełamanie monotonii dużych pustych ścian danego pomieszczenia, dlatego prezentowane pomieszczenie powinno posiadać dużą pustą ścianę. Ściana nie musi być całkowicie wyeksponowana, przy niej mogą stać meble, ale nie powinny one być zbyt wysokie, dlatego panele pasowałyby również nad łóżkiem w sypialni. Pomieszczenie musi posiadać dużą nieprzerwaną ścianę, zazwyczaj salon jest największym pokojem w mieszkaniu, ale korytarze też mogą posiadać długie i monotonne powierzchnie.
@@ -627,39 +644,17 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Zaprojektowanie pomieszczeń pozwoli na określenie ilości i umiejscowienia interaktywnych ścian pomieszczenia, rozplanowanie rozmieszczeń kamery oraz jej kadrowanie. Ważnym aspektem jest też rozplanowanie naturalnego i sztucznego oświetlenia w pomieszczeniu co odbywa się poprzez rozmieszczenie okien, lamp i żyrandoli. Po wstępnym zaprojektowaniu pomieszczeń, wiadoma będzie liczba i rodzaj mebli, które będą potrzebne do jego odtworzenia i umeblowania pomieszczenia za pomocą modeli trójwymiarowych. Dopiero wtedy można przejść do kolejnego punktu, którym jest wykonanie listy wymaganych modeli, oraz wymodelowanie ich. Dodatkowo, gotowy plan pomieszczenia ułatwi odwzorowanie go w silniku Unity3D.
         \\
         
-        \subsubsection{Plany pomieszczeń}
-        Poniżej przedstawione są plany pomieszczeń, które mogą znaleźć się w projekcie. Rozplanowanie pomieszczenia pozwoli na określenie miejsc w do których będzie przenosić się kamera, oraz jaki kadr będzie ona obejmować. Na rysunku punkty oznaczają miejsca ustawienia wirtualnej kamery, a kolorowy trójkąt oznacza pole widzenia kamery, które na rysunku wynosi 60 stopni, co jest domyślnym ustawieniem kamery w Unity3D
+        \subsubsection{Plan pomieszczenia}
+        Poniżej przedstawiony jest plan pomieszczenia, które ma znaleźć się w projekcie. Rozplanowanie pomieszczenia pozwoli na określenie miejsc w do których będzie przenosić się kamera, oraz jaki kadr będzie ona obejmować. Na rysunku punkty oznaczają miejsca ustawienia wirtualnej kamery, a kolorowy trójkąt oznacza pole widzenia kamery, które na rysunku wynosi 60 stopni, co jest domyślnym ustawieniem kamery w Unity3D
         \\
         
-        Pierwsze z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. Dzięki jednej dużej przestrzeni w planie mieszkania, jedno pomieszczenie jest w stanie pokazać produkt w paru różniących się od siebie otoczeniach, w salonie, jadalni, kuchni i korytarzu. 
+        Pomieszczenie z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. Dzięki jednej dużej przestrzeni w planie mieszkania, jedno pomieszczenie jest w stanie pokazać produkt w paru różniących się od siebie otoczeniach, w salonie, jadalni, kuchni i korytarzu. 
         \\
         \begin{center}
             \includegraphics[scale=0.5]{images/diagrams/big_salon.jpeg}
             % big_salon.jpeg: 640x455 px, 72dpi, 22.58x16.05 cm, bb=0 0 640 455
         \end{center}
         
-        
-        Kolejny plan jest małą kawalerką. Modelowanie niewidocznych pomieszczeń i ich umeblowania nie jest wymagane, w tym przypadku łazienka nie będzie widoczna do wglądu, a jej drzwi będą zamknięte. Salon jest oświetlony naturalnym światłem, ale kuchnia wymaga dodatkowego, sztucznego światła.
-        \\
-        \begin{center}
-            \includegraphics[scale=0.5]{images/diagrams/kawalerka.jpeg}
-            % kawalerka.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
-        \end{center}
-
-        Zależnie od ilości okien ilość światła naturalnego będzie większa lub mniejsza. W przypadku tego pokoju ilość światła słonecznego jest największa ze wszystkich przykładów. Otwartość przestrzeni pozwala na użycie mniejszej ilości sztucznych źródeł światła.
-        \\
-        \begin{center}
-            \includegraphics[scale=0.5]{images/diagrams/kawalerka2.jpeg}
-            % kawalerka2.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
-        \end{center}
-        
-        
-        Jest to dosyć małe i ciasne mieszkanie, może być wymagane zmienienie ustawień wirtualnej kamery, poprzez zwiększenie kąta jej widzenia. Mała ilość naturalnego światła musi zostać zrekompensowana poprzez większą ilość sztucznego światła.
-        \\
-        \begin{center}
-            \includegraphics[scale=0.5]{images/diagrams/kawalerka3.jpeg}
-            % kawalerka3.jpeg: 601x640 px, 72dpi, 21.20x22.58 cm, bb=0 0 601 640
-        \end{center}
         
     \subsection{Modelowanie elementów 3d}
         Proste kształty i modele trójwymiarowe można modelować bez technicznych rysunków i planów, takimi modelami będą ściany, które będą prostymi powierzchniami, z opcjonalnymi wnękami i otworami na wstawienie okien lub drzwi. Jedyną rzeczą o której trzeba pamiętać jest zachowanie jednakowej skali oraz proporcji. Podłoga i sufit będzie jeszcze prostsza do wymodelowania, gdyż będzie ona jedynie płaską powierzchnią. Posiadać ona będzie teksturę która urozmaici monotonną powierzchnię.    Bardziej wymagające do wymodelowania będą meble, które posiadają bardziej skomplikowane kształty, teksturę oraz materiały. 
@@ -669,18 +664,21 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Pierwszymi elementami do wymodelowania będą części składające się na pomieszczenie: ściany, podłogi i sufity. Należy je zaprojektować i wymodelować w taki sposób aby możliwe byłoby proste ich rozciąganie, aby zmniejszyć ilość modeli użytych w projekcie. Dodatkowo wydzielić można parę gotowych segmentów, z których można będzie zbudować większość pomieszczeń, będą nimi: pusta ściana, ściana z otworem na drzwi, ścina z otworem na okno, oraz ściana z wnęką pod grzejnik i otworem na okno. Wbrew pozorom z tych gotowych części będzie można złożyć większość podstawowych pomieszczeń. Ważne aby wszystkie modele w projekcie były wymodelowane w tej samej skali, a wymodelowane segmenty ścian powinny przestrzegać podstawowych zasad i wymiarów, którymi kierują się architekci podczas projektowania budynków. Stworzenie niewymiarowych ścian burzyło by immersję użytkownika.
             \\
             
-            <opisz proces modelowania ścian>
-            \\
+            
+            \begin{figure}
+            \centering
+            \includegraphics[scale=0.3]{images/screenshots/work/work.png}
+            % work.png: 1105x725 px, 72dpi, 38.98x25.58 cm, bb=0 0 1105 725
+            \caption{Modele segmentów ścian}
+            \label{Tab.}
+            \end{figure}
+
+
             
             Moduły ścian będą najprostszymi do wymodelowania częściami ze względu na swoją prostą budowę. Będą one miały jednakowe wymiary: szerokość 1-go metra i wysokość 2,5 metra. Pusta ściana będzie jednolitą pionową powierzchnią o określonych wymiarach. Wariant z otworem na drzwi, posiadać będzie fragment ściany nad drzwiami, oraz ściany w które wstawiać będzie się drzwi. Ściana z otworem na okna będzie posiadać wariant uproszczony jedynie z otworem na okno na odpowiedniej wysokości, albo posiadać będzie również wnękę na grzejnik, pod otworem na wstawienie okna.
             \\
             
             Przed wyeksportowaniem modelu trzeba pamiętać o pewnych mniej oczywistych zawiłościach, jedną z nich jest sposób w jaki różne silniki graficzne interpretują modele. Domyślnie w programie blender każda ściana ma dwie strony, tą która jest widoczna, oraz druga która jest całkowicie nie widoczna, pozwala to na nie renderowanie niewidocznych ścian w projekcie. Program blender zawsze pokazuje każdą ścianę z obu stron, ale nie jest to prawdą dla silnika Unity, przez co niektóre ściany modelu mogą być nie widoczne z pewnych stron. Możliwe jest włączenie specjalnego trybu pokazującego które ściany będą widoczne oraz ustawienie ich w taki sposób, aby ściany były widoczne z odpowiedniej strony.
-            \\
-            
-            Wykonane segmenty ścian są bardzo proste w swojej budowie i prezentują się następująco.
-            \\
-            <wstaw zdjęcie segmentów ścian>
             \\
             
         \subsubsection{Modelowanie listw ściennych}
@@ -691,9 +689,6 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
             Najpierw trzeba ustawić odpowiednio punkt przyłożenia modelu, aby jego ustawienie było jednakowe z ustawieniem go w modelach ścian. Następnie można wymodelować przekrój listwy, odrysowywując kolejne punkty wedle rysunku poglądowego. Powstały zarys przekroju należy potem rozciągnąć go do końcowej długości listwy. W tym przypadku będzie to standardowa długość dla modułów ścian czyli 1. metr szerokości. Każda listwa posiadać będzie dwa warianty modelu, listwy przycięte prostopadle, oraz pod kątem 45-ciu stopni. Pozwoli to na tworzenie kątów i krawędzi ścian z idealnie schodzącymi się listwami.
-            \\
-            
-            <wstaw rysunek>
             \\
             
             W taki sam sposób modelowane są listwy podsufitowe czasami nazywane sztukateriami. Różnicami będzie przesunięty punkt centralny modelu gdyż siatka będzie miała 1 metr a sufit będzie ustawiony na wysokości 2,5 metra. Kolejną różnicą będą dostępne wersje kolorystyczne z uwagi na różnice w materiałach zazwyczaj używanych do ich wykonania. Listwy przypodłogowe wykonywane są z drewna albo plastiku i mają albo teksturę drewna, albo jednolity kolor. Drewniane sztukaterie nie są już spotykane we współczesnych wnętrzach, ale były wykorzystywane w dawnych czasach kiedy ściany również zdobiono drewnianymi panelami. Dlatego sztukaterie nie będą posiadać tekstury, lecz jednolity zazwyczaj jasny kolor.
@@ -732,7 +727,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
             \begin{center}
-            \includegraphics[scale=0.25,keepaspectratio=true]{images/screenshots/work/5-modelowanie-mebli_004.png}
+            \includegraphics[scale=0.28,keepaspectratio=true]{images/screenshots/work/5-modelowanie-mebli_004.png}
             % 5-modelowanie-mebli_004.png: 1580x948 px, 72dpi, 55.74x33.44 cm, bb=0 0 1580 948
             \end{center}
             
@@ -772,7 +767,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Kolejną częścią są mapy wypukłości, są one specjalnym obrazem, przedstawiającym ostre krawędzie i nierówności w teksturze. Interpretowana jest ona w specjalny sposób przez silnik graficzny, zmienia się ona pod różnymi kątami padania światła. Nawet jeżeli nałożymy mapę wysokości na całkowicie płaską powierzchnię, mapa wypukłości będzie zmieniać się wraz z kierunkiem oświetlenia dając iluzję wypukłości materiału.
             \\
             
-            Mapa wysokości jest czarno-białym obrazem, w którym jasność piksela odpowiada jego wysokości. Dzięki temu materiał może posiadać iluzję różnych stopnii głębokości, nawet jeżeli obiekt jest całkowicie płaski. W projekcie niektóre materiały posiadają osobny obraz odpowiadający okluzji otoczenia (ambient coclusion). Jest to sposób na imitowanie uproszczonego cieniowania obiektów w scenie.
+            Mapa wysokości jest czarno-białym obrazem, w którym jasność piksela odpowiada jego wysokości. Dzięki temu materiał może posiadać iluzję różnych stopni głębokości, nawet jeżeli obiekt jest całkowicie płaski. W projekcie niektóre materiały posiadają osobny obraz odpowiadający okluzji otoczenia (ambient oclusion). Jest to sposób na imitowanie uproszczonego cieniowania obiektów w scenie.
             \\
             
             
@@ -787,6 +782,8 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
 
             
     \subsection{Projektowanie i programowanie logiki programu}
+        Po stworzeniu wszystkich statycznych elementów, można zacząć składać projekt w całość oraz dodać do niego logikę, która sprawi, że możliwe będzie jego użycie i działanie.
+        \\
     
         \subsubsection{Interfejs użytkownika}
             Po wypisaniu wszystkich planowanych funkcjonalności i określeniu listy kolejnych kroków, przez które przechodzić będzie użytkownik, można zacząć projektować graficzny interfejs użytkownika. Układ i jego plan można rozrysować za pomocą różnych narzędzi. Można rozrysować jego plany na kartce papieru, za pomocą tekstu czy rysunku, ale można też użyć bardziej nowoczesnych narzędzi.
@@ -857,11 +854,18 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Narysowanie podstawowych figur geometrycznych w programie do grafiki wektorowej, Inkscape jest trywialne proste, ze względu na wbudowane narzędzie do tworzenia figur równobocznych o zadanej ilości boków. Po narysowaniu kształtu możliwe jest ustawienie koloru i grubości linii, która go tworzy. Na końcu eksportujemy wszystkie figury jako osobne pliki graficzne.
             \\
         
-        \subsubsection{Skrypty}    
-            Najważniejszym skryptem w projekcie jest skrypt ustawiający panele na ścianie interaktywnej. Ustawione będa mogły być panele o trzech kształtach: trójkątnym, kwadratowym i sześciokątnym, każdy z nich będzie ustawiany w troche inny sposób, który wymaga trochę innego podejścia. Panele będa mogły być obrócone, a niektóre z nich będa mogły zostać ustawione w siatce, albo w wiąz. 
+        \subsubsection{Skrypty implementujące logikę programu}
+            Logika programu jest podzielona na parę skryptów, gdzie każdy z nich realizować będzie inną funkcjonalność. 
+            
+            
+        \subsubsection*{Pisanie skryptu ściany interaktynwej}
+            Najważniejszym skryptem w projekcie jest skrypt ustawiający panele na ścianie interaktywnej. Ustawione będą mogły być panele o trzech kształtach: trójkątnym, kwadratowym i sześciokątnym, każdy z nich będzie ustawiany w trochę inny sposób, który wymaga trochę innego podejścia. Panele będą mogły być obrócone, a niektóre z nich będą mogły zostać ustawione w siatce, albo w wiąz. 
             \\
             
-            Na początku wymagane będzie określenie obliczenie maksymalnej liczby kolumn i rzędów, które zmieszczą się na danej ścianie. Wystarczy podzielić wymiary ściany przez wymiary panelu dodając do niego opcjonalne odstępy pomiędzy nimi. Za pomocą wbudowanych funkcji silnika Unity3d można odczytać rzeczywiste wymiary ściany interaktywnej, oraz panelu który będzie ją pokrywał. Ważne jest wtedy branie pod uwagę sposobu w jaki obrócony ma być panel, bo jego obrót nie jest brany pod uwage podczas liczenia wymiarów modelu trójwymiarowego. Zależnie od wybranego kształtu panelu jego wymiary po obróceniu będą inne, dlatego już na tym etapie trzeba zrobić osobne przypadki dla różnych kształtów oraz różnych ich wariantów obrotu.
+            Ściana interaktywna będzie obiektem posiadającym płaską powierzchnię o skończonych wymiarach. Skrypt ten będzie dołączany do niej, oraz implementować będzie funkcjonalność nakładania na nią paneli wedle zadanych parametrów. Sama powierzchnia będzie niewidoczna, a cały obiekt ściany interaktywnej będzie ustawiany na ścianach pomieszczenia.
+            \\
+            
+            Na początku wymagane będzie określenie obliczenie maksymalnej liczby kolumn i rzędów, które zmieszczą się na danej ścianie. Wystarczy podzielić wymiary ściany przez wymiary panelu dodając do niego opcjonalne odstępy pomiędzy nimi. Za pomocą wbudowanych funkcji silnika Unity3d można odczytać rzeczywiste wymiary ściany interaktywnej, oraz panelu który będzie ją pokrywał. Ważne jest wtedy branie pod uwagę sposobu w jaki obrócony ma być panel, bo jego obrót nie jest brany pod uwagę podczas liczenia wymiarów modelu trójwymiarowego. Zależnie od wybranego kształtu panelu jego wymiary po obróceniu będą inne, dlatego już na tym etapie trzeba zrobić osobne przypadki dla różnych kształtów oraz różnych ich wariantów obrotu.
             \\
             
             \begin{center}
@@ -870,20 +874,146 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \end{center}
 
             
-            Po obliczeniu wymiarów, można określić wymiary siatki wedle której ustawiane będą panele, bo nie zawsze siatka jest tych samych wymiarów co wymiary panelu. Kwadraty są prostym przykładem, który sie komplikuje kiedy obróci się je o 45 stopni, wtedy muszą one zostać przesunięte w lewo lub prawo o połowę szerokości panelu, a wysokość rzędu wynosi połowę wysokości panelu zamiast jego wysokość.
+            Po obliczeniu wymiarów, można określić wymiary siatki wedle której ustawiane będą panele, bo nie zawsze siatka jest tych samych wymiarów co wymiary panelu. Kwadraty są prostym przykładem, który sie komplikuje kiedy obróci się je o 45 stopni, wtedy wysokość siatki zmniejsza się o połowę, gdyż panele zaczynają się przeplatać ze sobą.
             \\
             
+            Dodatkową zmianą jest fakt, że panele nie zawsze są poustawiane jeden pod drugim. W przypadku zerowej rotacji kwadratu jest to styl ułożenia w wiąz, a w przypadku panelu obróconego o 45 stopni jest to jedyny sposób na ułożenie ich.
+            \\
             
             \begin{center}
                 \includegraphics[scale=0.3]{images/diagrams/panel_tiling_hexagon.png}
                 % panel_tiling_hexagon.png: 803x214 px, 43dpi, 47.43x12.64 cm, bb=0 0 1344 358
             \end{center}
-
-            Podobnym przypadkiem są sześciokąty, które zawsze muszą być ustawione naprzemiennie.
+            
+            Podobnym przypadkiem są sześciokąty, które zawsze muszą być ustawione naprzemiennie, dodatkowo wymiary siatki różnią się od kształtu panelu, tak jest również w przypadku sześciokąta. Normalnie szerokość siatki jest równa szerokości panelu, a jej wysokość trzecich ósmych jego wysokości ze względu na przeplatanie się ze sobą paneli z kolejnych rzędów. Po obróceniu sześciokąta, szerokość siatki robi się większa od szerokości panelu, po obróceniu.
             \\
+            
+            \begin{center}
+                \includegraphics[scale=0.25]{images/diagrams/panel_tiling_triangles.png}
+                % panel_tiling_triangles.png: 1110x186 px, 43dpi, 65.56x10.99 cm, bb=0 0 1859 311
+            \end{center}
+
+            Najbardziej skomplikowane jest ułożenie paneli o kształcie trójkąta równobocznego. Każdy następny panel musi być obrócony o 180 stopni wobec poprzedniego, a szerokość siatki jest połową szerokości panelu. W przypadku obróconego panelu, obrót o 180 stopni tyczy się co drugiego rzędu.  
+            \\
+            
+            Panele są ustawiane od lewej do prawej, rzędami od góry do dołu. Najpierw wybierana jest początkowa pozycja ściany interaktywnej, która jest jej środkiem. Potem na podstawie wymiarów panelu, liczby rzędów i kolumn i odstępów pomiędzy nimi, obliczany jest punkt początkowy. Następnie w zagnieżdżonej pętli ustawiane są panele, wedle rzędów i kolumn. Tworzenie panelu odbywa się poprzez budowaną w silnik Unity3d funkcję 'Instantiate', która tworzy nową instancję obiektu z podanego prefabrykatu w podanej przez nas pozycji i obrocie. Dla zachowania porządku wszystkie stworzone panele są dziećmi pustego elementu o nazwie 'panels', ułatwi to potem usunięcie ich wszystkich jednocześnie i stworzenie ich na nowo.
+            \\
+            
+            \begin{center}
+            \includegraphics[scale=0.7]{images/screenshots/code/code_000.png}
+            % code.png: 716x908 px, 72dpi, 25.26x32.03 cm, bb=0 0 716 908
+            \end{center}
+
+            
+            Kiedy chcemy zmienić sposób ułożenia paneli, najpierw parametry ustawienia paneli są zmieniane, uruchamiana jest funkcja, która usuwa obiekt 'panels', wraz ze wszystkimi panelami. Następnie należy obliczyć na nowo wartości wymaganych zmiennych, a dopiero potem można ponownie uruchomić funkcję ustawiającą panele na swoich miejscach.
+            \\
+            
+            Stworzone zostały funkcje pozwalające na zmianę: kształtu panelu, rotacji panelu, sposobu ułożenia, szerokości i wysokości odstępów i liczby kolumn i rzędów. Każda z nich oprócz nadpisywania parametrów, usuwa panele na danej ścianie i buduje je na nowo z uwzględnieniem nowej wartości parametru. Funkcje te będą bezpośrednio uruchamiane przez interfejs użytkownika.
+            \\
+            
+        \subsubsection*{Pisanie skryptu dla kamery, oraz punktów obserwacji}
+            Ustawienie kamery w wirtualnej scenie będzie kluczowe dla odpowiedniego pokazania wizualizacji, dlatego jej ustawienie jest tak ważne. Kamera będzie zawsze skierowana w kierunku aktualnie edytowanej ściany, możliwe będzie przybliżanie i oddalanie, oraz przemieszczanie jej w ustalonym zakresie. Przybliżanie i oddalanie widoku odbywa się poprzez zmniejszanie i zwiększanie odległości od ściany, a poruszanie kamerą, odbywa się poprzez obrót kamery, względem ściany, gdzie punktem przyłożenia tego obrotu jest środek obserwowanej ściany.  Poprzez przyciśnięcie przycisku myszy i poruszenie kursora poruszana będzie kamera, która cały czas zwrócona będzie w kierunku ściany. Oddalanie i przybliżanie kamery będzie przypisane do kółka myszki.
+            \\
+            
+        
+            \begin{center}
+                \includegraphics[scale=0.6,keepaspectratio=true]{images/screenshots/code/code_001.png}
+                % code_001.png: 894x638 px, 72dpi, 31.54x22.51 cm, bb=0 0 894 638
+            \end{center}
+        
+            Sposób poruszania kamery będzie definiowany i implementowany przez skrypt do niej dołączony. Co każdą klatkę sprawdzany będzie stan wciśnięcia przycisku myszy, przesunięcie kursora, oraz obrót kółka myszy. Jeśli wykryte będą jakieś zmiany uruchamiana będzie odpowiednia akcja: przesunięcia kamery, oddalenia lub przybliżenia jej, albo zmiany obecnie aktywnej ściany interaktywnej.
+            \\
+            
+            Możliwa jest zmiana obecnie edytowanej ściany poprzez wskazanie jej kursorem i kliknięcie na nią. Punkt przyłożenia kamery, wraz z kamerą i jej pozycją zostaną przypisane do nowej interaktywnej ściany. Odległość kamery od ściany jest ustawiana na minimalną przewidywaną odległość, a kamera wycentrowana.
+            \\
+            
+            Kamera będzie poruszała się w określonym zakresie kąta względem ściany, osobno dla odchylenia w lewo, prawo, w górę i dół, informacje te będą zmieniały się zależnie od obecnie aktywnego skrpytu punktu obserwacji. 
+            \\
+            
+            Skrypt punktu obserwacji będzie skryptem dołączanym do każdej ściany interaktynwej, będzie on jedynie przetrzymywał zmienne określające maksymalne kąty wychylenia kamery dla danej ściany interaktywnej i przewidywany zakres odległości kamery do ściany. Wartości będą ręcznie wpisane dla każdej ściany z kolei.
+            \\
+            
+        \subsubsection*{Pisanie skryptu zarządzającego globalnym oświetleniem}
+            Implementacja oświetlenia będzie realizowana poprzez dwa skrypty tego dotyczące. LampScript będzie skryptem dołączanym do każdego obiektu źródła światła pozwalającym na zarządzanie nim, a kontroler oświetlenia będzie zarządzać wszystkimi elementami posiadający poprzednio opisany skrypt.
+            \\
+        
+            Oświetlenie w całej scenie będzie zarządzane przez jeden skrypt, kontroler oświetlenia. Skrypt ten będzie zarządzał pojedynczym źródłem światła imitującym słońce, oraz grupą mniejszych źródeł światła umieszczonych w lampach, odpowiedzialnych za nocne oświetlenie. Wszystkie lampy będą zgrupowane w jednym obiekcie nazwanym 'lamps'. Dodatkowo dodany został trzeci obiekt, odpowiedzialny za oświetlenie dodatkowe. Są to jedyne zmienne publiczne zadeklarowane w tym skrypcie.
+            \\
+            
+            
+            \includegraphics[bb=0 0 507 558,scale=0.55,keepaspectratio=true]{images/screenshots/code/code_002.png}
+            % code_002.png: 507x558 px, 72dpi, 17.89x19.68 cm, bb=0 0 507 558
+           
+
+            Skrypt posiada jedynie dwie funkcje: setNight(), setDay(). Są one odpowiedzialne za włączanie i wyłączanie określonych źródeł światła, aby stworzyć iluzję światła dziennego rzucającego cienie przez okna, albo imitować światło emitowane przez lampy we wnętrzu pomieszczenia. Kontroler oświetlenia realizuje włączanie i wyłączenie poszczególnych świateł poprzez skrypt lampScript dołączany do obiektów sceny posiadających źródło światła.
+            \\
+            
+            LampScript jest skryptem dołączanym do wszystkich elementów sceny posiadającym źródło światła. Zaimplementowane funkce: setColor(), setBrightness() pozwalają na zmianę koloru emitowanego światła, oraz procentową zmianę jego natężenia. Siła świecenia poszczególnych lamp może być różna a regulowane natężenie proporcjonalnie zmniejsza ich siłę względem początkowej wartości.
+            \\
+            
+        \subsubsection*{Pisanie skryptu zarządzającego paletą pomieszczenia}
+            Zmiana palety całego pomieszczenia odbywa sie poprzez dwa skrypty. Kontroler palety pomieszczenia, oraz skrypt przetrzymujący materiały. Konteroler palety posiada jedną funckję setGlobalPalette(), która wyszukuje wszystkie instancje skryptu pomocniczego, PaletteScript oraz uruchamia w nich funkcję zmiany palety. Funkcja ta jest uruchamiana przez interfejs użytkownika podczas wybierania określonej palety wnętrza.
+            \\
+            
+            Istnieje tylko jeden kontroler palety i jest on dołączony do głównego obiektu sceny. Skrypty palety kolorów, są dołączone do każdego obiektu którego materiały mają się zmieniać.
+            \\
+            
+            Skrypt PaletteScript jest dołączany do każdego obiektu sceny, którego materiały mają się zmieniać po zmianie palety pomieszczenia. Posiada on zadeklarowane tabele, w których przetrzymywane są kolejne materiały, które odpowiadają wyglądowi obiektu w różnych paletach wnętrz. Funkcje w nim zaimplemntowane: setMaterial(), setColor() pozwalają na zmianę materiałów danego obiektu i pokolorowanie obecnie wybranego materiału.
+            \\
+            
+        \subsubsection*{Pisanie skryptu zarządzającego interfejsem użytkownika}
+            Na interfejs użytkownika składa się parę plików, plik o rozszerzeniu UXML, w którym zadeklarowana jest struktura i ustawienie elementów interfejsu, plik USS, który definiuje zasady dotyczące wyglądu tych elementów, oraz skrypt, który wchodzić będzie w interakcję z resztą projektu
+            \\
+            
+            W skrypcie obsługującym interfejs użytkownika, zadeklarowane są zmienne odpowiadające elementom interfejsu, zadeklarowane również będą funkcje uruchamiane po naciśnięciu elementów interfejsu. Wymagane jest również przypisanie przycisków interfejsu do odpowiadających im funkcji, aby przypisać interakcję elementu interfejsu do przypisanej jemu akcji.
+            \\
+            
+            Na początku pliku zadeklarowane zostały zmienne odpowiadające przyciskom odpowiadającym poszczególnym etapom konfiguracji produktu. Po uruchomieniu programu, elementy interfejsu użytkownika zostaną przypisane do tych zmiennych, następnie do tych zmiennych przypisane zostają funkcje odpowiedzialne za uruchamianie kolejnych etapów konfiguracji.
+            \\
+            
+            Funkcje zmieniające etap konfiguracji mają proste zadanie, ukryć wszystkie elementy interfejsu, które nie są potrzebne na tym etapie i pokazać te obecnie potrzebne, oraz w razie potrzeby wykonać jakieś dodatkowe akcje, takie jak aktualizowanie parametrów interfejsu. Elementy interfejsu odpowiadające poszczególnym etapom, zgrupowane są w osobnych obiektach, dzięki czemu łatwo jest je wszystkie ukryć, albo odkryć w razie potrzeby.
+            \\
+            
+            \includegraphics[bb=0 0 691 275,scale=0.7,keepaspectratio=true]{images/screenshots/code/code_003.png}
+            % code_003.png: 691x275 px, 72dpi, 24.38x9.70 cm, bb=0 0 691 275
+
+            
+            Wymagane jest też zdefiniowanie i przypisanie akcji do elementów mieszczących się w zgrupowanych kategoriach, odpowiadającym poszczególnym etapom. Stworzone zostały funkcje uruchamiające dane akcje, a funkcje te przypisane zostały do odpowiadających im przycisków. 
+            \\
+            
+            Pierwszym etapem jest wybranie palety pomieszczenia, dlatego znajdujemy obiekt grupujący pod sobą wszystkie przyciski zmieniające paletę pomieszczenia oraz do każdego z kolei przypisujemy akcję, uruchamiania funkcji zmieniającej palety pomieszczenia. Dla każdego z przycisków uruchamiana jest ta sama funkcja, lecz z inną wartością parametru, dzięki temu, możemy wszystko wykonać za pomoca pętli iterując po kolei przez wszystkie przyciski. Uruchamiana funkcja, setGlobalPalette(), która została zdefiniowana w kontrolerze palety pomieszczenia, oraz jako argument przyjmuje indeks aplikowanej palety materiałów.
+            \\
+            
+            Kolejnym etapem jest wybranie kształtu paneli. Każdemu kształtowi przypisany jest osobny przycisk opatrzony obrazkiem i nazwą figury geometrycznej. Za pomocą pomocniczej funkcja pobieramy skrypt aktualnie edytowanej ściany interaktywnej. W niej zadeklarowana jest funkcja, która jako argument przyjmuję liczbę porządkową przypisaną każdemu z kształtów. Usuwa ona wszystkie panele, zmienia ona kształt panelu na ten przez nas wybrany i na nowo oblicza wszystkie zmienne oraz buduje wszystkie panele od nowa, na wybranej ścianie.
+            \\
+            
+            W następnym etapie wybrać można z jakiego materiału wykonane mają być panele dekoracyjne. Materiał wybiera się poprzez naciśnięcie przycisku. Każdy przycisk posiada nazwę materiału, któremu odpowiada. Każdy z nich uruchamia tę samą funkcję mieszczącą się w skrypcie PanelColor, lecz z inną wartością parametru index, będący liczbą porządkową danego materiału. Skrypt PanelColor dołączany jest do każdej ściany interaktywnej, oraz pozwala na zmianę koloru i materiału z którego wykonane są panele.
+            \\
+            
+            Kolejnym parametrem do określenia jest kolor paneli ściennych, odbywa się to za pomocą czterech suwaków. Pierwsze trzy suwaki po kolei odpowiadają za ilość: czerwonego, zielonego i niebieskiego pigmentu w kolorystyce paneli. Ostatnim osobnym suwakiem ustawić można stopień nasycenia wybranego koloru. Każdy z suwaków uruchamia tę samą funkcję lokalną setColor(), lecz z inną wartością parametru, którego wartość odpowiada osobnym kolorom. Funkcja ta najpierw pobiera obecny kolor, oraz nadpisuje wartość jednego z kolorów, wartością pobraną z odpowiedniego suwaka. Zmiana koloru materiału odbywa się przez funkcję znajdująca się w skrypcie ColorScript.
+            \\
+            
+            Następnie można wybrać kąt obrotu poszczególnych paneli, dla każdego kształtu wybór opcji jest inny, a przyciski posiadają obrazki pokazujące daną figurę geometryczną po obrocie o zadaną ilośc stopnii. Dodatkowo tekst objaśnia odkładną wartość obrotu paneli. Po przejściu do etapu wyboru obrotu panelu, sprawdzany jest obecnie wybrany kształt, na jego podstawie pokazywane są przyciski pokazujące jedynie te opcje, które odpowiadają wybranemu kształtowi. Każdy z przycisków uruchamia tę samą funckję, setPanelRotation() zadeklarowaną w skrypcie ściany interaktywnej, która jako argument przyjmuje nową wartość stopni obrotu paneli. Funkcja ta usuwa stare panele, nadpisuje wartość ich rotacji oraz na nowo ustawia na ścianie obrócone już panele.
+            \\
+            
+            W osobnym etapie można ustawić wartości pionowych i poziomych odstępów pomiędzy panelami. Odbywa się to poprzez dwa osobne suwaki. Przesunięcie ich uruchamia funkcję pomocniczą, która odczytuje ich wartość, oraz uruchamia funkcję setHorizontalPanelGaps(), albo setVerticalPanelGaps() zadeklarowane w skrypcie ściany interaktywnej.
+            \\
+            
+            Następnie można wybrać alternatywny sposób ułożenia paneli, który zależny jest od kształtu panelu oraz jego rotacji. Pozwala on ustawić panele w siatkę, albo w wiąz. Alternatywna opcja jest dostępna dla kwadratów z zerowa rotacją i trójkątów. Przyciski posiadają obrazki które przedstawiają sposób ułożenia paneli.
+            \\
+            
+            Osobna grupa elementów pozwala na ustalenie liczby kolumn i rzędów paneli, która odbywa się za pomoca suwaków. Podczas budowania paneli na ścianie, zostaje obliczona maksymalna liczba rzędów i kolumn paneli, które się zmieszczą na ścianie. Maksymalna wartość jaką można wybrać za pomocą suwaka jest maksymalną liczbą która się zmieści na ścianie, jest ona ustanawiana po kliknięciu przycisku uruchamiający ten etap. Po każdej akcji kliknięcia na suwak, uruchamiania jest funkcja która odczytuje jego nową wartość, zmienia parametry ściany interaktywnej, czyści stare panele i buduje je na nowo.
+            \\
+            
+            Etap podsumowywujący przedstawia liczbę, nazwę, oraz cenę panelu. Pokazywana jest również całkowita cena zamówienia. Każda z tych informacji, pokazywana jest za pomocą osobnego elementu z tekstem. Podczas uruchomienia tego etapu, zależnie od kształtu ustawiana jest odpowiednia nazwa panelu, ilość paneli jest liczona na podstawie ilości kolumn i rzędów, a sumaryczna cena zamówienia jest obliczana z pomnożenia ceny panelu i ich liczby. Liczba paneli i aktualna jego nazwa jest pobierana ze skryptu aktualnie aktywnej ściany interaktywnej.
+            \\
+            
+            Ostatni etap jest formularzem do wypełnienia dla klienta, posiada on pola tekstowe do których klient wpisuje swoje dane kontaktowe. Dla każdej informacji: imienia, nazwiska, numeru telefonu i adresu email przygotowane jest osobne pole. Przycisk 'Wyślij formularz' finalizuje cały proces.
+            \\
+            
 
         \subsubsection{Wykonanie projektu}
-            Pierwszą większą rzeczą wykonaną w edytorze Unity3D będzie stworzenie sceny. Podzielona ona zostanie na grupy obiektów dla zachowania porządku struktury projektu. Wszystkie elementy składające się na pomieszczenie będą przypisane do jednego obiektu, dzięki temu wykonując na nim akcje przemieszczania, obracania i skalowania będą one różnież zmieniały wszystkie obiekty jemu podległe, czyli wszystkie elementy pomieszczenia. Coś podobnego zastosowane będzie do zgrupowania ze sobą obiektów o podobnym przeznaczeniu, przykładem mogą być ściany, albo meble.
+            Pierwszą większą rzeczą wykonaną w edytorze Unity3D będzie stworzenie sceny. Podzielona ona zostanie na grupy obiektów dla zachowania porządku struktury projektu. Wszystkie elementy składające się na pomieszczenie będą przypisane do jednego obiektu, dzięki temu wykonując na nim akcje przemieszczania, obracania i skalowania będą one również zmieniały wszystkie obiekty jemu podległe, czyli wszystkie elementy pomieszczenia. Coś podobnego zastosowane będzie do zgrupowania ze sobą obiektów o podobnym przeznaczeniu, przykładem mogą być ściany, albo meble.
             \\
             
             Najpierw tworzymy nową płaską powierzchnię na którą nakładamy teksturę z diagramem przedstawiającym układ wnętrza pokoju oraz rozmieszczenie mebli. Potem skalujemy powierzchnię, aby miała te same proporcje co zdjęcie z teksturą, dzięki temu tekstura zachowa swoje pierwotne proporcje. Powierzchnię z planem używać będziemy jako zdjęcia referencyjnego, na podstawie którego ustwawimy ściany pomieszczenia, meble oraz kolejne punkty dla kamer.
@@ -894,9 +1024,31 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             
             Gdy ściany pomieszcenia są już na swoim miejscu można rozstawić meble na swoje miejsca. Bardzo pomocny staje się plan pomieszczenie, na którym meble również zostały narysowane, dzięki czemu można rozstawić meble na swoje miejsca, oraz w razie potrzeby nawet w pewnym stopniu przeskalować meble aby bardziej pokrywały się z planem.
             \\
+            
+            Etapem finalizującym cały projekt jest podłączenie napisanych skryptów do interfejsu użytkownika, to on będzie uruchamiał każda akcję dziejącą się w świecie gry.
+            \\
         
 
+\newpage
 \section{Wnioski}
+    Podczas fazy planowania projeku wszystko wydaje się być o wiele prostrze, niż jest w rzeczywiskości. Nie jest możliwe przewidzenie wszyskich problemów i zawiłości, które samoczynnie wyjdą podczas implementacji projektu. Wnioski tutaj wypisane są zapisem rzeczy, które nie zostały przewidziane podczas fazy projektowania programu, a były potrzebne w fazie jego implementacji.
+    \\
+    
+    \subsubsection*{Podział pracy może okazać się inny niż ten przewidywany}
+        Przed zaczęciem fazy projektowania, wymagane było oszacowanie czasu wymaganego na ukończenie kolejnych etapów. Fakt że początkowa estymacja była mocno zaniżona, nie był wielkim zdziwieniem. Niespodzianką było jak bardzo zmieniły proporcje pomiędzy czasem przeznaczonym na poszczególne etapy. Wydawać by się mogło, że podczas pisania programu komputerowego najwięcej czasu zabiera samo pisanie kodu, lecz wbrew pozorom najwięcej czasu zabrało rozplanowanie i stworzenie materiałów, niż samo jego pisanie. Prawdopodobnei wynika to z faktu, że nie było wymagane pisanie żadnych funkcjonalności od podstaw, a używanie tych, które zapewnia nam silnik do tworzenia gier komputerowych. Dodatkowym czynnikiem przyspieszającym tworzenie kodu, był fakt, że już wcześniej byłem zapoznany z podstawami tego silnika, jedynie tworzenie UI przyspożyło problemów z uwagi na brak wcześniejszego doświadczenia tym zestawem narzędzi.
+        \\
+        
+    \subsubsection*{Warto upewnić się, że narzędzia posiadają wymagane funkcjonalności}
+        Podczas projektowania interfejsu użytkownika została użyta webowa aplikacja UIzard, stworzona makieta miała pomóc określić ogólny podział interfejsu na części, na kolejne ekrany i ustalić styl tworzonego interfejsu. Inspiracją miał być, obecnie trendy styl neumorficzny, który wyróżnia się użyciem jednakowych kolorów, gdzie poszczególne elementy są zaznaczone za pomocą trójwymiarowych cieni. Wygląda to trochę jakby w jednakowej płycie metalu zostałyby wybite elementy interaktywne. UIzard pozwalał na dodanie jednolitego, rozmazanego cienia do każdego elementu, niestety użyta w projekcie biblioteka do tworzenia interfejsu użytkownika UI Toolkit, nie implementuje takiej funkcjonalności. W parametrach elementów interfejsu nie zostały zaimplementowane niektóre właściwości języka CSS uważane za podstawowe. Wymagane było zmiennie troszkę stylu, przez co tworzenie interfejsu użytkownika zajęło więcej niż przewidywano.
+        \\
+        
+    \subsubsection*{Nie używać narzędzi, nie działających stabilnie}
+        Wersja UI Toolkit użyta w projekcie posiada dopisek 'preview' co oznacza że jest to mocno wczesna wersja, przeznaczona do zapoznania się użytkowników z danym programem, a dla programistów jest okazją do zebrania opinii innych na temat tego oprogramowania. Do teraz nie wiem czy jest to spowodowane przez użycie tej wstępnej wersji, czy dotyczy to każdej jego wersji, ale narzędzie czasami zawieszało cały system operacyjny (linux), bez żadnego ostrzeżenia, co skutkowało utratą niezapisanych zmian w edytorze interfejsu.
+        \\
+    
+    \subsubsection*{Używanie odpowiednich narzędzi do planowania naprawdę ułatwia pracę}
+        Rozplanowanie całego projektu bardzo ułatwiło i przyspieszyło pracę, przydatna bardzo była webowa aplikacja Miro, w której można tworzyć różnego rodzaju listy, tabele, diagramy i inne bardziej zawansowane struktury. Jedną z nich była tablica kanban, która pozwala na lepsze usystematyzowanie pracy and projektem. Podstawowa tablica dzieli mniejsze zadania na kolumny: zaplanowane, w trakcie, skończone, dodatkowo podzielić ją można na wiersze, gdzie każdy wiersz grupuje trochę inną część projektu. W przypadku tej pracy powstały kategorie: rzeczy do rozpoznania, praca pisemna, materiały, programowanie, konfiguracja projektu. 
+        \\
 
 
 \newpage
