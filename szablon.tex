@@ -23,6 +23,7 @@
 \usepackage{fancyhdr}
 \renewcommand{\figurename}{Rys.}
 \renewcommand{\contentsname}{Spis treści}
+\renewcommand{\refname}{Bibliografia}
 
 \pagestyle{fancy}% Set default page style to fancy
 \renewcommand{\headrulewidth}{0pt}% Remove header rule
@@ -89,14 +90,14 @@ Nr albumu: \\
 \end{minipage}
 
 \begin{center}
- Bydgoszcz,
+ Bydgoszcz, Styczeń 2023
 \end{center}
 
 \pagestyle{fancy}
 
 \begin{adjustwidth}{-\oddsidemargin-1in}{-\rightmargin}
 \centering
-\includegraphics[width=\paperwidth,angle=0.3]{Załączniki/karta_pracy_skan.png}
+\includegraphics[width=\paperwidth,angle=0.3,trim={0 0 1cm 3cm},clip]{Załączniki/karta_pracy_skan.png}
 \end{adjustwidth}
 \newpage
 
@@ -105,11 +106,14 @@ Nr albumu: \\
 Celem pracy jest zaprojektowanie oraz stworzenie interaktywnego konfiguratora elementów wnętrz, a dokładniej ściennych paneli dekoracyjnych. Najpierw opisane będą istniejące już rozwiązania w tym zakresie, a potem zostanie określony zbiór funkcjonalności oraz zakres interaktywności. Wymagane będzie zdefiniowanie i wymodelowanie elementów wnętrza, a następnie zaprojektowanie logiki programu umożliwiającej edycję parametrów tychże elementów.
 \\
 
-\textbf{Słowa kluczowe:}
+\textbf{Słowa kluczowe:} konfigurator wnętrz, wizualizacja 3D, panele dekoracyjne
 
 \section*{Summary}
+The goal of this thesis is design and implementation of an interactive configurator of interior elements, more specifically wall decorative panels. First, existing solutions in this area will be described, then set of functions and scope of their interactivity will be defined. Definition and modeling of interior elements will be required, and then designing and programming program's logic, that enables edition of their paramaters.
+\\
 
-\textbf{Keywords:}
+
+\textbf{Keywords:} interior configurator, 3D visualization, decorative panels
 
 \newpage
 
@@ -157,7 +161,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
     \\
    
     \subsection{Wizualizacja}
-        Wizualizacja jest obrazową reprezentacją przedmiotu, procesu lub stanu. Dawniej odnosiło się to do obrazu, albo procesu jego tworzenia, w ludzkiej wyobraźni. Obraz ten istniał jedynie w naszej głowie, by przedstawić go komuś innemu wymagane było nakreślenie jego na jakimś medium, co wymagało dużych umiejętności i środków. Cała gałąź sztuki polega właśnie na doskonaleniu tego wymagającego procesu.
+        Wizualizacja jest obrazową reprezentacją przedmiotu, procesu lub stanu. Dawniej odnosiło się to do obrazu, albo procesu jego tworzenia, w ludzkiej wyobraźni. Obraz ten istniał jedynie w naszej głowie, by przedstawić go komuś innemu wymagane było nakreślenie jego na jakimś medium, co wymagało dużych umiejętności i środków. Cała gałąź sztuki polega właśnie na doskonaleniu tego wymagającego procesu. \cite{visualization}
         \\
         
         Wizualizacja komputerowa zajmuje się czymś podobnym. Stara się przedstawić coś nie fizycznego za pomocą ilustracji. Przedstawiany może być przedmiot, proces albo inny bardziej abstrakcyjny koncept. Dzięki oprogramowaniu graficznemu możliwe jest zautomatyzowanie tego procesu dla, z góry określonych, scenariuszy. Zadaniem wizualizacji komputerowej jest zebranie ogromu danych, odpowiednie ich przetworzenie, oraz przedstawienie ich w prosty i zrozumiały sposób użytkownikowi końcowemu.
@@ -167,19 +171,20 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         \\
             
     \subsection{Interaktywność}
-        Interakcja jest wzajemnym oddziaływaniem na siebie osób, przedmiotów lub zjawisk.\footnote[1]{Definicja z internetowego słownika PWN} Ważne żeby oddziaływanie te było dwu-kierunkowe, gdyż jednokierunkowym odpowiednikiem interakcji jest przyczynowość. Interaktywność jest miarą interakcji i jej jakości. 
+        Interakcja jest wzajemnym oddziaływaniem na siebie osób, przedmiotów lub zjawisk.\cite{pwn} Ważne żeby oddziaływanie te było dwu-kierunkowe, gdyż jednokierunkowym odpowiednikiem interakcji jest przyczynowość. Interaktywność jest miarą interakcji i jej jakości. 
         \\
     
         Interaktywność jest sytuacją w której każda kolejna akcja bierze poprzednią, lub kilka poprzednich, pod uwagę zmieniając jej kontekst. Wykonanie tej samej akcji w innym kontekście będzie skutkować wykonaniem innej czynności. Ważne jest aby różne konteksty były łatwo rozpoznawalne i znane użytkownikowi.
         \\
     
-        Interaktywność może zostać zdefiniowana jako ciągła wymiana informacji, pomiędzy minimum dwoma uczestnikami.  W tym przypadku jednym uczestnikiem jest wizualizacja, a drugim użytkownik. Użytkownik podaje informacje w postaci parametrów wejściowych, a wizualizacja zwraca użytkownikowi jak wyglądać może scena spełniające podane wymagania i parametry. Jest to proces który zachodzi cały czas w formie pętli, lecz nie każda akcja użytkownika musi równać się natychmiastowej reakcji systemu.
+        Interaktywność może zostać zdefiniowana jako ciągła wymiana informacji, pomiędzy minimum dwoma uczestnikami.  W tym przypadku jednym uczestnikiem jest wizualizacja, a drugim użytkownik. Użytkownik podaje informacje w postaci parametrów wejściowych, a wizualizacja zwraca użytkownikowi jak wyglądać może scena spełniające podane wymagania i parametry. Jest to proces który zachodzi cały czas w formie pętli, lecz nie każda akcja użytkownika musi równać się natychmiastowej reakcji systemu. \cite{interactivity}
         \\
         
         Ważne jest zachowanie przejrzystości po obu stronach. Należy dać użytkownikowi interfejs, który jest zrozumiały i łatwy w obsłudze. Dzięki zastosowaniu się do podstawowych zasad projektowania interfejsów powinien on być wizualnie przejrzysty i jednolity. Sensowne rozplanowanie różnych kontekstów, pozwoli na bardziej intuicyjną nawigację po programie i jego funkcjach.
+        \cite{interacting}
         \\
     
-        Interaktywność pozwala użytkownikowi na kontrolowanie parametrów wejściowych symulacji, oraz obserwowanie nowo powstałego obrazu. Ważne jest aby użytkownik czuł, że ma kontrolę nad przebiegiem symulacji, a każda wprowadzona zmiana jest wprowadzana i aktualizowana tak szybko jak szybko się da. Dlatego czas obliczenia kolejnego widoku powinien być odpowiednio krótki. Zawęża to częściowo jak wiele obliczeń możemy przeznaczyć na ten cel, oraz jak wymagająca i realistyczna może być wizualizacja i jej grafika. 
+        Interaktywność pozwala użytkownikowi na kontrolowanie parametrów wejściowych symulacji, oraz obserwowanie nowo powstałego obrazu. \cite{medicine} Ważne jest aby użytkownik czuł, że ma kontrolę nad przebiegiem symulacji, a każda wprowadzona zmiana jest wprowadzana i aktualizowana tak szybko jak szybko się da. Dlatego czas obliczenia kolejnego widoku powinien być odpowiednio krótki. Zawęża to częściowo jak wiele obliczeń możemy przeznaczyć na ten cel, oraz jak wymagająca i realistyczna może być wizualizacja i jej grafika.
         \\
                 
     \subsection{Grafika komputerowa}
@@ -204,7 +209,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         \\
                       
         \subsubsection{Znane silniki gier komputerowych}
-        Rynek oferuje wiele gotowych rozwiązań, w kwestii silników do gier komputerowych. Mimo że one wszystkie mają ten sam cel, skupiają się one na różnych aspektach oraz posiadają pewne unikalne cechy. Jedne skupiają się na realistycznej grafice oraz stremowaniu ogromnych ilości danych, a inne skupiają się na prostocie użycia oraz multiplatformowości. Każdy z nich swoimi możliwościami określa pewien zakres, w którym gra będzie się zawierać. Pełna gra stworzona na danym silniku nie może wyglądać lepiej niż demo technologiczne czy benchmark tego samego silnika, gdyż po prostu zabraknie zasobów na resztę logiki gry.
+        Rynek oferuje wiele gotowych rozwiązań, w kwestii silników do gier komputerowych. Mimo że one wszystkie mają ten sam cel, skupiają się one na różnych aspektach oraz posiadają pewne unikalne cechy. Jedne skupiają się na realistycznej grafice oraz stremowaniu ogromnych ilości danych, a inne skupiają się na prostocie użycia oraz multiplatformowości. Każdy z nich swoimi możliwościami określa pewien zakres, w którym gra będzie się zawierać. \cite{comparason} Pełna gra stworzona na danym silniku nie może wyglądać lepiej niż demo technologiczne czy benchmark tego samego silnika, gdyż po prostu zabraknie zasobów na resztę logiki gry.
         \\
         
         \subsubsection*{Unreal engine}
@@ -217,7 +222,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Z czasem silnik się rozwijał, oddawane zostały kolejne narzędzia, a większa moc obliczeniowa komputerów pozwalała na stworzenie realistycznej grafiki. Czwarta wersja dodawała nowy sposób na generowanie oświetlenia, zamiast statycznego oświetlenia sceny użyte było dynamiczne generowanie oświetlenia, reagujące na poruszające się obiekty jak i samego bohatera. W tej samej wersji dodano również narzędzia do szybkiej implementacji logiki gry.
         \\
         
-        Najnowsza piąte wersja, dodała przełomową funkcję, silnik Nanite. Pozwala on na importowanie modeli w najlepszej możliwej jakości oraz zmniejszanie ich jakości w locie, wedle potrzeby. Jeśli obiekt zajmuje większą powierzchnię ekranu, model rysowany jest z większą ilością wielokątów, jeżeli jest mniej widoczny jest on używany z mocno ograniczoną ich liczbą. Z perspektywy programisty jest to wygodne i nie wymaga ręcznej implementacji LOD, oraz jednocześnie samo dba o optymalizację modeli w całej grze.
+        Najnowsza piąte wersja, dodała przełomową funkcję, silnik Nanite. Pozwala on na importowanie modeli w najlepszej możliwej jakości oraz zmniejszanie ich jakości w locie, wedle potrzeby. Jeśli obiekt zajmuje większą powierzchnię ekranu, model rysowany jest z większą ilością wielokątów, jeżeli jest mniej widoczny jest on używany z mocno ograniczoną ich liczbą. \cite{unreal} Z perspektywy programisty jest to wygodne i nie wymaga ręcznej implementacji LOD, oraz jednocześnie samo dba o optymalizację modeli w całej grze.
         \\
         
         Wymagania sprzętowe silnika są wysokie, mogą one być zbyt wysokie dla niektórych komputerów. Celem jest stworzenie wizualizacji, którą można będzie uruchomić na większości urządzeń, ale nie można wymagać od użytkownika posiadania nawet dedykowanej karty graficznej. Silnik byłby idealny jeżeli głównym celem byłaby realistyczna grafika, ale niestety jest on narzędziem o zbyt wysokich wymaganiach sprzętowych, których niektóre urządzenia klientów nie mogłyby sprostać.
@@ -259,7 +264,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Wspierane jest tworzenie gier dwuwymiarowych i trójwymiarowych, gdzie oba tryby mogą pracować jednocześnie, oddzielnie od siebie nawzajem. Stworzony został system animacji, dla obrazów dwuwymiarowych i modeli trójwymiarowych. Animacja szkieletowa jest wspierana w obu przypadkach, animacje obrazu posiadają dodatkowe unikalne dla obrazów animacje. Obrazy można skalować, obracać i edytować ich kolorystkę w czasie trwania animacji. 
         \\
         
-        Kolejnymi wspieranymi elementami jest tworzenie graficznego interfejsu użytkownika. Czasami ten sam silnik używany jest właśnie, do tworzenia programów użytkowych, zamiast gier komputerowych. Wspierana jest również, wielowątkowość, statyczne oświetlenie sceny, oraz efekty cząsteczkowe.
+        Kolejnymi wspieranymi elementami jest tworzenie graficznego interfejsu użytkownika. Czasami ten sam silnik używany jest właśnie, do tworzenia programów użytkowych, zamiast gier komputerowych. Jednym ze znanych programów z jego użyciem jest program Material Maker.\cite{material} Wspierana jest również, wielowątkowość, statyczne oświetlenie sceny, oraz efekty cząsteczkowe.
         \\
         
         Godot przeznaczony jest to tworzenia małych i średnich projektów, oraz daje użytkownikowi wiele możliwości. Jest rozwiązaniem na licencji otwartego oprogramowania, dzięki czemu posiada duże wsparcie wolontariuszy. Jest to dobry wybór do stworzenia projektu wizualizacji architektonicznej.
@@ -284,16 +289,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         
     \subsection{Interaktywny konfigurator produktu}
-        Konfigurator, dawniej nazywany konfiguratorem produktu, jest narzędziem do tworzenia unikalnej konfiguracji produktu posiadającego wiele opcji konifguracyjnych. Produkty te posiadają wiele opcji wyboru, niektóre opcjonalne, inne wymagane, a inne wykluczające się nawzajem. Pozwala on na dogłębne dobranie i skonfigurowanie produktu, odpowiadającego klientowi, gdzie efektem końcowym jest gotowa konfiguracja, kompatybilna z systemem. Może on być przeznaczony dla samego klienta, albo być narzędziem wprowadzania dla pracownika jego obsługującego. Ma on na celu oddelegowanie zadania tworzenia konfiguracji z pracownika, na program komputerowy i samego klienta.
+        Konfigurator, dawniej nazywany konfiguratorem produktu, jest narzędziem do tworzenia unikalnej konfiguracji produktu posiadającego wiele opcji konifguracyjnych. Produkty te posiadają wiele opcji wyboru, niektóre opcjonalne, inne wymagane, a inne wykluczające się nawzajem. Pozwala on na dogłębne dobranie i skonfigurowanie produktu, odpowiadającego klientowi, gdzie efektem końcowym jest gotowa konfiguracja, kompatybilna z systemem. Może on być przeznaczony dla samego klienta, albo być narzędziem wprowadzania dla pracownika jego obsługującego. Ma on na celu oddelegowanie zadania tworzenia konfiguracji z pracownika, na program komputerowy i samego klienta. \cite{oracle}
         \\
         
         Dla klienta może on być interaktywnym katalogiem pokazującym zbiór produktów, oraz wszelkich ich opcji konfiguracyjnych. Czasami klient do końca nie sprecyzował jeszcze swojej wizji i wymagań, ani jak produkt końcowy miałby wyglądać. Poprzez kolejne kroki tworzenia kompozycji, klient jest zapoznawany z zakresem możliwości edycji i opcji dostrojenia produktu końcowego. W ten, koherentny, sposób udziela klientowi informacji, niezbędnych do podjęcia najlepszego dla siebie wyboru. Na końcu informacja ta może być w zautomatyzowany sposób przekazana do realizacji.
         \\
         
         Dla pracownika, może być narzędziem pomagającym w pracy i pozwalającym na wprowadzenie gotowej, zwalidowanej konfiguracji do systemu. Może przeprowadzić on pracownika przez kolejne etapy, oraz poinformować go o stanie magazynu, albo innych niedogodnościach, dotyczących łańcucha dostaw. Dzięki temu, pracownik jest odciążony, a swoją uwagę może skupić na zadawaniu bardziej szczegółowych pytań klientowi.
-        \\
-        \href{https://docs.oracle.com/cd/E16582_01/doc.91/e15086/und_configurator.htm#EOABC00002}{adres}
-        \\
         
         \subsubsection{Typy konfiguratorów}
         Ze względu na zastosowaną technologię i grafikę, wydzielić można typy konfiguratorów produktów. Nie jest to jedyny sposób w jaki można je podzielić.
@@ -308,7 +310,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         \\
     
     \subsection{Architektura wnętrz}
-        Architektura wnętrz jest dziedziną zajmującą się projektowaniem oraz wystrojem wnętrz budynków. Obejmuje to zdefiniowanie stylu, i ogólnej kolorystyki wnętrza jak i rozplanowanie rozmieszczenia mebli. Odpowiednie, do jego zastosowania, zagospodarowanie wnętrza sprawia, że wnętrze jest bardziej funkcjonalne, oraz prezentuje się lepiej. W kontekście tej pracy wymagane będzie stworzenie zestawu projektów pomieszczeń, w taki sposób, aby najlepiej oddawały najróżniejsze kompozycje i style pomieszczeń. Zbiór ten powinien oddawać jak najszerszą gamę stylów, aby klient mógł w nim znaleźć coś co mniej więcej oddaje jego własne wnętrze, aby lepiej do niego dopasować swój własny produkt.
+        Architektura wnętrz jest dziedziną zajmującą się projektowaniem oraz wystrojem wnętrz budynków. Obejmuje to zdefiniowanie stylu, i ogólnej kolorystyki wnętrza jak i rozplanowanie rozmieszczenia mebli. Odpowiednie, do jego zastosowania, zagospodarowanie wnętrza sprawia, że wnętrze jest bardziej funkcjonalne, oraz prezentuje się lepiej. \cite{architecture} W kontekście tej pracy wymagane będzie stworzenie zestawu projektów pomieszczeń, w taki sposób, aby najlepiej oddawały najróżniejsze kompozycje i style pomieszczeń. Zbiór ten powinien oddawać jak najszerszą gamę stylów, aby klient mógł w nim znaleźć coś co mniej więcej oddaje jego własne wnętrze, aby lepiej do niego dopasować swój własny produkt.
         \\
         
         \subsubsection{Istniejące już rozwiązania}
@@ -393,10 +395,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Użytkownik zostanie przeprowadzony przez kolejne etapy konfigurowania produktu. Kolejne wybory będą stopniowo zawężać oraz prowadzić go do podjęcia najlepszej decyzji. Ważna jest ich kolejność, pierwsze -wybory mają mieć większe znaczenie, a każdy kolejny w coraz mniejszym stopniu będzie w stanie zmieniać ogólny zarys produktu.
         \\
         
-        Najpierw użytkownik będzie wybierać pomieszczenie oraz rzut z którego będzie ono widoczne. Do wyboru będzie parę opcji, które reprezentować będą różne potencjalne umiejscowienia produktu w wirtualnym pomieszczeniu. Ważne aby były to jak najróżniejsze zastosowania i umiejscowienia, aby ukazywały jak najszerszy zakres użycia produktu. 
-        \\
-        
-        Następnie wybrać będzie można kolorystkę wnętrza, do wyboru będzie paręnaście palet, które zmienią kolory ścian, mebli oraz niektóre tekstury pomieszczenia. Dzięki temu, użytkownik, będzie można w pewnym stopniu odwzorować kolorystykę swojego własnego wnętrza, do którego chce dobrać panele dekoracyjne.
+        Wybrać będzie można kolorystkę wnętrza, do wyboru będzie paręnaście palet, które zmienią kolory ścian, mebli oraz niektóre tekstury pomieszczenia. Dzięki temu, użytkownik, będzie można w pewnym stopniu odwzorować kolorystykę swojego własnego wnętrza, do którego chce dobrać panele dekoracyjne.
         \\
         
         Pierwszym wyborem dotyczącym paneli będzie wybór ich kształtu. W osobnym widoku będzie można przeglądać gotowe kształty i style paneli dekoracyjnych. Dostępne będą trójkątne, kwadratowe, sześciokątne, oraz inne bardziej skomplikowane formy. Wszystkie panele będą miały ten sam kształt.
@@ -415,7 +414,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Poprzez wybór pomieszczenia użytkownik określi otoczenie w jakim przedstawiany będzie produkt. Docelowo otoczenie to powinno jak najbliżej imitować miejsce ich instalacji, pomieszczenia w domu klienta. Nigdy to nie będzie możliwe, ale możliwe będzie stworzenie czegoś co docelowe otoczenie w pewnym stopniu przypomina. Ułatwi to klientowi dobranie dopasowanego do siebie produktu.
         \\
         
-        Użytkownik będzie mógł wybrać jedno z paru pomieszczeń takich jak: kuchnia, salon, jadalnia, sypialnia. Będą to różne pomieszczenia o różnym układzie mebli, oraz innym zastosowaniu, aby pokazać różnorodne zastosowanie dekoracji. Każde z nich będzie posiadać interaktywne ściany, o różnych wymiarach, do których będzie można przymierzać panele ścienne.
+        Użytkownik będzie mógł wybrać jeden z paru widoków takich jak: kuchnia, salon, jadalnia, sypialnia. Będą to różne pomieszczenia o różnym układzie mebli, oraz innym zastosowaniu, aby pokazać różnorodne zastosowanie dekoracji. Każde z nich będzie posiadać interaktywne ściany, o różnych wymiarach, do których będzie można przymierzać panele ścienne.
         \\
         
         Wybrać będzie można styl i kolorystkę pomieszczenia. Każde z nich będzie posiadać zdefiniowany zbiór palet kolorów, które będą zmieniać kolorystykę całego pomieszczenia. Ściany będą zmieniały kolor na inny, podłogi będą miały inną teksturę, a niektóre meble będą miały zmieniony model aby stylistycznie lepiej pasować do wnętrza.
@@ -468,10 +467,14 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
     \subsection{Określenie pracy wymaganej do wykonania projektu}
         Pracę wykonaną na potrzeby programu można podzielić na trzy oddzielne kategorie. Wykonać należy materiały do których wliczają się elementy artystyczne niezbędne do wykonania projektu, czyli modele trójwymiarowe i grafiki. Wymagana jest logika programu, która będzie definiować w jaki sposób będzie się on zachowywał. Logikę i zachowanie programu będzie definiować kod programu, oraz skrypty napisane na jego potrzeby. Ostatnią rzeczą jest złożenie tych poszczególnych części w jeden działający projekt w edytorze Unity 3d.
         \\
-        
-        \begin{center}
-            \includegraphics[scale=0.3,keepaspectratio]{images/diagrams/1 Project work categories.jpg}
-        \end{center}
+                
+        \begin{figure}[h]
+        \centering
+        \includegraphics[bb=0 0 1224 816,scale=0.3,keepaspectratio=true]{images/diagrams/1 Project work categories.jpg}
+        % 1 Project work categories.jpg: 1224x816 px, 72dpi, 43.18x28.79 cm, bb=0 0 1224 816
+        \caption{Podział pracy na różne kategorie}
+        \end{figure}
+
 
 
         \subsubsection{Modele i zasoby graficzne}
@@ -532,7 +535,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Gdyby projekt był pisany od podstaw wymagane byłoby napisanie jakieś jego centralnej logiki, w tym przypadku użyty jest silnik do gier komputerowy Unity3D. Dzięki temu podejściu jedyne co trzeba będzie stworzyć to elementy świata gry, interfejs graficzny oraz fragmenty kodu, które będą tę logikę implementować.
         \\
         
-        Każdy element w grze tzw. 'GameObject' może posiadać różne komponenty, to właśnie one definiują funkcje i rolę tego obiektu w grze. Dodanie komponentu z określonym skryptem dodawać będzie pewną funkcjonalność do danego obiektu w scenie. Obiekty których materiały będą się zmieniać, wedle palety, będą posiadać określony skrypt jako swój komponent. Kamera zmieniająca swoje położenie i ustawienie, również będzie posiadać od tego osobny skrypt.
+        Każdy element w grze tzw. 'GameObject' może posiadać różne komponenty, to właśnie one definiują funkcje i rolę tego obiektu w grze. Dodanie komponentu z określonym skryptem dodawać będzie pewną funkcjonalność do danego obiektu w scenie. Obiekty których materiały będą się zmieniać, wedle palety, będą posiadać określony skrypt jako swój komponent. Kamera zmieniająca swoje położenie i ustawienie, również będzie posiadać od tego osobny skrypt. \cite{unity}
         \\
  
         Poprzez graficzny interfejs użytkownika klient będzie wprowadzał kolejne informacje, oraz wchodził w interakcję z programem. Dlatego część logiki będzie podpięta pod obiekty interfejsu użytkownika, odpowiedzialne one będą za aktualizowanie potencjalnego zamówienia, oraz uruchamianie akcji wyzwalanych po interakcji z elementami z interfejsem. Dzięki nim możliwe będzie przechodzenie przez kolejne kroki konfigurowania produktu.
@@ -545,10 +548,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         \subsubsection*{Dostosowanie produktu}
         
-        \begin{center}
-        \includegraphics[scale=0.3,keepaspectratio=true]{images/diagrams/ui_mockup.png}
+        \begin{figure}[h]
+        \centering
+        \includegraphics[bb=0 0 1225 766,scale=0.3,keepaspectratio=true]{images/diagrams/ui_mockup.png}
         % ui_mockup.png: 1225x766 px, 72dpi, 43.22x27.02 cm, bb=0 0 1225 766
-        \end{center}
+        \caption{Wstępny zarys interfejsu użytkownika}
+        \end{figure}
+
         
 
         Pierwszym układem będzie układ przedstawiający produkt w scenie, umożliwiający dostosowanie produktu. Dzielić się on będzie na dwie części. Po lewej widoczna będzie trójwymiarowa wizualizacja, w której widoczne będą panele dekoracyjne. Wszystkie zmiany wprowadzane przez użytkownika będą aktualizowały wizualizację. Ekran wizualizacji będzie pozwalał na ograniczone obracanie kamerą i przybliżanie i oddalanie jej. Możliwe też będzie przełączanie się pomiędzy różnymi ścianami w pomieszczeniu.
@@ -650,11 +656,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         
         Pomieszczenie z nich jest fragmentem większego mieszania z aneksem kuchennym i osobnym pokojem. Dzięki jednej dużej przestrzeni w planie mieszkania, jedno pomieszczenie jest w stanie pokazać produkt w paru różniących się od siebie otoczeniach, w salonie, jadalni, kuchni i korytarzu. 
         \\
-        \begin{center}
-            \includegraphics[scale=0.5]{images/diagrams/big_salon.jpeg}
-            % big_salon.jpeg: 640x455 px, 72dpi, 22.58x16.05 cm, bb=0 0 640 455
-        \end{center}
-        
+
+        \begin{figure}[h]
+        \centering
+        \includegraphics[bb=0 0 640 455,scale=0.5,keepaspectratio=true]{images/diagrams/big_salon.jpeg}
+        % big_salon.jpeg: 640x455 px, 72dpi, 22.58x16.05 cm, bb=0 0 640 455
+        \caption{Układ pomieszczenia}
+        \end{figure}
         
     \subsection{Modelowanie elementów 3d}
         Proste kształty i modele trójwymiarowe można modelować bez technicznych rysunków i planów, takimi modelami będą ściany, które będą prostymi powierzchniami, z opcjonalnymi wnękami i otworami na wstawienie okien lub drzwi. Jedyną rzeczą o której trzeba pamiętać jest zachowanie jednakowej skali oraz proporcji. Podłoga i sufit będzie jeszcze prostsza do wymodelowania, gdyż będzie ona jedynie płaską powierzchnią. Posiadać ona będzie teksturę która urozmaici monotonną powierzchnię.    Bardziej wymagające do wymodelowania będą meble, które posiadają bardziej skomplikowane kształty, teksturę oraz materiały. 
@@ -665,7 +673,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
             
-            \begin{figure}
+            \begin{figure}[!h]
             \centering
             \includegraphics[scale=0.3]{images/screenshots/work/work.png}
             % work.png: 1105x725 px, 72dpi, 38.98x25.58 cm, bb=0 0 1105 725
@@ -726,10 +734,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Teraz można zacząć proces modelowania. Zacząć można od jednego z podstawowych kształtów i powoli dodawać kolejne punkty, linie i ściany. Wielkim ułatwieniem jest fakt, że stawiając nawet jeden kolejny punkt, można sprawdzić poprawność jego położenia w paru rzutach jednocześnie, zamiast przełączać się po kolei pomiędzy nimi.
             \\
             
-            \begin{center}
-            \includegraphics[scale=0.28,keepaspectratio=true]{images/screenshots/work/5-modelowanie-mebli_004.png}
+            \begin{figure}[h]
+            \centering
+            \includegraphics[bb=0 0 1580 948,scale=0.28,keepaspectratio=true]{images/screenshots/work/5-modelowanie-mebli_004.png}
             % 5-modelowanie-mebli_004.png: 1580x948 px, 72dpi, 55.74x33.44 cm, bb=0 0 1580 948
-            \end{center}
+            \caption{Zrzut z ekranu z programu Blender podczas modelowania krzesła}
+            \end{figure}
+
             
             Rama krzesła modelowana jest najpierw jako dwuwymiarowy kształt. Najpierw tworzony jest przekrój nogi krzesła, potem odchodzące od niego poprzeczki, następnie można rozciągnąć dwuwymiarowy obiekt do trójwymiarowego tworząc zalążek ramy siedziska.
             \\
@@ -747,11 +758,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Tekstury można stworzyć w różny sposób, można stworzyć ją od podstaw za pomocą programów graficznych, albo za pomocą specjalnych programów do tworzenia i generowania wirtualnych materiałów, na przykład Material Maker. Innym podejściem jest użycie zdjęć do ich stworzenia. Na potrzeby projektu, nie będziemy tworzyć tekstur od podstaw, lecz użyjemy już tych istniejących oraz dostępnych w internecie. Ważne jest aby ich licencja pozwalała na nieodpłatne używanie ich w naszym projekcie.
             \\
             
-            W internecie można znaleźć parę stron internetowych z teksturami i materiałami, ważna jest licencja pod którą podlegają. My będziemy używać materiałów objętych licencją Creative Commons CC0 License, która określa materiał jako podany do domeny publicznej, która pozwala na kopiowanie, modyfikowanie, dystrybucję a nawet na używanie ich w produktach komercyjnych bez pytania o zgodę ich autora. Wedle oficjalne strony Creative Commons, twory opatrzone licencją CC0 przekazane są do domeny publicznej, a ich autor całkowicie zrzeka się praw autorskich do tego tworu.
-            \\
-            
-            <wstaw listę stron ambientcg.com, polyhaven.com> \\
-            <https://creativecommons.org/publicdomain/zero/1.0/deed.pl>
+            W internecie można znaleźć parę stron internetowych z teksturami i materiałami, ważna jest licencja pod którą podlegają. My będziemy używać materiałów objętych licencją Creative Commons CC0 License, która określa materiał jako podany do domeny publicznej, która pozwala na kopiowanie, modyfikowanie, dystrybucję a nawet na używanie ich w produktach komercyjnych bez pytania o zgodę ich autora. Wedle oficjalne strony Creative Commons, twory opatrzone licencją CC0 przekazane są do domeny publicznej, a ich autor całkowicie zrzeka się praw autorskich do tego tworu. \cite{creative}
             \\
             
             Do wyboru jest wiele najróżniejszych materiałów, ale trzeba pamiętać aby ograniczyć ich liczbę do minimum z uwagi na ich rozmiar. Jeżeli oddamy wbyt wiele tekstur i plików, problemem może się stać ograniczone miejsce pamięci RAM na urządzeniu odtwarzającym projekt. Dlatego należy wybrać jak najmniej, najbardziej różniących się od siebie materiałów. Kolejnym sposobem na oszczędzenie pamięci jest użycie białych wariantów tekstur, które można na poczekaniu pokolorować aby uzyskać iluzję zupełnie innego, nowego materiału, zamiast przechowywać parę różnych wariantów różniących się jedynie kolorami. 
@@ -761,7 +768,7 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             \\
             
         \subsubsection{Tworzenie materiałów dla mebli}
-            Na potrzeby projektu wymagane będzie stworzenie materiałów przypisywanych modelom, będą to materiały stworzone w silniku Unity3D. Jeżeli mamy już potrzebne materiały, jest to prosty proces. W archiwum z teksturami znajdują się nie tylko tekstura, ale również inne obrazy reprezentujące warstwy materiału.         Tekstura jest zdjęciem lub obrazem imitujące kolor i przerbarwienia materiału. Czasami jest podstawowa część materiału.
+            Na potrzeby projektu wymagane będzie stworzenie materiałów przypisywanych modelom, będą to materiały stworzone w silniku Unity3D. Jeżeli mamy już potrzebne materiały, jest to prosty proces. W archiwum z teksturami znajdują się nie tylko tekstura, ale również inne obrazy reprezentujące warstwy materiału. Tekstura jest zdjęciem lub obrazem imitujące kolor i przerbarwienia materiału. Czasami jest podstawowa część materiału.
             \\
             
             Kolejną częścią są mapy wypukłości, są one specjalnym obrazem, przedstawiającym ostre krawędzie i nierówności w teksturze. Interpretowana jest ona w specjalny sposób przez silnik graficzny, zmienia się ona pod różnymi kątami padania światła. Nawet jeżeli nałożymy mapę wysokości na całkowicie płaską powierzchnię, mapa wypukłości będzie zmieniać się wraz z kierunkiem oświetlenia dając iluzję wypukłości materiału.
@@ -770,12 +777,12 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Mapa wysokości jest czarno-białym obrazem, w którym jasność piksela odpowiada jego wysokości. Dzięki temu materiał może posiadać iluzję różnych stopni głębokości, nawet jeżeli obiekt jest całkowicie płaski. W projekcie niektóre materiały posiadają osobny obraz odpowiadający okluzji otoczenia (ambient oclusion). Jest to sposób na imitowanie uproszczonego cieniowania obiektów w scenie.
             \\
             
-            
-            \begin{center}
-            \includegraphics[scale=0.4,keepaspectratio=true]{images/screenshots/work/8-tworzenie-materialow_000.png}
+            \begin{figure}[h]
+            \centering
+            \includegraphics[bb=0 0 1164 524,scale=0.4,keepaspectratio=true]{images/screenshots/work/8-tworzenie-materialow_000.png}
             % 8-tworzenie-materialow_000.png: 1164x524 px, 72dpi, 41.06x18.49 cm, bb=0 0 1164 524
-            \end{center}
-
+            \caption{Proces tworzenia materiału w silniku Unity3D}
+            \end{figure}
             
             Dzięki złożeniu tych wszystkich obrazów, możliwe jest odtworzenie wielu materiałów. Wystarczy stworzyć nowy materiał oraz przeciągnąć odpowiednią teksturę do odpowiadających im pól. 
             \\
@@ -795,8 +802,13 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Widok został podzielony na dwie części, wizualizacja z linią progresu, oraz widok z przyciskami i elementami interaktywnymi. Podczas procesu konfiguracji, kolejne widoki z przyciskami będą się zmieniać zależnie do obecnego stanu w procesie konfiguracji. 
             \\
             
-            <wstaw kolejne widoki z guzikami>
-            \\
+            \begin{figure}[h]
+            \centering
+            \includegraphics[bb=0 0 1103 1053,keepaspectratio=true, scale=0.3]{images/screenshots/work/ui-montage.png}
+            % ui-montage.png: 1103x1053 px, 72dpi, 38.91x37.15 cm, bb=0 0 1103 1053
+            \caption{Ułożenie elementów na poszczególnych widokach}
+            \end{figure}
+
             
             Gdy zaprojektujemy już wstępnie kolejne widoki, można zacząć wydzielać z nich części wspólne, oraz elementy powtarzające się. Dzięki temu tworząc ten widok oszczędzić będzie można sobie niepotrzebnej pracy. Na przykład lewa część ekranu nie będzie się prawie w ogóle zmieniać, gdzie prawa będzie całkowicie zmieniana na inną podczas przejścia na inny etap konfiguracji. Każdy z widoków będzie zaprojektowany osobno i posiadać będzie inne funkcjonalności, każdy z nich będzie wyświetlany tym samym miejscu. 
             \\
@@ -832,25 +844,28 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Style Sheet (USS), które pełnią podobną rolę co pliki CSS w stronach internetowych, mogą zostać użyte do wypisania zasad, które definiować będą wygląd elementów. Raz zdefiniowana klasa, może zostać przypisana dowolnemu elementowi, dzięki czemu zyskuje on cechy wyglądu przypisane danej klasie. Jest to ogromne ułatwienie, jednak pliki USS nie są pozbawione wad. Pamiętać należy, że mechanizm ten nie jest tak samo dogłębnie rozbudowany co wersja dla stron internetowych i pewne parametry elementów znane z CSSa nie są zaimplementowane w USS. Przykładem są cienie pod elementami, które można zdefiniować w plikach CSS, ale Unity już tekiej opcji nie wspiera.
             \\
             
-            \begin{center}
-            \includegraphics[scale=0.35,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_003.png}
+            \begin{figure}[h]
+            \centering
+            \includegraphics[bb=0 0 866 713,scale=0.4,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_003.png}
             % 6-tworzenie-ui_003.png: 866x713 px, 72dpi, 30.55x25.15 cm, bb=0 0 866 713
-            \end{center}
+            \caption{Podgląd stylowania przycisku w edytorze interfejsu użytkownika}
+            \end{figure}
 
-            
+
             Przykładem w projekcie jest stylowanie przycisku, poprzez zdefiniowanie klasy .button-border, która tworzy różnokolorowe obramowanie wokół przycisku. Klasa ta jest dodawana do każdego elementu, który działa jako przycisk dzięki czemu jego wygląd kojarzy się użytkownikowi z określoną akcją naciśnięcia na niego. Po prawej stronie ekranu widoczna jest lista właściwości które są zmieniane w danej klasie.
             \\
             
         \subsubsection*{Tworzenie ikon i miniatur}
             Na potrzeby interfejsu użytkownika wymagane jest stworzenie miniatur przedstawiających geometryczne kształty paneli, obrócone ich wariacje oraz alternatywne sposoby ich ułożenia. Miniatury te będą grafiką wektorową wykonaną w programie Inkscape. Stworzenie ich jednocześnie jest wymagane, aby obrazy te posiadały te same rozmiary, grubość linii, oraz styl graficzny.
             \\
-            
-            \begin{center}
-            \includegraphics[scale=0.3,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_002.png}
-            % 6-tworzenie-ui_002.png: 916x544 px, 72dpi, 32.31x19.19 cm, bb=0 0 916 544
-            \end{center}
 
-            
+            \begin{figure}[h]
+            \centering
+            \includegraphics[bb=0 0 916 544,scale=0.35,keepaspectratio=true]{images/screenshots/work/6-tworzenie-ui_002.png}
+            % 6-tworzenie-ui_002.png: 916x544 px, 72dpi, 32.31x19.19 cm, bb=0 0 916 544
+            \caption{Tworzenie wielokąta w programie Inkscape}
+            \end{figure}
+
             Narysowanie podstawowych figur geometrycznych w programie do grafiki wektorowej, Inkscape jest trywialne proste, ze względu na wbudowane narzędzie do tworzenia figur równobocznych o zadanej ilości boków. Po narysowaniu kształtu możliwe jest ustawienie koloru i grubości linii, która go tworzy. Na końcu eksportujemy wszystkie figury jako osobne pliki graficzne.
             \\
         
@@ -868,10 +883,12 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Na początku wymagane będzie określenie obliczenie maksymalnej liczby kolumn i rzędów, które zmieszczą się na danej ścianie. Wystarczy podzielić wymiary ściany przez wymiary panelu dodając do niego opcjonalne odstępy pomiędzy nimi. Za pomocą wbudowanych funkcji silnika Unity3d można odczytać rzeczywiste wymiary ściany interaktywnej, oraz panelu który będzie ją pokrywał. Ważne jest wtedy branie pod uwagę sposobu w jaki obrócony ma być panel, bo jego obrót nie jest brany pod uwagę podczas liczenia wymiarów modelu trójwymiarowego. Zależnie od wybranego kształtu panelu jego wymiary po obróceniu będą inne, dlatego już na tym etapie trzeba zrobić osobne przypadki dla różnych kształtów oraz różnych ich wariantów obrotu.
             \\
             
-            \begin{center}
-                \includegraphics[scale=0.2,keepaspectratio=true]{images/diagrams/panel_tiling_square.png}
+            \begin{figure}[h]
+            \centering
+            \includegraphics[scale=0.2,keepaspectratio=true]{images/diagrams/panel_tiling_square.png}
                 % panel_tiling_square.png: 1008x183 px, 43dpi, 59.54x10.81 cm, bb=0 0 1688 306
-            \end{center}
+            \caption{Różne sposoby ułożenia parkietażu kwadratu}
+            \end{figure}
 
             
             Po obliczeniu wymiarów, można określić wymiary siatki wedle której ustawiane będą panele, bo nie zawsze siatka jest tych samych wymiarów co wymiary panelu. Kwadraty są prostym przykładem, który sie komplikuje kiedy obróci się je o 45 stopni, wtedy wysokość siatki zmniejsza się o połowę, gdyż panele zaczynają się przeplatać ze sobą.
@@ -880,18 +897,23 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Dodatkową zmianą jest fakt, że panele nie zawsze są poustawiane jeden pod drugim. W przypadku zerowej rotacji kwadratu jest to styl ułożenia w wiąz, a w przypadku panelu obróconego o 45 stopni jest to jedyny sposób na ułożenie ich.
             \\
             
-            \begin{center}
-                \includegraphics[scale=0.3]{images/diagrams/panel_tiling_hexagon.png}
+            \begin{figure}[!h]
+            \centering
+            \includegraphics[scale=0.3]{images/diagrams/panel_tiling_hexagon.png}
                 % panel_tiling_hexagon.png: 803x214 px, 43dpi, 47.43x12.64 cm, bb=0 0 1344 358
-            \end{center}
+            \caption{Różne sposoby ułożenia parkietażu sześciokąta}
+            \end{figure}
             
             Podobnym przypadkiem są sześciokąty, które zawsze muszą być ustawione naprzemiennie, dodatkowo wymiary siatki różnią się od kształtu panelu, tak jest również w przypadku sześciokąta. Normalnie szerokość siatki jest równa szerokości panelu, a jej wysokość trzecich ósmych jego wysokości ze względu na przeplatanie się ze sobą paneli z kolejnych rzędów. Po obróceniu sześciokąta, szerokość siatki robi się większa od szerokości panelu, po obróceniu.
             \\
             
-            \begin{center}
-                \includegraphics[scale=0.25]{images/diagrams/panel_tiling_triangles.png}
+            
+            \begin{figure}[!h]
+            \centering
+            \includegraphics[scale=0.25]{images/diagrams/panel_tiling_triangles.png}
                 % panel_tiling_triangles.png: 1110x186 px, 43dpi, 65.56x10.99 cm, bb=0 0 1859 311
-            \end{center}
+            \caption{Różne sposoby ułożenia parkietażu trójkąta}
+            \end{figure}
 
             Najbardziej skomplikowane jest ułożenie paneli o kształcie trójkąta równobocznego. Każdy następny panel musi być obrócony o 180 stopni wobec poprzedniego, a szerokość siatki jest połową szerokości panelu. W przypadku obróconego panelu, obrót o 180 stopni tyczy się co drugiego rzędu.  
             \\
@@ -974,12 +996,11 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
             Funkcje zmieniające etap konfiguracji mają proste zadanie, ukryć wszystkie elementy interfejsu, które nie są potrzebne na tym etapie i pokazać te obecnie potrzebne, oraz w razie potrzeby wykonać jakieś dodatkowe akcje, takie jak aktualizowanie parametrów interfejsu. Elementy interfejsu odpowiadające poszczególnym etapom, zgrupowane są w osobnych obiektach, dzięki czemu łatwo jest je wszystkie ukryć, albo odkryć w razie potrzeby.
             \\
             
-            \includegraphics[bb=0 0 691 275,scale=0.7,keepaspectratio=true]{images/screenshots/code/code_003.png}
-            % code_003.png: 691x275 px, 72dpi, 24.38x9.70 cm, bb=0 0 691 275
-
-            
             Wymagane jest też zdefiniowanie i przypisanie akcji do elementów mieszczących się w zgrupowanych kategoriach, odpowiadającym poszczególnym etapom. Stworzone zostały funkcje uruchamiające dane akcje, a funkcje te przypisane zostały do odpowiadających im przycisków. 
             \\
+            
+            \includegraphics[bb=0 0 691 275,scale=0.7,keepaspectratio=true]{images/screenshots/code/code_003.png}
+            % code_003.png: 691x275 px, 72dpi, 24.38x9.70 cm, bb=0 0 691 275
             
             Pierwszym etapem jest wybranie palety pomieszczenia, dlatego znajdujemy obiekt grupujący pod sobą wszystkie przyciski zmieniające paletę pomieszczenia oraz do każdego z kolei przypisujemy akcję, uruchamiania funkcji zmieniającej palety pomieszczenia. Dla każdego z przycisków uruchamiana jest ta sama funkcja, lecz z inną wartością parametru, dzięki temu, możemy wszystko wykonać za pomoca pętli iterując po kolei przez wszystkie przyciski. Uruchamiana funkcja, setGlobalPalette(), która została zdefiniowana w kontrolerze palety pomieszczenia, oraz jako argument przyjmuje indeks aplikowanej palety materiałów.
             \\
@@ -1050,12 +1071,14 @@ Po fazach analizy i projektowania, możliwe będzie przejście do właściwej im
         Rozplanowanie całego projektu bardzo ułatwiło i przyspieszyło pracę, przydatna bardzo była webowa aplikacja Miro, w której można tworzyć różnego rodzaju listy, tabele, diagramy i inne bardziej zawansowane struktury. Jedną z nich była tablica kanban, która pozwala na lepsze usystematyzowanie pracy and projektem. Podstawowa tablica dzieli mniejsze zadania na kolumny: zaplanowane, w trakcie, skończone, dodatkowo podzielić ją można na wiersze, gdzie każdy wiersz grupuje trochę inną część projektu. W przypadku tej pracy powstały kategorie: rzeczy do rozpoznania, praca pisemna, materiały, programowanie, konfiguracja projektu. 
         \\
 
+        
+\newpage
+\listoffigures
 
 \newpage
-\section{Literatura}
+\bibliographystyle{plain}
+\bibliography{bib.bib}
 
-\newpage
-\section{Załączniki}
 
 
 
